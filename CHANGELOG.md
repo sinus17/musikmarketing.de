@@ -1,5 +1,31 @@
 # Changelog - musikmarketing.de
 
+## [1.0.1] - 2025-01-16
+
+### 🐛 Bug Fixes
+- **Dependency Conflicts**: Fixed React 19 compatibility issues with react-helmet-async
+- **React Version**: Downgraded from React 19.2.0 to React 18.3.1 for better ecosystem compatibility
+- **MUI Version**: Downgraded from MUI v7 to v6 for stable React 18 support
+- **Build Dependencies**: Removed unused Tailwind CSS, PostCSS, and Autoprefixer dependencies
+- **Vite Configuration**: Switched from rolldown-vite to standard Vite 5.4.10 for better stability
+- **Type Definitions**: Updated @types/react and @types/react-dom to match React 18.3.1
+
+### 📦 Dependencies
+- React: `19.2.0` → `18.3.1`
+- React-DOM: `19.2.0` → `18.3.1`
+- MUI Material: `7.3.5` → `6.3.0`
+- MUI Icons: `7.3.5` → `6.3.0`
+- MUI System: `7.3.5` → `6.3.0`
+- React Router: `7.1.0` → `6.28.0`
+- Vite: `rolldown-vite@7.2.2` → `5.4.10`
+
+### ✅ Deployment
+- **Build Status**: Fixed npm install errors on Netlify
+- **Compatibility**: Improved compatibility with deployment platforms
+- **Bundle Size**: Reduced by removing unused dependencies
+
+---
+
 ## [1.0.0] - 2025-01-16
 
 ### 🚀 Initial Release
