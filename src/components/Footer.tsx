@@ -40,7 +40,9 @@ const Footer = () => {
             </Typography>
             <Box sx={{ display: 'flex', gap: 1 }}>
               <IconButton
-                href="#"
+                href="https://instagram.com/swipeup"
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   color: 'grey.400',
                   '&:hover': { color: 'primary.light' },
@@ -49,7 +51,9 @@ const Footer = () => {
                 <InstagramIcon />
               </IconButton>
               <IconButton
-                href="#"
+                href="https://www.youtube.com/@philipp.swipeup"
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   color: 'grey.400',
                   '&:hover': { color: 'primary.light' },
@@ -58,7 +62,9 @@ const Footer = () => {
                 <YouTubeIcon />
               </IconButton>
               <IconButton
-                href="#"
+                href="https://tiktok.com/@philipp.swipeup"
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   color: 'grey.400',
                   '&:hover': { color: 'primary.light' },
@@ -75,6 +81,16 @@ const Footer = () => {
               Unsere Services
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+              <Link
+                href="/musikmarketing-agentur"
+                sx={{
+                  color: 'grey.300',
+                  textDecoration: 'none',
+                  '&:hover': { color: 'primary.light' },
+                }}
+              >
+                Musikmarketing Agentur
+              </Link>
               <Link
                 href="https://song.so/instagram-ads-blueprint"
                 target="_blank"

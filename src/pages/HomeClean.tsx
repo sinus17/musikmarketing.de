@@ -261,6 +261,64 @@ const Home = () => {
               >
                 Kostenlose Beratung erhalten
               </Button>
+              
+              {/* Google Reviews Component */}
+              <Box 
+                component="a"
+                href="https://swipeup-marketing.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 2,
+                  mt: 4,
+                  textDecoration: 'none',
+                  transition: 'opacity 0.3s ease',
+                  cursor: 'pointer',
+                  '&:hover': {
+                    opacity: 0.8,
+                  }
+                }}
+              >
+                <Box sx={{ flexShrink: 0 }}>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 640 640" 
+                    style={{ 
+                      width: '48px', 
+                      height: '48px', 
+                      fill: '#88D3E5' 
+                    }}
+                  >
+                    <path d="M564 325.8C564 467.3 467.1 568 324 568C186.8 568 76 457.2 76 320C76 182.8 186.8 72 324 72C390.8 72 447 96.5 490.3 136.9L422.8 201.8C334.5 116.6 170.3 180.6 170.3 320C170.3 406.5 239.4 476.6 324 476.6C422.2 476.6 459 406.2 464.8 369.7L324 369.7L324 284.4L560.1 284.4C562.4 297.1 564 309.3 564 325.8z"/>
+                  </svg>
+                </Box>
+                <Box sx={{ textAlign: 'center' }}>
+                  <Typography 
+                    variant="h5" 
+                    sx={{ 
+                      fontWeight: 900, 
+                      color: '#88D3E5',
+                      mb: 0.5,
+                      fontSize: '1.5rem'
+                    }}
+                  >
+                    5.0 <Box component="span" sx={{ color: '#B8860B' }}>★★★★★</Box>
+                  </Typography>
+                  <Typography 
+                    variant="body2" 
+                    sx={{ 
+                      color: 'rgba(255, 255, 255, 0.7)',
+                      fontSize: '0.875rem',
+                      fontStyle: 'italic'
+                    }}
+                  >
+                    Basierend auf 69 Bewertungen
+                  </Typography>
+                </Box>
+              </Box>
             </Box>
           </Container>
         </Box>
