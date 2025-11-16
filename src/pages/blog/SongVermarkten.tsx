@@ -5,13 +5,13 @@ import BlogAuthor from '../../components/BlogAuthor';
 import InternalLinks from '../../components/InternalLinks';
 
 export default function SongVermarkten() {
-  const publishDate = '2024-11-16';
-  const modifiedDate = '2024-11-16';
+  const publishDate = '2025-01-16';
+  const modifiedDate = '2025-01-16';
   
   const blogPostingSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Wie vermarkte ich meinen Song? 7-Schritte-Plan für Artists [2024]",
+    "headline": "Wie vermarkte ich meinen Song? 7-Schritte-Plan für Artists [2025]",
     "description": "Kompletter Leitfaden zur Song-Vermarktung: Pre-Save, Release-Strategie, Social Media, Playlists & Paid Ads. Schritt-für-Schritt Anleitung für Independent Artists.",
     "image": "https://musikmarketing.de/musikmarketing.png",
     "author": {
@@ -37,6 +37,45 @@ export default function SongVermarkten() {
     "keywords": "Song vermarkten, Musik promoten, Release Strategie, Pre-Save Kampagne, Playlist Pitching, Instagram Ads für Musik",
     "wordCount": 850,
     "inLanguage": "de-DE"
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie vermarkte ich meinen Song?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Um deinen Song erfolgreich zu vermarkten, folge diesem 7-Schritte-Plan: 1) Starte eine Pre-Save Kampagne 3 Wochen vor Release, 2) Erstelle einen Content-Plan mit 20-30 Posts, 3) Pitche deinen Song an Spotify Editorial Playlists, 4) Führe einen starken Release Day Push durch, 5) Schalte Instagram & TikTok Ads mit 5-10€/Tag, 6) Kontaktiere User-Generated Playlist Kuratoren, 7) Halte das Momentum mindestens 4 Wochen aufrecht."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wann sollte ich mit der Song-Vermarktung beginnen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beginne mindestens 3-4 Wochen vor dem Release-Datum mit der Vermarktung. Starte mit einer Pre-Save Kampagne 3 Wochen vorher und plane deinen Content im Voraus. Marketing beginnt nicht am Release-Tag, sondern deutlich früher."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie viel Budget brauche ich für Song-Vermarktung?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mit einem Budget von 100-200€ pro Release kannst du bereits viel erreichen. Plane 5-10€/Tag für Instagram Ads ein und teste verschiedene Creatives. Auch mit kleinem Budget ist professionelles Marketing möglich."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Plattformen sind wichtig für Song-Vermarktung?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die wichtigsten Plattformen sind: Instagram (für Reels und Stories), TikTok (für virale Reichweite), Spotify (für Playlist Pitching), YouTube (für Musikvideos) und E-Mail Marketing (für deine treue Fanbase). Fokussiere dich auf 2-3 Plattformen statt alle gleichzeitig zu bespielen."
+        }
+      }
+    ]
   };
 
   const steps = [
@@ -73,7 +112,7 @@ export default function SongVermarkten() {
   return (
     <>
       <Helmet>
-        <title>Wie vermarkte ich meinen Song? 7-Schritte-Plan für Artists [2024]</title>
+        <title>Wie vermarkte ich meinen Song? 7-Schritte-Plan für Artists [2025]</title>
         <meta name="description" content="Kompletter Leitfaden zur Song-Vermarktung: Pre-Save, Release-Strategie, Social Media, Playlists & Paid Ads. Schritt-für-Schritt Anleitung für Independent Artists." />
         <meta name="keywords" content="Song vermarkten, Musik promoten, Release Strategie, Pre-Save Kampagne, Playlist Pitching, Instagram Ads für Musik" />
         <link rel="canonical" href="https://musikmarketing.de/blog/song-vermarkten" />
@@ -84,12 +123,15 @@ export default function SongVermarkten() {
         <script type="application/ld+json">
           {JSON.stringify(blogPostingSchema)}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
 
       <Box sx={{ background: 'linear-gradient(135deg, #07393c 0%, #0a090c 100%)', pt: { xs: 10, md: 14 }, pb: { xs: 6, md: 8 } }}>
         <Container maxWidth="md">
           <Typography variant="h1" component="h1" sx={{ fontSize: { xs: '1.75rem', sm: '2.5rem', md: '3.5rem' }, fontWeight: 800, color: '#90ddf0', mb: { xs: 2, md: 3 }, lineHeight: 1.2 }}>
-            Wie vermarkte ich meinen Song? 7-Schritte-Plan [2024]
+            Wie vermarkte ich meinen Song? 7-Schritte-Plan [2025]
           </Typography>
           
           <BlogAuthor date="16. Januar 2025" readTime="8 Min. Lesezeit" />
