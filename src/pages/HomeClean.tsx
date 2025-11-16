@@ -15,7 +15,6 @@ import {
   BarChart as BarChartIcon,
   AutoAwesome as SparkleIcon,
   Waves as WaveIcon,
-  School as SchoolIcon,
   PlayArrow as PlayArrowIcon,
   AutoMode as AutoModeIcon,
   AccessTime as TimeIcon,
