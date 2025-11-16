@@ -100,7 +100,7 @@ export default function InternalLinks({ currentPath, title = 'Weitere Ressourcen
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {filteredLinks.map((link, index) => (
+          {filteredLinks.map((link) => (
             <Grid 
               item 
               xs={12} 
