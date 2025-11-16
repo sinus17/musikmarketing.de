@@ -130,6 +130,65 @@ const Footer = () => {
             </Box>
           </Grid>
 
+          {/* Blog */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
+              Blog
+            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+              <Link
+                href="/blog"
+                sx={{
+                  color: 'grey.300',
+                  textDecoration: 'none',
+                  '&:hover': { color: 'primary.light' },
+                }}
+              >
+                Alle Artikel
+              </Link>
+              <Link
+                href="/blog/was-ist-musikmarketing"
+                sx={{
+                  color: 'grey.300',
+                  textDecoration: 'none',
+                  '&:hover': { color: 'primary.light' },
+                }}
+              >
+                Was ist Musikmarketing?
+              </Link>
+              <Link
+                href="/blog/spotify-verdienst"
+                sx={{
+                  color: 'grey.300',
+                  textDecoration: 'none',
+                  '&:hover': { color: 'primary.light' },
+                }}
+              >
+                Spotify Verdienst
+              </Link>
+              <Link
+                href="/blog/musikmarketing-tipps"
+                sx={{
+                  color: 'grey.300',
+                  textDecoration: 'none',
+                  '&:hover': { color: 'primary.light' },
+                }}
+              >
+                Musikmarketing Tipps
+              </Link>
+              <Link
+                href="/blog/song-vermarkten"
+                sx={{
+                  color: 'grey.300',
+                  textDecoration: 'none',
+                  '&:hover': { color: 'primary.light' },
+                }}
+              >
+                Song vermarkten
+              </Link>
+            </Box>
+          </Grid>
+
         </Grid>
 
         <Divider sx={{ my: 4, borderColor: 'grey.800' }} />

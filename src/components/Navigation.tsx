@@ -71,7 +71,7 @@ const Navigation = () => {
                   fontSize: '1.25rem',
                 }}
               >
-                Musikmarketing.de
+                musikmarketing.de
               </Typography>
             </Box>
           </Box>
