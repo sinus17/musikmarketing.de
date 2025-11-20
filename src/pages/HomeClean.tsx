@@ -382,135 +382,6 @@ const Home = () => {
         </Box>
       </Box>
 
-      {/* What Makes Us Special Section */}
-      <Box sx={{ py: 12, background: 'linear-gradient(135deg, #07393c 0%, #0a090c 100%)', position: 'relative' }}>
-        <Container maxWidth="lg">
-          <Box sx={{ textAlign: 'center', mb: 10 }}>
-            <Typography variant="h2" sx={{ 
-              mb: 6, 
-              fontWeight: 700, 
-              color: 'text.primary',
-              textAlign: 'center'
-            }}>
-              Das zeichnet{' '}
-              <Box component="span" sx={{ 
-                fontFamily: '"Instrument Serif", serif', 
-                fontStyle: 'italic', 
-                background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>
-                musikmarketing.de
-              </Box>{' '}
-              aus
-            </Typography>
-          </Box>
-
-          <Stack direction={{ xs: 'column', md: 'row' }} spacing={6}>
-            <Box sx={{ 
-              flex: 1, 
-              textAlign: 'center', 
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              borderRadius: '24px',
-              border: '1px solid rgba(144, 221, 240, 0.2)',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                border: '1px solid rgba(144, 221, 240, 0.4)',
-                boxShadow: '0 0 30px rgba(144, 221, 240, 0.2)',
-                transform: 'translateY(-4px)',
-              }
-            }}>
-              <Box sx={{ mb: 3 }}>
-                <CheckCircleIcon sx={{ fontSize: '4rem', color: 'primary.light' }} />
-              </Box>
-              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
-                Umfangreiche{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-                  Komplettlösungen
-                </Box>
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.6 }}>
-                Unsere Online-Kurse haben den Anspruch, deine einzige Quelle für Informationen zu sein. 
-                Du lernst bei uns alles, was du als{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-                  Artist brauchst
-                </Box>
-                , um dich erfolgreich selbst zu vermarkten – kein Vorwissen nötig.
-              </Typography>
-            </Box>
-
-            <Box sx={{ 
-              flex: 1, 
-              textAlign: 'center', 
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              borderRadius: '24px',
-              border: '1px solid rgba(44, 102, 110, 0.2)',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                border: '1px solid rgba(44, 102, 110, 0.4)',
-                boxShadow: '0 0 30px rgba(44, 102, 110, 0.2)',
-                transform: 'translateY(-4px)',
-              }
-            }}>
-              <Box sx={{ mb: 3 }}>
-                <TrendingUpIcon sx={{ fontSize: '4rem', color: 'secondary.light' }} />
-              </Box>
-              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
-                Aktuelles Wissen direkt aus der{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'secondary.light' }}>
-                  Praxis
-                </Box>
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.6 }}>
-                Alle gelehrten Skills setzen wir selbst täglich ein, sowie hunderte{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'secondary.light' }}>
-                  erfolgreicher Artists
-                </Box>
-                , die ihre Karriere mit diesen Strategien aufgebaut haben.
-              </Typography>
-            </Box>
-
-            <Box sx={{ 
-              flex: 1, 
-              textAlign: 'center', 
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              borderRadius: '24px',
-              border: '1px solid rgba(7, 57, 60, 0.2)',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                border: '1px solid rgba(7, 57, 60, 0.4)',
-                boxShadow: '0 0 30px rgba(7, 57, 60, 0.2)',
-                transform: 'translateY(-4px)',
-              }
-            }}>
-              <Box sx={{ mb: 3 }}>
-                <BarChartIcon sx={{ fontSize: '4rem', color: 'success.light' }} />
-              </Box>
-              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
-                Großes{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'success.light' }}>
-                  Marktpotenzial
-                </Box>
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.6 }}>
-                Zu jedem dieser Skills haben wir genügend Beispiele von Artists, die ausschließlich mit einem dieser Skills eine{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'success.light' }}>
-                  erfolgreiche Musikkarriere
-                </Box>{' '}
-                aufgebaut haben.
-              </Typography>
-            </Box>
-          </Stack>
-        </Container>
-      </Box>
-
       {/* Journey Section */}
       <Box sx={{ py: 12, background: 'linear-gradient(135deg, #0a090c 0%, #07393c 100%)', position: 'relative' }}>
         <Container maxWidth="lg">
@@ -1347,8 +1218,137 @@ const Home = () => {
         </Container>
       </Box>
 
+      {/* What Makes Us Special Section */}
+      <Box sx={{ py: 12, background: 'linear-gradient(135deg, #07393c 0%, #0a090c 100%)', position: 'relative' }}>
+        <Container maxWidth="lg">
+          <Box sx={{ textAlign: 'center', mb: 10 }}>
+            <Typography variant="h2" sx={{ 
+              mb: 6, 
+              fontWeight: 700, 
+              color: 'text.primary',
+              textAlign: 'center'
+            }}>
+              Das zeichnet{' '}
+              <Box component="span" sx={{ 
+                fontFamily: '"Instrument Serif", serif', 
+                fontStyle: 'italic', 
+                background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}>
+                musikmarketing.de
+              </Box>{' '}
+              aus
+            </Typography>
+          </Box>
+
+          <Stack direction={{ xs: 'column', md: 'row' }} spacing={6}>
+            <Box sx={{ 
+              flex: 1, 
+              textAlign: 'center', 
+              p: 4,
+              background: 'rgba(10, 9, 12, 0.6)',
+              backdropFilter: 'blur(20px)',
+              borderRadius: '24px',
+              border: '1px solid rgba(144, 221, 240, 0.2)',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                border: '1px solid rgba(144, 221, 240, 0.4)',
+                boxShadow: '0 0 30px rgba(144, 221, 240, 0.2)',
+                transform: 'translateY(-4px)',
+              }
+            }}>
+              <Box sx={{ mb: 3 }}>
+                <CheckCircleIcon sx={{ fontSize: '4rem', color: 'primary.light' }} />
+              </Box>
+              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
+                Umfangreiche{' '}
+                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
+                  Komplettlösungen
+                </Box>
+              </Typography>
+              <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.6 }}>
+                Unsere Online-Kurse haben den Anspruch, deine einzige Quelle für Informationen zu sein. 
+                Du lernst bei uns alles, was du als{' '}
+                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
+                  Artist brauchst
+                </Box>
+                , um dich erfolgreich selbst zu vermarkten – kein Vorwissen nötig.
+              </Typography>
+            </Box>
+
+            <Box sx={{ 
+              flex: 1, 
+              textAlign: 'center', 
+              p: 4,
+              background: 'rgba(10, 9, 12, 0.6)',
+              backdropFilter: 'blur(20px)',
+              borderRadius: '24px',
+              border: '1px solid rgba(44, 102, 110, 0.2)',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                border: '1px solid rgba(44, 102, 110, 0.4)',
+                boxShadow: '0 0 30px rgba(44, 102, 110, 0.2)',
+                transform: 'translateY(-4px)',
+              }
+            }}>
+              <Box sx={{ mb: 3 }}>
+                <TrendingUpIcon sx={{ fontSize: '4rem', color: 'secondary.light' }} />
+              </Box>
+              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
+                Aktuelles Wissen direkt aus der{' '}
+                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'secondary.light' }}>
+                  Praxis
+                </Box>
+              </Typography>
+              <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.6 }}>
+                Alle gelehrten Skills setzen wir selbst täglich ein, sowie hunderte{' '}
+                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'secondary.light' }}>
+                  erfolgreicher Artists
+                </Box>
+                , die ihre Karriere mit diesen Strategien aufgebaut haben.
+              </Typography>
+            </Box>
+
+            <Box sx={{ 
+              flex: 1, 
+              textAlign: 'center', 
+              p: 4,
+              background: 'rgba(10, 9, 12, 0.6)',
+              backdropFilter: 'blur(20px)',
+              borderRadius: '24px',
+              border: '1px solid rgba(7, 57, 60, 0.2)',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                border: '1px solid rgba(7, 57, 60, 0.4)',
+                boxShadow: '0 0 30px rgba(7, 57, 60, 0.2)',
+                transform: 'translateY(-4px)',
+              }
+            }}>
+              <Box sx={{ mb: 3 }}>
+                <BarChartIcon sx={{ fontSize: '4rem', color: 'success.light' }} />
+              </Box>
+              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
+                Großes{' '}
+                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'success.light' }}>
+                  Marktpotenzial
+                </Box>
+              </Typography>
+              <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.6 }}>
+                Zu jedem dieser Skills haben wir genügend Beispiele von Artists, die ausschließlich mit einem dieser Skills eine{' '}
+                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'success.light' }}>
+                  erfolgreiche Musikkarriere
+                </Box>{' '}
+                aufgebaut haben.
+              </Typography>
+            </Box>
+          </Stack>
+        </Container>
+      </Box>
+
       {/* Musikmarketing Begriffserklärungen Section */}
-      <Box sx={{ py: 12, background: 'linear-gradient(135deg, #07393c 0%, #0a090c 100%)' }}>
+      <Box sx={{ py: 12, background: 'linear-gradient(135deg, #0a090c 0%, #07393c 100%)' }}>
         <Container maxWidth="lg">
           <Typography variant="h2" sx={{ 
             mb: 6, 

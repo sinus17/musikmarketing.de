@@ -1,7 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
+import { useEffect } from 'react';
+import ReactGA from 'react-ga4';
+import CookieConsent from 'react-cookie-consent';
 import theme from './theme';
 import Home from './pages/HomeClean';
 import MusikmarketingAgentur from './pages/MusikmarketingAgentur';
@@ -20,12 +23,27 @@ import InstagramMarketingMusiker from './pages/InstagramMarketingMusiker';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
+// Initialize Google Analytics
+ReactGA.initialize('G-13021393531');
+
+// Component to track page views
+function PageViewTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: location.pathname + location.search });
+  }, [location]);
+
+  return null;
+}
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <HelmetProvider>
         <Router>
+          <PageViewTracker />
           <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
             <Navigation />
             
@@ -49,6 +67,69 @@ function App() {
             </main>
             
             <Footer />
+            
+            {/* Cookie Consent Banner */}
+            <CookieConsent
+              location="bottom"
+              buttonText="Akzeptieren"
+              declineButtonText="Ablehnen"
+              enableDeclineButton
+              onAccept={() => {
+                ReactGA.gtag('consent', 'update', {
+                  analytics_storage: 'granted'
+                });
+              }}
+              onDecline={() => {
+                ReactGA.gtag('consent', 'update', {
+                  analytics_storage: 'denied'
+                });
+              }}
+              style={{
+                background: 'rgba(10, 9, 12, 0.98)',
+                backdropFilter: 'blur(20px)',
+                borderTop: '1px solid rgba(144, 221, 240, 0.2)',
+                padding: '20px',
+                alignItems: 'center',
+              }}
+              buttonStyle={{
+                background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
+                color: 'white',
+                fontSize: '14px',
+                fontWeight: 600,
+                borderRadius: '8px',
+                padding: '10px 30px',
+                border: 'none',
+                cursor: 'pointer',
+              }}
+              declineButtonStyle={{
+                background: 'transparent',
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '14px',
+                borderRadius: '8px',
+                padding: '10px 30px',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                cursor: 'pointer',
+              }}
+              contentStyle={{
+                flex: '1 0 300px',
+                margin: '0 20px',
+              }}
+            >
+              <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.9)' }}>
+                Diese Website verwendet Cookies, um die Nutzererfahrung zu verbessern und Analysen durchzuführen. 
+                Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.{' '}
+                <a 
+                  href="/datenschutz" 
+                  style={{ 
+                    color: '#90ddf0', 
+                    textDecoration: 'underline',
+                    fontWeight: 500 
+                  }}
+                >
+                  Mehr erfahren
+                </a>
+              </span>
+            </CookieConsent>
           </div>
         </Router>
       </HelmetProvider>
