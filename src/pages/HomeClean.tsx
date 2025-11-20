@@ -113,6 +113,64 @@ const Home = () => {
             }
           })}
         </script>
+        
+        {/* FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Wie viel kostet Musikmarketing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Die Kosten für Musikmarketing variieren stark je nach Strategie. Organisches Marketing auf Social Media ist kostenlos, erfordert aber Zeit und Konsistenz. Paid Ads starten ab 5-10€ pro Tag und können beliebig skaliert werden. Professionelle Musikmarketing-Agenturen verlangen zwischen 500€ und 5.000€ pro Monat. Unsere Online-Kurse bieten eine kostengünstige Alternative: Einmalig zwischen 97€ und 497€ für lebenslanges Wissen, das du immer wieder anwenden kannst."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie lange dauert es, bis Musikmarketing Ergebnisse zeigt?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Mit Paid Ads können erste Ergebnisse innerhalb von 24-48 Stunden sichtbar sein. Organisches Musikmarketing auf Instagram und TikTok benötigt in der Regel 3-6 Monate konsistenter Arbeit, bis signifikantes Wachstum eintritt. Der Spotify Algorithmus reagiert meist nach 2-4 Wochen auf optimierte Releases. Wichtig: Musikmarketing ist ein Marathon, kein Sprint. Nachhaltiger Erfolg erfordert Geduld und kontinuierliche Optimierung."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Brauche ich eine Musikmarketing-Agentur oder kann ich es selbst machen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Viele erfolgreiche Artists machen ihr Musikmarketing selbst – besonders in der Anfangsphase. Mit den richtigen Kursen und Tools ist DIY-Musikmarketing absolut möglich und oft sogar effektiver, da du deine Musik am besten kennst. Eine Agentur macht Sinn, wenn du bereits ein Budget von 2.000€+ pro Monat hast und dich voll auf die Musik konzentrieren möchtest. Für den Start empfehlen wir: Lerne die Grundlagen selbst, teste verschiedene Strategien, und hole dir dann bei Bedarf professionelle Unterstützung für Skalierung."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Welche Social Media Plattform ist am wichtigsten für Musikmarketing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Instagram und TikTok sind aktuell die wichtigsten Plattformen für Musikmarketing. TikTok bietet das größte virale Potenzial und kann Songs über Nacht zum Hit machen. Instagram ist ideal für Community Building und Direct-To-Fan Kommunikation. YouTube bleibt wichtig für Musikvideos und langfristigen Content. Die beste Strategie: Fokussiere dich auf 1-2 Plattformen, wo deine Zielgruppe aktiv ist, statt überall präsent sein zu wollen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie bekomme ich mehr Spotify Streams durch Musikmarketing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Mehr Spotify Streams erreichst du durch eine Kombination aus Pre-Save Kampagnen, Playlist Pitching, Instagram Ads und organischem Social Media Marketing. Wichtig ist, dass du qualifizierte Hörer auf deine Tracks lenkst, die deine Musik wirklich mögen – nur so sendest du positive Signale an den Spotify Algorithmus. Vermeide Fake Streams oder Bot-Services, diese schaden langfristig. Fokussiere dich auf Save-Rate und Completion-Rate statt nur auf Stream-Zahlen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Was ist der Unterschied zwischen organischem und bezahltem Musikmarketing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Organisches Musikmarketing bedeutet, Reichweite ohne Werbebudget aufzubauen – durch Content, Community Building und Engagement auf Social Media. Es kostet Zeit statt Geld und baut nachhaltige, loyale Fans auf. Bezahltes Musikmarketing (Paid Ads) nutzt Werbebudget für schnelle, skalierbare Reichweite. Die beste Strategie kombiniert beide Ansätze: Organisch für Community und Authentizität, Paid Ads für Skalierung und schnelle Ergebnisse."
+                }
+              }
+            ]
+          })}
+        </script>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://musikmarketing.de/" />
         <meta property="og:title" content="Musikmarketing | Professionelles Marketing für Musiker & Künstler" />
@@ -917,8 +975,29 @@ const Home = () => {
                 </Box>{' '}
                 & Artist Identity
               </Typography>
-              <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
-                Entwickle eine starke, authentische Artist-Identität und ein konsistentes Branding, das dich von anderen abhebt.
+              <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.7 }}>
+                Entwickle eine starke, authentische Artist-Identität und ein konsistentes Branding, das dich von anderen abhebt. Im modernen Musikmarketing ist deine visuelle und emotionale Marke entscheidend für langfristigen Erfolg.
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 2, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
+                Professionelles Musikmarketing beginnt mit einer klaren Positionierung: Wer bist du als Künstler? Welche Geschichte erzählst du? Ein durchdachtes Artist Branding hilft dir, auf Social Media Plattformen wie Instagram und TikTok sofort erkennbar zu sein und eine emotionale Verbindung zu deiner Zielgruppe aufzubauen.
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
+                Lerne in unserer{' '}
+                <Box 
+                  component="a" 
+                  href="https://swipeup-marketing.com/strategy-session"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ 
+                    color: 'primary.light', 
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    '&:hover': { textDecoration: 'underline' }
+                  }}
+                >
+                  Strategy-Session
+                </Box>
+                , wie du deine Artist Identity strategisch entwickelst und für dein Musikmarketing nutzt.
               </Typography>
               <Button
                 variant="contained"
@@ -958,8 +1037,42 @@ const Home = () => {
                   Instagram & TikTok
                 </Box>
               </Typography>
-              <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
-                Baue eine echte Fanbase auf durch authentischen Content und strategisches Community Building.
+              <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.7 }}>
+                Baue eine echte Fanbase auf durch authentischen Content und strategisches Community Building. Organisches Musikmarketing auf Social Media ist der nachhaltigste Weg, um langfristige Fans zu gewinnen.
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 2, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
+                Instagram und TikTok sind die wichtigsten Plattformen für modernes Musikmarketing. Mit der richtigen Content-Strategie kannst du täglich neue Hörer erreichen und deine Musik viral verbreiten. Lerne in unserem{' '}
+                <Box 
+                  component="a" 
+                  href="/instagram-marketing-musiker"
+                  sx={{ 
+                    color: 'secondary.light', 
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    '&:hover': { textDecoration: 'underline' }
+                  }}
+                >
+                  Instagram Marketing Guide
+                </Box>
+                , wie du mit authentischem Content deine Reichweite organisch steigerst.
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
+                Im{' '}
+                <Box 
+                  component="a" 
+                  href="https://swipeup-marketing.com/365-content-club"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ 
+                    color: 'secondary.light', 
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    '&:hover': { textDecoration: 'underline' }
+                  }}
+                >
+                  365 Content Club
+                </Box>
+                {' '}erhältst du täglich Content-Ideen und Strategien für erfolgreiches Social Media Musikmarketing.
               </Typography>
               <Button
                 variant="contained"
@@ -1001,8 +1114,29 @@ const Home = () => {
                 </Box>{' '}
                 als Hebel für Wachstum
               </Typography>
-              <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
-                Nutze Instagram & Facebook Ads strategisch, um deine Reichweite auf Autopilot zu skalieren.
+              <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.7 }}>
+                Nutze Instagram & Facebook Ads strategisch, um deine Reichweite auf Autopilot zu skalieren. Paid Advertising ist der schnellste Weg, um im Musikmarketing messbare Ergebnisse zu erzielen.
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 2, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
+                Mit professionellem Musikmarketing durch Instagram Ads kannst du gezielt neue Hörer erreichen und deine Spotify Streams exponentiell steigern. Facebook Ads für Musiker ermöglichen präzises Targeting und messbare ROI-Optimierung.
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
+                Das{' '}
+                <Box 
+                  component="a" 
+                  href="https://song.so/instagram-ads-blueprint"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ 
+                    color: 'success.light', 
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    '&:hover': { textDecoration: 'underline' }
+                  }}
+                >
+                  Instagram Ads Blueprint
+                </Box>
+                {' '}zeigt dir Schritt-für-Schritt, wie du erfolgreiche Werbekampagnen für deine Musik aufsetzt und optimierst.
               </Typography>
               <Button
                 variant="contained"
@@ -1042,8 +1176,29 @@ const Home = () => {
                 </Box>{' '}
                 verstehen & gewinnen
               </Typography>
-              <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
-                Lerne, wie der Spotify Algorithmus funktioniert und wie du ihn für maximale Streams nutzt.
+              <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.7 }}>
+                Lerne, wie der Spotify Algorithmus funktioniert und wie du ihn für maximale Streams nutzt. Der Spotify Algorithmus ist ein zentraler Bestandteil erfolgreichen Musikmarketings im Streaming-Zeitalter.
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 2, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
+                Verstehe die Mechanismen hinter Spotify's Discover Weekly, Release Radar und algorithmischen Playlists. Professionelles Musikmarketing für Spotify bedeutet, die richtigen Signale zu senden: Save-Rate, Skip-Rate und Completion-Rate optimieren.
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
+                Mit gezielten{' '}
+                <Box 
+                  component="a" 
+                  href="https://song.so/instagram-ads-blueprint"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ 
+                    color: 'primary.light', 
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    '&:hover': { textDecoration: 'underline' }
+                  }}
+                >
+                  Instagram Ads
+                </Box>
+                {' '}kannst du qualifizierte Hörer auf deine Spotify-Tracks lenken und so den Algorithmus positiv beeinflussen.
               </Typography>
               <Button
                 variant="contained"
@@ -1085,8 +1240,29 @@ const Home = () => {
                 </Box>{' '}
                 Channels aufbauen
               </Typography>
-              <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
-                Baue E-Mail Listen und WhatsApp Channels auf, um deine Fans direkt zu erreichen und zu monetarisieren.
+              <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.7 }}>
+                Baue E-Mail Listen und WhatsApp Channels auf, um deine Fans direkt zu erreichen und zu monetarisieren. Direct-To-Fan Marketing ist die Zukunft nachhaltigen Musikmarketings.
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 2, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
+                Unabhängigkeit von Social Media Algorithmen: Mit eigenen Kommunikationskanälen behältst du die Kontrolle über dein Musikmarketing. E-Mail Marketing und WhatsApp ermöglichen direkten Kontakt zu deinen treuesten Fans.
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
+                Mit{' '}
+                <Box 
+                  component="a" 
+                  href="https://song.so"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ 
+                    color: 'secondary.light', 
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    '&:hover': { textDecoration: 'underline' }
+                  }}
+                >
+                  song.so
+                </Box>
+                {' '}kannst du professionelle Landing Pages erstellen und deine Fan-Datenbank strategisch aufbauen.
               </Typography>
               <Button
                 variant="contained"
@@ -1126,8 +1302,29 @@ const Home = () => {
                 </Box>{' '}
                 Artist-Analyse
               </Typography>
-              <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
-                Erhalte eine kostenlose Analyse deiner Artist-Präsenz und individuelle Empfehlungen.
+              <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.7 }}>
+                Erhalte eine kostenlose Analyse deiner Artist-Präsenz und individuelle Empfehlungen. Professionelles Musikmarketing beginnt mit einer ehrlichen Bestandsaufnahme.
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 2, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
+                Unsere Musikmarketing-Experten analysieren deine Social Media Präsenz, Spotify Performance und dein aktuelles Branding. Du erhältst konkrete Handlungsempfehlungen für deine nächsten Schritte im Musikmarketing.
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
+                Die{' '}
+                <Box 
+                  component="a" 
+                  href="https://swipeup-marketing.com/analyse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ 
+                    color: 'success.light', 
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    '&:hover': { textDecoration: 'underline' }
+                  }}
+                >
+                  kostenlose Profil-Analyse
+                </Box>
+                {' '}zeigt dir, wo du im Vergleich zu anderen Artists stehst und welche Quick Wins du sofort umsetzen kannst.
               </Typography>
               <Button
                 variant="contained"
@@ -1146,6 +1343,213 @@ const Home = () => {
                 Kostenlose Profil-Analyse
               </Button>
             </Card>
+          </Stack>
+        </Container>
+      </Box>
+
+      {/* Musikmarketing Begriffserklärungen Section */}
+      <Box sx={{ py: 12, background: 'linear-gradient(135deg, #07393c 0%, #0a090c 100%)' }}>
+        <Container maxWidth="lg">
+          <Typography variant="h2" sx={{ 
+            mb: 6, 
+            fontWeight: 700, 
+            color: 'text.primary',
+            textAlign: 'center'
+          }}>
+            Was ist{' '}
+            <Box component="span" sx={{ 
+              fontFamily: '"Instrument Serif", serif', 
+              fontStyle: 'italic', 
+              background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}>
+              Musikmarketing
+            </Box>
+            ?
+          </Typography>
+
+          <Box sx={{ 
+            maxWidth: '900px', 
+            mx: 'auto',
+            p: 4,
+            background: 'rgba(10, 9, 12, 0.4)',
+            backdropFilter: 'blur(20px)',
+            borderRadius: '24px',
+            border: '1px solid rgba(144, 221, 240, 0.2)',
+          }}>
+            <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.8 }}>
+              <strong>Musikmarketing</strong> umfasst alle strategischen Maßnahmen, um Musik und Künstler erfolgreich zu vermarkten und eine treue Fanbase aufzubauen. Im digitalen Zeitalter hat sich Musikmarketing grundlegend verändert: Während früher Labels und Radio die Hauptrolle spielten, können Artists heute durch Social Media Marketing, Streaming-Optimierung und Direct-To-Fan Strategien eigenständig eine erfolgreiche Karriere aufbauen.
+            </Typography>
+
+            <Typography variant="h4" sx={{ mb: 3, mt: 5, fontWeight: 600, color: 'primary.light' }}>
+              Die wichtigsten Bereiche im Musikmarketing
+            </Typography>
+
+            <Typography variant="h6" sx={{ mb: 2, mt: 4, fontWeight: 600, color: 'text.primary' }}>
+              Social Media Marketing für Musiker
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.8 }}>
+              Instagram und TikTok sind heute die wichtigsten Plattformen für Musikmarketing. Durch authentischen Content, Behind-The-Scenes Einblicke und strategisches Community Building können Artists organisch wachsen. Erfolgreiche Musikmarketing-Strategien auf Social Media kombinieren Unterhaltung mit Mehrwert und schaffen emotionale Verbindungen zur Zielgruppe. Die Algorithmen belohnen konsistente Aktivität und hohe Engagement-Raten.
+            </Typography>
+
+            <Typography variant="h6" sx={{ mb: 2, mt: 4, fontWeight: 600, color: 'text.primary' }}>
+              Spotify Marketing & Streaming-Optimierung
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.8 }}>
+              Der Spotify Algorithmus ist ein zentraler Faktor im modernen Musikmarketing. Durch Optimierung von Save-Rate, Skip-Rate und Completion-Rate können Artists die Wahrscheinlichkeit erhöhen, in algorithmischen Playlists wie Discover Weekly und Release Radar gefeatured zu werden. Professionelles Musikmarketing für Spotify beinhaltet Pre-Save Kampagnen, Playlist Pitching und strategische Release-Planung.
+            </Typography>
+
+            <Typography variant="h6" sx={{ mb: 2, mt: 4, fontWeight: 600, color: 'text.primary' }}>
+              Paid Advertising im Musikmarketing
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.8 }}>
+              Instagram Ads und Facebook Ads ermöglichen präzises Targeting und skalierbare Reichweite. Im Musikmarketing werden Paid Ads eingesetzt, um Spotify Streams zu steigern, Social Media Follower zu gewinnen oder Ticket-Sales für Konzerte zu pushen. Der große Vorteil: Messbare Ergebnisse und volle Kontrolle über Budget und Zielgruppe. Erfolgreiche Musikmarketing-Kampagnen mit Paid Ads erzielen oft ROI von 3:1 bis 10:1.
+            </Typography>
+
+            <Typography variant="h6" sx={{ mb: 2, mt: 4, fontWeight: 600, color: 'text.primary' }}>
+              Artist Branding & Identität
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.8 }}>
+              Starkes Branding ist die Grundlage erfolgreichen Musikmarketings. Eine klare Artist Identity hilft dabei, sich von der Masse abzuheben und eine emotionale Verbindung zur Zielgruppe aufzubauen. Professionelles Musikmarketing beginnt mit der Definition der eigenen Positionierung: Wer bin ich als Artist? Welche Story erzähle ich? Welche Werte vertrete ich? Ein konsistentes visuelles und emotionales Branding über alle Kanäle hinweg ist entscheidend.
+            </Typography>
+
+            <Typography variant="h6" sx={{ mb: 2, mt: 4, fontWeight: 600, color: 'text.primary' }}>
+              Direct-To-Fan Marketing
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.8 }}>
+              Die Zukunft des Musikmarketings liegt in der direkten Beziehung zwischen Artist und Fan. E-Mail Marketing, WhatsApp Channels und eigene Communities ermöglichen Unabhängigkeit von Social Media Algorithmen. Artists können ihre treuesten Fans direkt erreichen, exklusive Inhalte teilen und Merchandise oder Konzert-Tickets verkaufen. Direct-To-Fan Musikmarketing schafft nachhaltige Einnahmequellen und loyale Fanbeziehungen.
+            </Typography>
+
+            <Typography variant="h6" sx={{ mb: 2, mt: 4, fontWeight: 600, color: 'text.primary' }}>
+              Content Marketing für Musiker
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 0, color: 'text.secondary', lineHeight: 1.8 }}>
+              Regelmäßiger, hochwertiger Content ist das Herzstück modernen Musikmarketings. Neben der Musik selbst sind Behind-The-Scenes Videos, Tutorials, Vlogs und authentische Einblicke in den Alltag wichtige Content-Formate. Erfolgreiche Musikmarketing-Strategien nutzen Content, um Persönlichkeit zu zeigen, Expertise zu demonstrieren und eine Community aufzubauen. Der Schlüssel liegt in Konsistenz und Authentizität.
+            </Typography>
+          </Box>
+        </Container>
+      </Box>
+
+      {/* FAQ Section */}
+      <Box sx={{ py: 12, background: 'linear-gradient(135deg, #0a090c 0%, #07393c 100%)' }}>
+        <Container maxWidth="lg">
+          <Typography variant="h2" sx={{ 
+            mb: 8, 
+            fontWeight: 700, 
+            color: 'text.primary',
+            textAlign: 'center'
+          }}>
+            Häufig gestellte Fragen zu{' '}
+            <Box component="span" sx={{ 
+              fontFamily: '"Instrument Serif", serif', 
+              fontStyle: 'italic', 
+              background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}>
+              Musikmarketing
+            </Box>
+          </Typography>
+
+          <Stack spacing={3} sx={{ maxWidth: '900px', mx: 'auto' }}>
+            {/* FAQ 1 */}
+            <Box sx={{ 
+              p: 4,
+              background: 'rgba(10, 9, 12, 0.6)',
+              backdropFilter: 'blur(20px)',
+              borderRadius: '20px',
+              border: '1px solid rgba(144, 221, 240, 0.2)',
+            }}>
+              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'primary.light' }}>
+                Wie viel kostet Musikmarketing?
+              </Typography>
+              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Die Kosten für Musikmarketing variieren stark je nach Strategie. Organisches Marketing auf Social Media ist kostenlos, erfordert aber Zeit und Konsistenz. Paid Ads starten ab 5-10€ pro Tag und können beliebig skaliert werden. Professionelle Musikmarketing-Agenturen verlangen zwischen 500€ und 5.000€ pro Monat. Unsere Online-Kurse bieten eine kostengünstige Alternative: Einmalig zwischen 97€ und 497€ für lebenslanges Wissen, das du immer wieder anwenden kannst.
+              </Typography>
+            </Box>
+
+            {/* FAQ 2 */}
+            <Box sx={{ 
+              p: 4,
+              background: 'rgba(10, 9, 12, 0.6)',
+              backdropFilter: 'blur(20px)',
+              borderRadius: '20px',
+              border: '1px solid rgba(44, 102, 110, 0.2)',
+            }}>
+              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'secondary.light' }}>
+                Wie lange dauert es, bis Musikmarketing Ergebnisse zeigt?
+              </Typography>
+              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Mit Paid Ads können erste Ergebnisse innerhalb von 24-48 Stunden sichtbar sein. Organisches Musikmarketing auf Instagram und TikTok benötigt in der Regel 3-6 Monate konsistenter Arbeit, bis signifikantes Wachstum eintritt. Der Spotify Algorithmus reagiert meist nach 2-4 Wochen auf optimierte Releases. Wichtig: Musikmarketing ist ein Marathon, kein Sprint. Nachhaltiger Erfolg erfordert Geduld und kontinuierliche Optimierung.
+              </Typography>
+            </Box>
+
+            {/* FAQ 3 */}
+            <Box sx={{ 
+              p: 4,
+              background: 'rgba(10, 9, 12, 0.6)',
+              backdropFilter: 'blur(20px)',
+              borderRadius: '20px',
+              border: '1px solid rgba(7, 57, 60, 0.2)',
+            }}>
+              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'success.light' }}>
+                Brauche ich eine Musikmarketing-Agentur oder kann ich es selbst machen?
+              </Typography>
+              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Viele erfolgreiche Artists machen ihr Musikmarketing selbst – besonders in der Anfangsphase. Mit den richtigen Kursen und Tools ist DIY-Musikmarketing absolut möglich und oft sogar effektiver, da du deine Musik am besten kennst. Eine Agentur macht Sinn, wenn du bereits ein Budget von 2.000€+ pro Monat hast und dich voll auf die Musik konzentrieren möchtest. Für den Start empfehlen wir: Lerne die Grundlagen selbst, teste verschiedene Strategien, und hole dir dann bei Bedarf professionelle Unterstützung für Skalierung.
+              </Typography>
+            </Box>
+
+            {/* FAQ 4 */}
+            <Box sx={{ 
+              p: 4,
+              background: 'rgba(10, 9, 12, 0.6)',
+              backdropFilter: 'blur(20px)',
+              borderRadius: '20px',
+              border: '1px solid rgba(144, 221, 240, 0.2)',
+            }}>
+              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'primary.light' }}>
+                Welche Social Media Plattform ist am wichtigsten für Musikmarketing?
+              </Typography>
+              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Instagram und TikTok sind aktuell die wichtigsten Plattformen für Musikmarketing. TikTok bietet das größte virale Potenzial und kann Songs über Nacht zum Hit machen. Instagram ist ideal für Community Building und Direct-To-Fan Kommunikation. YouTube bleibt wichtig für Musikvideos und langfristigen Content. Die beste Strategie: Fokussiere dich auf 1-2 Plattformen, wo deine Zielgruppe aktiv ist, statt überall präsent sein zu wollen.
+              </Typography>
+            </Box>
+
+            {/* FAQ 5 */}
+            <Box sx={{ 
+              p: 4,
+              background: 'rgba(10, 9, 12, 0.6)',
+              backdropFilter: 'blur(20px)',
+              borderRadius: '20px',
+              border: '1px solid rgba(44, 102, 110, 0.2)',
+            }}>
+              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'secondary.light' }}>
+                Wie bekomme ich mehr Spotify Streams durch Musikmarketing?
+              </Typography>
+              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Mehr Spotify Streams erreichst du durch eine Kombination aus Pre-Save Kampagnen, Playlist Pitching, Instagram Ads und organischem Social Media Marketing. Wichtig ist, dass du qualifizierte Hörer auf deine Tracks lenkst, die deine Musik wirklich mögen – nur so sendest du positive Signale an den Spotify Algorithmus. Vermeide Fake Streams oder Bot-Services, diese schaden langfristig. Fokussiere dich auf Save-Rate und Completion-Rate statt nur auf Stream-Zahlen.
+              </Typography>
+            </Box>
+
+            {/* FAQ 6 */}
+            <Box sx={{ 
+              p: 4,
+              background: 'rgba(10, 9, 12, 0.6)',
+              backdropFilter: 'blur(20px)',
+              borderRadius: '20px',
+              border: '1px solid rgba(7, 57, 60, 0.2)',
+            }}>
+              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'success.light' }}>
+                Was ist der Unterschied zwischen organischem und bezahltem Musikmarketing?
+              </Typography>
+              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Organisches Musikmarketing bedeutet, Reichweite ohne Werbebudget aufzubauen – durch Content, Community Building und Engagement auf Social Media. Es kostet Zeit statt Geld und baut nachhaltige, loyale Fans auf. Bezahltes Musikmarketing (Paid Ads) nutzt Werbebudget für schnelle, skalierbare Reichweite. Die beste Strategie kombiniert beide Ansätze: Organisch für Community und Authentizität, Paid Ads für Skalierung und schnelle Ergebnisse.
+              </Typography>
+            </Box>
           </Stack>
         </Container>
       </Box>

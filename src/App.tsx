@@ -16,6 +16,7 @@ import MusikmarketingTipps from './pages/blog/MusikmarketingTipps';
 import MusikplattformVergleich from './pages/blog/MusikplattformVergleich';
 import SongVermarkten from './pages/blog/SongVermarkten';
 import MusikBekannt from './pages/blog/MusikBekannt';
+import InstagramMarketingMusiker from './pages/InstagramMarketingMusiker';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
@@ -43,6 +44,7 @@ function App() {
                 <Route path="/blog/musikplattform-vergleich" element={<MusikplattformVergleich />} />
                 <Route path="/blog/song-vermarkten" element={<SongVermarkten />} />
                 <Route path="/blog/musik-bekannt" element={<MusikBekannt />} />
+                <Route path="/instagram-marketing-musiker" element={<InstagramMarketingMusiker />} />
               </Routes>
             </main>
             
