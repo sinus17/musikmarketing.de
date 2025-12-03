@@ -17,7 +17,6 @@ import {
   MenuItem,
 } from '@mui/material';
 import { Menu as MenuIcon, Close as CloseIcon, KeyboardArrowDown } from '@mui/icons-material';
-import MusicNoteIcon from '@mui/icons-material/MusicNote';
 
 const Navigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -102,7 +101,7 @@ const Navigation = () => {
   return (
     <>
       <AppBar position="sticky" elevation={0}>
-        <Toolbar sx={{ maxWidth: '1280px', width: '100%', mx: 'auto', px: { xs: 2, sm: 3 } }}>
+        <Toolbar sx={{ maxWidth: '1280px', width: '100%', mx: 'auto', px: { xs: 2, sm: 3 }, minHeight: '56px' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
             <Box 
               component="a"
@@ -112,18 +111,17 @@ const Navigation = () => {
                 alignItems: 'center', 
                 textDecoration: 'none',
                 '&:hover': {
-                  opacity: 0.8,
+                  opacity: 0.7,
                 }
               }}
             >
-              <MusicNoteIcon sx={{ color: 'primary.main', mr: 1, fontSize: '2rem' }} />
               <Typography
                 variant="h6"
                 component="div"
                 sx={{
-                  fontWeight: 700,
-                  color: 'text.primary',
-                  fontSize: '1.25rem',
+                  fontWeight: 600,
+                  color: '#ffffff',
+                  fontSize: '1rem',
                 }}
               >
                 musikmarketing.de
@@ -152,14 +150,15 @@ const Navigation = () => {
                     component={item.hasDropdown ? "div" : "a"}
                     href={!item.hasDropdown ? item.href : undefined}
                     sx={{
-                      color: 'text.primary',
+                      color: '#9e9e9e',
                       textTransform: 'none',
-                      fontSize: '0.95rem',
-                      fontWeight: 500,
+                      fontSize: '0.875rem',
+                      fontWeight: 400,
                       px: 2,
                       cursor: 'pointer',
                       '&:hover': {
-                        background: 'rgba(144, 221, 240, 0.1)',
+                        color: '#ffffff',
+                        background: 'rgba(255, 255, 255, 0.05)',
                       }
                     }}
                   >
@@ -185,9 +184,8 @@ const Navigation = () => {
                         '& .MuiPaper-root': {
                           mt: 1,
                           minWidth: 220,
-                          background: 'rgba(10, 9, 12, 0.95)',
-                          backdropFilter: 'blur(20px)',
-                          border: '1px solid rgba(144, 221, 240, 0.2)',
+                          background: '#000000',
+                          border: '1px solid #2a2a2a',
                         }
                       }}
                     >
@@ -203,11 +201,11 @@ const Navigation = () => {
                             if (item.label === 'Agentur') setAgenturAnchor(null);
                           }}
                           sx={{
-                            color: 'text.secondary',
-                            fontSize: '0.9rem',
+                            color: '#9e9e9e',
+                            fontSize: '0.875rem',
                             '&:hover': {
-                              background: 'rgba(144, 221, 240, 0.1)',
-                              color: 'primary.light',
+                              background: 'rgba(255, 255, 255, 0.05)',
+                              color: '#ffffff',
                             }
                           }}
                         >

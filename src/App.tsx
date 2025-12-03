@@ -85,29 +85,28 @@ function App() {
                 });
               }}
               style={{
-                background: 'rgba(10, 9, 12, 0.98)',
-                backdropFilter: 'blur(20px)',
-                borderTop: '1px solid rgba(144, 221, 240, 0.2)',
+                background: '#000000',
+                borderTop: '1px solid #2a2a2a',
                 padding: '20px',
                 alignItems: 'center',
               }}
               buttonStyle={{
-                background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-                color: 'white',
+                background: '#ffffff',
+                color: '#000000',
                 fontSize: '14px',
-                fontWeight: 600,
-                borderRadius: '8px',
-                padding: '10px 30px',
+                fontWeight: 500,
+                borderRadius: '4px',
+                padding: '8px 16px',
                 border: 'none',
                 cursor: 'pointer',
               }}
               declineButtonStyle={{
                 background: 'transparent',
-                color: 'rgba(255, 255, 255, 0.7)',
+                color: '#9e9e9e',
                 fontSize: '14px',
-                borderRadius: '8px',
-                padding: '10px 30px',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
+                borderRadius: '4px',
+                padding: '8px 16px',
+                border: '1px solid #2a2a2a',
                 cursor: 'pointer',
               }}
               contentStyle={{
@@ -115,15 +114,15 @@ function App() {
                 margin: '0 20px',
               }}
             >
-              <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.9)' }}>
+              <span style={{ fontSize: '14px', color: '#9e9e9e' }}>
                 Diese Website verwendet Cookies, um die Nutzererfahrung zu verbessern und Analysen durchzuführen. 
                 Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.{' '}
                 <a 
                   href="/datenschutz" 
                   style={{ 
-                    color: '#90ddf0', 
+                    color: '#ffffff', 
                     textDecoration: 'underline',
-                    fontWeight: 500 
+                    fontWeight: 400 
                   }}
                 >
                   Mehr erfahren

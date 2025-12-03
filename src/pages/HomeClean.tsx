@@ -1,29 +1,14 @@
 import { Helmet } from 'react-helmet-async';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import {
   Box,
   Container,
   Typography,
   Button,
-  Card,
   Stack,
 } from '@mui/material';
-import {
-  MusicNote as MusicNoteIcon,
-  TrendingUp as TrendingUpIcon,
-  CheckCircle as CheckCircleIcon,
-  BarChart as BarChartIcon,
-  AutoAwesome as SparkleIcon,
-  Waves as WaveIcon,
-  PlayArrow as PlayArrowIcon,
-  AutoMode as AutoModeIcon,
-  AccessTime as TimeIcon,
-  AttachMoney as MoneyIcon,
-  Balance as BalanceIcon,
-} from '@mui/icons-material';
 
 const Home = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [selectedCurrency, setSelectedCurrency] = useState<'time' | 'money' | 'balanced'>('balanced');
 
   return (
@@ -35,142 +20,6 @@ const Home = () => {
           content="Erlerne essenzielle Musikmarketing-Skills, um dich als Artist erfolgreich selbst zu vermarkten in einer Zeit, in der Sichtbarkeit auf Social Media immer wichtiger wird." 
         />
         <meta name="keywords" content="Musikmarketing, Musik Marketing, Musik Promotion, Musik vermarkten, Social Media Marketing, Instagram Marketing, Musik streamen, Künstler Marketing, Musiker Promotion" />
-        
-        {/* Schema.org JSON-LD */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Musikmarketing.de",
-            "description": "Professionelles Musikmarketing für Musiker & Künstler. Erlerne essenzielle Marketing-Skills für deine Musikkarriere.",
-            "url": "https://musikmarketing.de",
-            "publisher": {
-              "@type": "Organization",
-              "name": "SwipeUp Marketing",
-              "url": "https://swipeup-marketing.com",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://musikmarketing.de/musikmarketing.png"
-              }
-            },
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://musikmarketing.de/?s={search_term_string}",
-              "query-input": "required name=search_term_string"
-            },
-            "mainEntity": {
-              "@type": "Course",
-              "name": "Musikmarketing Skills für Artists",
-              "description": "Lerne Musikmarketing, welches Artists zum wachsen bringt",
-              "provider": {
-                "@type": "Organization",
-                "name": "SwipeUp Marketing",
-                "url": "https://swipeup-marketing.com"
-              },
-              "courseMode": "online",
-              "educationalLevel": "Beginner to Advanced",
-              "about": [
-                "Instagram Marketing für Musiker",
-                "TikTok Strategien für Artists",
-                "Spotify Algorithmus verstehen",
-                "Paid Ads für Musikpromotion",
-                "Direct-To-Fan Marketing"
-              ]
-            }
-          })}
-        </script>
-        
-        {/* Organization Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "SwipeUp Marketing",
-            "alternateName": "Musikmarketing.de",
-            "url": "https://musikmarketing.de",
-            "logo": "https://musikmarketing.de/musikmarketing.png",
-            "description": "Führende Musikmarketing Agentur in Deutschland. Betreibt das Ratgeber Portal musikmarketing.de für Artists und Musiker.",
-            "foundingDate": "2020",
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "DE"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "customer service",
-              "url": "https://swipeup-marketing.com/strategy-session"
-            },
-            "sameAs": [
-              "https://swipeup-marketing.com"
-            ],
-            "offers": {
-              "@type": "Offer",
-              "name": "Kostenlose Strategy-Session",
-              "description": "Kostenlose Beratung für Musikmarketing Strategien",
-              "url": "https://swipeup-marketing.com/strategy-session",
-              "price": "0",
-              "priceCurrency": "EUR"
-            }
-          })}
-        </script>
-        
-        {/* FAQ Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Wie viel kostet Musikmarketing?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Die Kosten für Musikmarketing variieren stark je nach Strategie. Organisches Marketing auf Social Media ist kostenlos, erfordert aber Zeit und Konsistenz. Paid Ads starten ab 5-10€ pro Tag und können beliebig skaliert werden. Professionelle Musikmarketing-Agenturen verlangen zwischen 500€ und 5.000€ pro Monat. Unsere Online-Kurse bieten eine kostengünstige Alternative: Einmalig zwischen 97€ und 497€ für lebenslanges Wissen, das du immer wieder anwenden kannst."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Wie lange dauert es, bis Musikmarketing Ergebnisse zeigt?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Mit Paid Ads können erste Ergebnisse innerhalb von 24-48 Stunden sichtbar sein. Organisches Musikmarketing auf Instagram und TikTok benötigt in der Regel 3-6 Monate konsistenter Arbeit, bis signifikantes Wachstum eintritt. Der Spotify Algorithmus reagiert meist nach 2-4 Wochen auf optimierte Releases. Wichtig: Musikmarketing ist ein Marathon, kein Sprint. Nachhaltiger Erfolg erfordert Geduld und kontinuierliche Optimierung."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Brauche ich eine Musikmarketing-Agentur oder kann ich es selbst machen?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Viele erfolgreiche Artists machen ihr Musikmarketing selbst – besonders in der Anfangsphase. Mit den richtigen Kursen und Tools ist DIY-Musikmarketing absolut möglich und oft sogar effektiver, da du deine Musik am besten kennst. Eine Agentur macht Sinn, wenn du bereits ein Budget von 2.000€+ pro Monat hast und dich voll auf die Musik konzentrieren möchtest. Für den Start empfehlen wir: Lerne die Grundlagen selbst, teste verschiedene Strategien, und hole dir dann bei Bedarf professionelle Unterstützung für Skalierung."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Welche Social Media Plattform ist am wichtigsten für Musikmarketing?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Instagram und TikTok sind aktuell die wichtigsten Plattformen für Musikmarketing. TikTok bietet das größte virale Potenzial und kann Songs über Nacht zum Hit machen. Instagram ist ideal für Community Building und Direct-To-Fan Kommunikation. YouTube bleibt wichtig für Musikvideos und langfristigen Content. Die beste Strategie: Fokussiere dich auf 1-2 Plattformen, wo deine Zielgruppe aktiv ist, statt überall präsent sein zu wollen."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Wie bekomme ich mehr Spotify Streams durch Musikmarketing?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Mehr Spotify Streams erreichst du durch eine Kombination aus Pre-Save Kampagnen, Playlist Pitching, Instagram Ads und organischem Social Media Marketing. Wichtig ist, dass du qualifizierte Hörer auf deine Tracks lenkst, die deine Musik wirklich mögen – nur so sendest du positive Signale an den Spotify Algorithmus. Vermeide Fake Streams oder Bot-Services, diese schaden langfristig. Fokussiere dich auf Save-Rate und Completion-Rate statt nur auf Stream-Zahlen."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Was ist der Unterschied zwischen organischem und bezahltem Musikmarketing?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Organisches Musikmarketing bedeutet, Reichweite ohne Werbebudget aufzubauen – durch Content, Community Building und Engagement auf Social Media. Es kostet Zeit statt Geld und baut nachhaltige, loyale Fans auf. Bezahltes Musikmarketing (Paid Ads) nutzt Werbebudget für schnelle, skalierbare Reichweite. Die beste Strategie kombiniert beide Ansätze: Organisch für Community und Authentizität, Paid Ads für Skalierung und schnelle Ergebnisse."
-                }
-              }
-            ]
-          })}
-        </script>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://musikmarketing.de/" />
         <meta property="og:title" content="Musikmarketing | Professionelles Marketing für Musiker & Künstler" />
@@ -179,1464 +28,262 @@ const Home = () => {
         <meta property="og:url" content="https://musikmarketing.de/" />
       </Helmet>
 
-      {/* Dark Space Background Container */}
-      <Box 
-        ref={containerRef}
-        sx={{ 
-          minHeight: '100vh',
-          background: 'linear-gradient(135deg, #0a090c 0%, #07393c 50%, #0a090c 100%)',
-          position: 'relative',
-          overflow: 'hidden',
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: `
-              radial-gradient(circle at 20% 20%, rgba(144, 221, 240, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(44, 102, 110, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 40% 60%, rgba(7, 57, 60, 0.05) 0%, transparent 50%)
-            `,
-            pointerEvents: 'none',
-          }
-        }}
-      >
-        {/* Floating Particles */}
-        <Box sx={{ position: 'absolute', top: '10%', left: '10%', opacity: 0.3 }}>
-          <SparkleIcon sx={{ fontSize: '2rem', color: 'primary.light', animation: 'float 6s ease-in-out infinite' }} />
-        </Box>
-        <Box sx={{ position: 'absolute', top: '20%', right: '15%', opacity: 0.2 }}>
-          <WaveIcon sx={{ fontSize: '1.5rem', color: 'secondary.light', animation: 'float 8s ease-in-out infinite reverse' }} />
-        </Box>
-        <Box sx={{ position: 'absolute', bottom: '30%', left: '20%', opacity: 0.25 }}>
-          <MusicNoteIcon sx={{ fontSize: '1.8rem', color: 'success.light', animation: 'float 7s ease-in-out infinite' }} />
-        </Box>
-
-        {/* Hero Section */}
-        <Box sx={{ 
-          minHeight: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          pt: { xs: 2, md: 4 },
-          pb: { xs: 4, md: 8 }
-        }}>
-          <Container maxWidth="lg">
-            <Box sx={{ textAlign: 'center' }}>
-              <Box sx={{ display: 'inline-block', mb: 4 }}>
-                <Box sx={{ 
-                  width: '80px', 
-                  height: '80px', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  background: 'rgba(10, 9, 12, 0.6)', 
-                  backdropFilter: 'blur(20px)', 
-                  borderRadius: '20px', 
-                  border: '1px solid rgba(144, 221, 240, 0.2)',
-                  mx: 'auto',
-                  transition: 'all 0.3s ease',
-                  '&:hover': {
-                    border: '1px solid rgba(144, 221, 240, 0.4)',
-                    boxShadow: '0 0 30px rgba(144, 221, 240, 0.2)',
-                    transform: 'translateY(-4px)',
-                  }
-                }}>
-                  <MusicNoteIcon sx={{ fontSize: '2rem', color: 'primary.light' }} />
-                </Box>
-              </Box>
-
-              <Typography 
-                variant="h1" 
-                sx={{ 
-                  mb: 4,
-                  fontWeight: 800,
-                  fontSize: { xs: '2.5rem', md: '4rem', lg: '5rem' },
-                  lineHeight: 1.1,
-                  color: 'text.primary',
-                  textShadow: '0 0 30px rgba(144, 221, 240, 0.3)',
-                }}
-              >
-                Lerne{' '}
-                <Box component="span" sx={{ 
-                  fontFamily: '"Instrument Serif", serif', 
-                  fontStyle: 'italic', 
-                  background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}>
-                  Musikmarketing,
-                </Box>
-                {' '}welches Artists zum wachsen bringt
-              </Typography>
-              
-              <Typography 
-                variant="h5" 
-                sx={{ 
-                  mb: 6, 
-                  color: 'text.secondary',
-                  maxWidth: '700px',
-                  mx: 'auto',
-                  lineHeight: 1.5,
-                  fontWeight: 400,
-                }}
-              >
-                Erlerne essenzielle{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-                  Musikmarketing-Skills
-                </Box>
-                , um dich als Artist{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-                  erfolgreich selbst zu vermarkten
-                </Box>{' '}
-                in einer Zeit, in der Sichtbarkeit auf Social Media immer wichtiger wird.
-              </Typography>
-              
+      {/* Main Container - Black Background */}
+      <Box sx={{ 
+        minHeight: '100vh',
+        background: '#000000',
+        py: 8,
+      }}>
+        <Container maxWidth="lg">
+          {/* Hero Section - Left Aligned */}
+          <Box sx={{ mb: 8 }}>
+            <Typography 
+              variant="h1" 
+              sx={{ 
+                mb: 3,
+                fontWeight: 700,
+                color: '#ffffff',
+                textAlign: 'left',
+              }}
+            >
+              Lerne Musikmarketing, welches Artists zum wachsen bringt
+            </Typography>
+            
+            <Typography 
+              variant="body1" 
+              sx={{ 
+                mb: 4, 
+                color: '#9e9e9e',
+                maxWidth: '700px',
+                textAlign: 'left',
+              }}
+            >
+              Erlerne essenzielle Musikmarketing-Skills, um dich als Artist erfolgreich selbst zu vermarkten in einer Zeit, in der Sichtbarkeit auf Social Media immer wichtiger wird.
+            </Typography>
+            
+            <Box sx={{ mb: 4 }}>
               <Button
                 variant="contained"
-                size="medium"
                 href="https://swipeup-marketing.com/analyse"
                 target="_blank"
                 rel="noopener noreferrer"
-                sx={{
-                  px: 4,
-                  py: 1.5,
-                  fontSize: '1rem',
-                  fontWeight: 600,
-                  borderRadius: '50px',
-                  textTransform: 'none',
-                  background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-                  boxShadow: '0 0 30px rgba(144, 221, 240, 0.4)',
-                  whiteSpace: 'nowrap',
-                  '&:hover': {
-                    boxShadow: '0 0 40px rgba(144, 221, 240, 0.6)',
-                    transform: 'translateY(-2px)',
-                  }
-                }}
               >
                 Kostenlose Beratung erhalten
               </Button>
-              
-              {/* Google Reviews Component */}
-              <Box 
-                component="a"
-                href="https://swipeup-marketing.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 2,
-                  mt: 4,
-                  textDecoration: 'none',
-                  transition: 'opacity 0.3s ease',
-                  cursor: 'pointer',
-                  '&:hover': {
-                    opacity: 0.8,
-                  }
-                }}
-              >
-                <Box sx={{ flexShrink: 0 }}>
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 640 640" 
-                    style={{ 
-                      width: '48px', 
-                      height: '48px', 
-                      fill: '#88D3E5' 
-                    }}
-                  >
-                    <path d="M564 325.8C564 467.3 467.1 568 324 568C186.8 568 76 457.2 76 320C76 182.8 186.8 72 324 72C390.8 72 447 96.5 490.3 136.9L422.8 201.8C334.5 116.6 170.3 180.6 170.3 320C170.3 406.5 239.4 476.6 324 476.6C422.2 476.6 459 406.2 464.8 369.7L324 369.7L324 284.4L560.1 284.4C562.4 297.1 564 309.3 564 325.8z"/>
-                  </svg>
-                </Box>
-                <Box sx={{ textAlign: 'center' }}>
-                  <Typography 
-                    variant="h5" 
-                    sx={{ 
-                      fontWeight: 900, 
-                      color: '#88D3E5',
-                      mb: 0.5,
-                      fontSize: '1.5rem'
-                    }}
-                  >
-                    5.0 <Box component="span" sx={{ color: '#B8860B' }}>★★★★★</Box>
-                  </Typography>
-                  <Typography 
-                    variant="body2" 
-                    sx={{ 
-                      color: 'rgba(255, 255, 255, 0.7)',
-                      fontSize: '0.875rem',
-                      fontStyle: 'italic'
-                    }}
-                  >
-                    Basierend auf 69 Bewertungen
-                  </Typography>
-                </Box>
-              </Box>
             </Box>
-          </Container>
-        </Box>
-      </Box>
 
-      {/* Journey Section */}
-      <Box sx={{ py: 12, background: 'linear-gradient(135deg, #0a090c 0%, #07393c 100%)', position: 'relative' }}>
-        <Container maxWidth="lg">
-          <Box sx={{ textAlign: 'center', mb: 10 }}>
-            <Typography variant="h2" sx={{ 
-              mb: 6, 
-              fontWeight: 700, 
-              color: 'text.primary',
-              textAlign: 'center'
-            }}>
-              Dein Weg, um als{' '}
-              <Box component="span" sx={{ 
-                fontFamily: '"Instrument Serif", serif', 
-                fontStyle: 'italic', 
-                background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>
-                Artist sichtbar zu werden
-              </Box>
-            </Typography>
+            {/* Google Reviews */}
+            <Box 
+              component="a"
+              href="https://swipeup-marketing.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                display: 'block',
+                textDecoration: 'none',
+                '&:hover': { opacity: 0.8 }
+              }}
+            >
+              <Typography variant="body2" sx={{ color: '#9e9e9e' }}>
+                5.0 ★★★★★ Basierend auf 69 Bewertungen
+              </Typography>
+            </Box>
           </Box>
 
-          {/* Vertical Journey Steps */}
-          <Box sx={{ maxWidth: '800px', mx: 'auto' }}>
-            {/* Step 1 */}
-            <Box sx={{ 
-              display: 'flex', 
-              alignItems: 'flex-start', 
-              mb: 8,
-              position: 'relative',
-              '&::after': {
-                content: '""',
-                position: 'absolute',
-                left: '40px',
-                top: '80px',
-                bottom: '-32px',
-                width: '2px',
-                background: 'linear-gradient(180deg, rgba(144, 221, 240, 0.5) 0%, rgba(44, 102, 110, 0.3) 100%)',
-                zIndex: 0,
-              }
+          {/* Journey Section */}
+          <Box sx={{ mb: 8 }}>
+            <Typography variant="h2" sx={{ 
+              mb: 4, 
+              fontWeight: 700, 
+              color: '#ffffff',
+              textAlign: 'left'
             }}>
-              <Box sx={{ 
-                width: '80px', 
-                height: '80px', 
-                borderRadius: '50%',
-                background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                mr: 4,
-                position: 'relative',
-                zIndex: 1,
-                boxShadow: '0 0 30px rgba(144, 221, 240, 0.3)',
-              }}>
-                <svg width="40" height="40" viewBox="0 0 640 640" fill="none">
-                  <path d="M519.8 126.4C536.6 120.8 545.6 102.7 540 85.9C534.4 69.1 516.3 60.1 499.6 65.6L386.6 103.3C372.7 79.8 347 64 317.7 64C273.5 64 237.7 99.8 237.7 144C237.7 147 237.9 149.9 238.2 152.8L115.6 193.6C98.8 199.2 89.8 217.3 95.4 234.1C101 250.9 119.1 259.9 135.9 254.3L271.4 209.1C275.9 212.3 280.7 215 285.8 217.3L285.8 544C285.8 561.7 300.1 576 317.8 576L509.8 576C527.5 576 541.8 561.7 541.8 544C541.8 526.3 527.5 512 509.8 512L349.8 512L349.8 217.3C370.8 208.1 387 190.3 394 168.3L519.9 126.3zM437.3 352L509.7 227.8L582.1 352L437.2 352zM509.7 448C572.6 448 624.9 414 635.7 369.1C638.3 358.1 634.7 346.8 629 337L533.8 173.8C528.8 165.2 519.6 160 509.7 160C499.8 160 490.6 165.3 485.6 173.8L390.4 337.1C384.7 346.9 381.1 358.2 383.7 369.2C394.5 414 446.8 448.1 509.7 448.1zM126.8 355.8L199.2 480L54.3 480L126.7 355.8zM.9 497.1C11.7 542 64 576 126.8 576C189.6 576 242 542 252.8 497.1C255.4 486.1 251.8 474.8 246.1 465L150.9 301.8C145.9 293.2 136.7 288 126.8 288C116.9 288 107.7 293.3 102.7 301.8L7.6 465.1C1.9 474.9-1.7 486.2 .9 497.2z" fill="white"/>
-                </svg>
-              </Box>
-              <Box sx={{ flex: 1, pt: 1 }}>
-                <Typography variant="h4" sx={{ mb: 3, fontWeight: 600, color: 'text.primary' }}>
-                  1. Lerne die{' '}
-                  <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-                    Grundlagen
-                  </Box>
-                </Typography>
-                <Typography variant="body1" sx={{ mb: 4, color: 'text.secondary', lineHeight: 1.6 }}>
-                  Wie man in der heutigen Zeit Releases mit modernen und erprobten Strategien vermarktet und mit den 2 Währungen{' '}
-                  <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-                    (Zeit und/oder Geld)
-                  </Box>{' '}
-                  bezahlt. Lege fest, wie viel du von was einsetzen kannst.
-                </Typography>
-                
-                {/* Currency Options */}
-                <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
-                  <Box 
-                    onClick={() => setSelectedCurrency('money')}
-                    sx={{ 
-                      flex: 1,
-                      p: 3,
-                      background: selectedCurrency === 'money' ? 'rgba(44, 102, 110, 0.2)' : 'rgba(44, 102, 110, 0.1)',
-                      backdropFilter: 'blur(10px)',
-                      borderRadius: '16px',
-                      border: selectedCurrency === 'money' ? '2px solid rgba(44, 102, 110, 0.6)' : '1px solid rgba(44, 102, 110, 0.2)',
-                      textAlign: 'center',
-                      transition: 'all 0.3s ease',
-                      cursor: 'pointer',
-                      transform: selectedCurrency === 'money' ? 'scale(1.02)' : 'scale(1)',
-                      '&:hover': {
-                        border: '1px solid rgba(44, 102, 110, 0.4)',
-                        transform: selectedCurrency === 'money' ? 'scale(1.02) translateY(-2px)' : 'translateY(-2px)',
-                      }
-                    }}>
-                    <MoneyIcon sx={{ fontSize: '2rem', color: 'secondary.light', mb: 1 }} />
-                    <Typography variant="body2" sx={{ fontWeight: 600, color: 'text.primary' }}>
-                      Nur Geld, keine Zeit
-                    </Typography>
-                  </Box>
-                  <Box 
-                    onClick={() => setSelectedCurrency('balanced')}
-                    sx={{ 
-                      flex: 1,
-                      p: 3,
-                      background: 'rgba(144, 221, 240, 0.1)',
-                      backdropFilter: 'blur(10px)',
-                      borderRadius: '16px',
-                      border: '2px solid rgba(144, 221, 240, 0.6)',
-                      textAlign: 'center',
-                      transition: 'all 0.3s ease',
-                      cursor: 'pointer',
-                      transform: 'scale(1.05)',
-                      boxShadow: '0 0 20px rgba(144, 221, 240, 0.3)',
-                      '&:hover': {
-                        border: '2px solid rgba(144, 221, 240, 0.8)',
-                        transform: 'scale(1.05) translateY(-2px)',
-                        boxShadow: '0 0 25px rgba(144, 221, 240, 0.4)',
-                      }
-                    }}>
-                    <BalanceIcon sx={{ fontSize: '2rem', color: 'success.light', mb: 1 }} />
-                    <Typography variant="body2" sx={{ fontWeight: 700, color: 'text.primary' }}>
-                      Etwas Geld, etwas Zeit
-                    </Typography>
-                    <Typography variant="caption" sx={{ 
-                      display: 'block', 
-                      mt: 0.5, 
-                      color: 'success.light', 
-                      fontWeight: 600,
-                      textTransform: 'uppercase',
-                      fontSize: '0.7rem'
-                    }}>
-                      Empfohlen
-                    </Typography>
-                  </Box>
-                  <Box 
-                    onClick={() => setSelectedCurrency('time')}
-                    sx={{ 
-                      flex: 1,
-                      p: 3,
-                      background: selectedCurrency === 'time' ? 'rgba(44, 102, 110, 0.2)' : 'rgba(44, 102, 110, 0.1)',
-                      backdropFilter: 'blur(10px)',
-                      borderRadius: '16px',
-                      border: selectedCurrency === 'time' ? '2px solid rgba(44, 102, 110, 0.6)' : '1px solid rgba(44, 102, 110, 0.2)',
-                      textAlign: 'center',
-                      transition: 'all 0.3s ease',
-                      cursor: 'pointer',
-                      transform: selectedCurrency === 'time' ? 'scale(1.02)' : 'scale(1)',
-                      '&:hover': {
-                        border: '1px solid rgba(44, 102, 110, 0.4)',
-                        transform: selectedCurrency === 'time' ? 'scale(1.02) translateY(-2px)' : 'translateY(-2px)',
-                      }
-                    }}>
-                    <TimeIcon sx={{ fontSize: '2rem', color: 'secondary.light', mb: 1 }} />
-                    <Typography variant="body2" sx={{ fontWeight: 600, color: 'text.primary' }}>
-                      Nur Zeit, kein Geld
-                    </Typography>
-                  </Box>
-                </Stack>
-              </Box>
+              Dein Weg, um als Artist sichtbar zu werden
+            </Typography>
+
+            {/* Step 1 */}
+            <Box sx={{ mb: 6 }}>
+              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
+                1. Lerne die Grundlagen
+              </Typography>
+              <Typography variant="body1" sx={{ mb: 3, color: '#9e9e9e', textAlign: 'left' }}>
+                Wie man in der heutigen Zeit Releases mit modernen und erprobten Strategien vermarktet und mit den 2 Währungen (Zeit und/oder Geld) bezahlt. Lege fest, wie viel du von was einsetzen kannst.
+              </Typography>
+              
+              {/* Currency Options */}
+              <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
+                <Box 
+                  onClick={() => setSelectedCurrency('money')}
+                  sx={{ 
+                    flex: 1,
+                    p: 2,
+                    background: selectedCurrency === 'money' ? '#1a1a1a' : '#0a0a0a',
+                    border: selectedCurrency === 'money' ? '1px solid #4a4a4a' : '1px solid #2a2a2a',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    '&:hover': { border: '1px solid #4a4a4a' }
+                  }}>
+                  <Typography variant="body2" sx={{ fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
+                    💰 Nur Geld, keine Zeit
+                  </Typography>
+                </Box>
+                <Box 
+                  onClick={() => setSelectedCurrency('balanced')}
+                  sx={{ 
+                    flex: 1,
+                    p: 2,
+                    background: '#1a1a1a',
+                    border: '1px solid #4a4a4a',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    '&:hover': { border: '1px solid #6a6a6a' }
+                  }}>
+                  <Typography variant="body2" sx={{ fontWeight: 700, color: '#ffffff', textAlign: 'left' }}>
+                    ⚖️ Etwas Geld, etwas Zeit
+                  </Typography>
+                  <Typography variant="caption" sx={{ display: 'block', color: '#9e9e9e', textAlign: 'left' }}>
+                    Empfohlen
+                  </Typography>
+                </Box>
+                <Box 
+                  onClick={() => setSelectedCurrency('time')}
+                  sx={{ 
+                    flex: 1,
+                    p: 2,
+                    background: selectedCurrency === 'time' ? '#1a1a1a' : '#0a0a0a',
+                    border: selectedCurrency === 'time' ? '1px solid #4a4a4a' : '1px solid #2a2a2a',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    '&:hover': { border: '1px solid #4a4a4a' }
+                  }}>
+                  <Typography variant="body2" sx={{ fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
+                    ⏰ Nur Zeit, kein Geld
+                  </Typography>
+                </Box>
+              </Stack>
             </Box>
 
             {/* Step 2 */}
-            <Box sx={{ 
-              display: 'flex', 
-              alignItems: 'flex-start', 
-              mb: 8,
-              position: 'relative',
-              '&::after': {
-                content: '""',
-                position: 'absolute',
-                left: '40px',
-                top: '80px',
-                bottom: '-32px',
-                width: '2px',
-                background: 'linear-gradient(180deg, rgba(44, 102, 110, 0.5) 0%, rgba(7, 57, 60, 0.3) 100%)',
-                zIndex: 0,
-              }
-            }}>
-              <Box sx={{ 
-                width: '80px', 
-                height: '80px', 
-                borderRadius: '50%',
-                background: 'linear-gradient(135deg, #2c666e 0%, #07393c 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                mr: 4,
-                position: 'relative',
-                zIndex: 1,
-                boxShadow: '0 0 30px rgba(44, 102, 110, 0.3)',
-              }}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 13.18v4L12 21l7-3.82v-4L12 17zM12 3 1 9l11 6 9-4.91V17h2V9z" fill="white"/>
-                </svg>
-              </Box>
-              <Box sx={{ flex: 1, pt: 1 }}>
-                <Typography variant="h4" sx={{ mb: 3, fontWeight: 600, color: 'text.primary' }}>
-                  2. Eigne dir diese Strategien mit Hilfe unserer{' '}
-                  <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'secondary.light' }}>
-                    intensiven Online-Kurse
-                  </Box>{' '}
-                  an
-                </Typography>
-                <Typography variant="body1" sx={{ mb: 4, color: 'text.secondary', lineHeight: 1.6 }}>
-                  Kompakte, aber intensive Online-Kurse unter{' '}
-                  <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'secondary.light', fontWeight: 600 }}>
-                    7 Tagen
-                  </Box>
-                  . Alles was du brauchst, um sofort loszulegen – ohne Zeitverschwendung.
-                </Typography>
+            <Box sx={{ mb: 6 }}>
+              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
+                2. Eigne dir diese Strategien mit Hilfe unserer intensiven Online-Kurse an
+              </Typography>
+              <Typography variant="body1" sx={{ mb: 3, color: '#9e9e9e', textAlign: 'left' }}>
+                Kompakte, aber intensive Online-Kurse unter 7 Tagen. Alles was du brauchst, um sofort loszulegen – ohne Zeitverschwendung.
+              </Typography>
 
-                {/* Dynamic Recommendations based on selected currency */}
-                {selectedCurrency === 'balanced' && (
-                  <Box sx={{ 
-                    p: 4,
-                    background: 'rgba(144, 221, 240, 0.1)',
-                    backdropFilter: 'blur(10px)',
-                    borderRadius: '20px',
-                    border: '2px solid rgba(144, 221, 240, 0.3)',
-                    textAlign: 'center',
-                    boxShadow: '0 0 20px rgba(144, 221, 240, 0.2)',
-                  }}>
-                    <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: 'primary.light' }}>
-                      🎯 Empfohlen für dich
-                    </Typography>
-                    <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
-                      Perfekte Balance aus Zeit und Budget - ideal für nachhaltiges Wachstum
-                    </Typography>
-                    <Button
-                      variant="contained"
-                      href="https://song.so/instagram-ads-blueprint"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{ 
-                        background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-                        boxShadow: '0 0 20px rgba(144, 221, 240, 0.3)',
-                        px: 4,
-                        py: 1.5,
-                        '&:hover': {
-                          boxShadow: '0 0 30px rgba(144, 221, 240, 0.5)',
-                        }
-                      }}
-                    >
-                      Instagram Ads Blueprint
-                    </Button>
-                  </Box>
-                )}
+              {/* Dynamic Recommendations */}
+              {selectedCurrency === 'balanced' && (
+                <Box sx={{ 
+                  p: 3,
+                  background: '#1a1a1a',
+                  border: '1px solid #4a4a4a',
+                  borderRadius: '4px',
+                }}>
+                  <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
+                    🎯 Empfohlen für dich
+                  </Typography>
+                  <Typography variant="body1" sx={{ mb: 2, color: '#9e9e9e', textAlign: 'left' }}>
+                    Perfekte Balance aus Zeit und Budget - ideal für nachhaltiges Wachstum
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    href="https://song.so/instagram-ads-blueprint"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Instagram Ads Blueprint
+                  </Button>
+                </Box>
+              )}
 
-                {selectedCurrency === 'time' && (
-                  <Box sx={{ 
-                    p: 4,
-                    background: 'rgba(44, 102, 110, 0.1)',
-                    backdropFilter: 'blur(10px)',
-                    borderRadius: '20px',
-                    border: '2px solid rgba(44, 102, 110, 0.3)',
-                    textAlign: 'center',
-                    boxShadow: '0 0 20px rgba(44, 102, 110, 0.2)',
-                  }}>
-                    <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: 'secondary.light' }}>
-                      ⏰ Perfekt für dich
-                    </Typography>
-                    <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
-                      Organisches Wachstum durch Content - investiere Zeit statt Geld
-                    </Typography>
-                    <Button
-                      variant="contained"
-                      href="https://swipeup-marketing.com/365-content-club"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{ 
-                        background: 'linear-gradient(135deg, #2c666e 0%, #07393c 100%)',
-                        boxShadow: '0 0 20px rgba(44, 102, 110, 0.3)',
-                        px: 4,
-                        py: 1.5,
-                        '&:hover': {
-                          boxShadow: '0 0 30px rgba(44, 102, 110, 0.5)',
-                        }
-                      }}
-                    >
-                      365 Content Club
-                    </Button>
-                  </Box>
-                )}
+              {selectedCurrency === 'time' && (
+                <Box sx={{ 
+                  p: 3,
+                  background: '#1a1a1a',
+                  border: '1px solid #4a4a4a',
+                  borderRadius: '4px',
+                }}>
+                  <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
+                    ⏰ Perfekt für dich
+                  </Typography>
+                  <Typography variant="body1" sx={{ mb: 2, color: '#9e9e9e', textAlign: 'left' }}>
+                    Organisches Wachstum durch Content - investiere Zeit statt Geld
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    href="https://swipeup-marketing.com/365-content-club"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    365 Content Club
+                  </Button>
+                </Box>
+              )}
 
-                {selectedCurrency === 'money' && (
-                  <Box sx={{ 
-                    p: 4,
-                    background: 'rgba(44, 102, 110, 0.1)',
-                    backdropFilter: 'blur(10px)',
-                    borderRadius: '20px',
-                    border: '2px solid rgba(44, 102, 110, 0.3)',
-                    textAlign: 'center',
-                    boxShadow: '0 0 20px rgba(44, 102, 110, 0.2)',
-                  }}>
-                    <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: 'secondary.light' }}>
-                      💰 Ideal für dich
-                    </Typography>
-                    <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
-                      Schnelle Ergebnisse durch professionelle Beratung - investiere Geld statt Zeit
-                    </Typography>
-                    <Button
-                      variant="contained"
-                      href="https://swipeup-marketing.com/strategy-session"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{ 
-                        background: 'linear-gradient(135deg, #2c666e 0%, #07393c 100%)',
-                        boxShadow: '0 0 20px rgba(44, 102, 110, 0.3)',
-                        px: 4,
-                        py: 1.5,
-                        '&:hover': {
-                          boxShadow: '0 0 30px rgba(44, 102, 110, 0.5)',
-                        }
-                      }}
-                    >
-                      Strategy-Session buchen
-                    </Button>
-                  </Box>
-                )}
-              </Box>
+              {selectedCurrency === 'money' && (
+                <Box sx={{ 
+                  p: 3,
+                  background: '#1a1a1a',
+                  border: '1px solid #4a4a4a',
+                  borderRadius: '4px',
+                }}>
+                  <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
+                    💰 Ideal für dich
+                  </Typography>
+                  <Typography variant="body1" sx={{ mb: 2, color: '#9e9e9e', textAlign: 'left' }}>
+                    Schnelle Ergebnisse durch professionelle Beratung - investiere Geld statt Zeit
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    href="https://swipeup-marketing.com/strategy-session"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Strategy-Session buchen
+                  </Button>
+                </Box>
+              )}
             </Box>
 
             {/* Step 3 */}
-            <Box sx={{ 
-              display: 'flex', 
-              alignItems: 'flex-start', 
-              mb: 8,
-              position: 'relative',
-              '&::after': {
-                content: '""',
-                position: 'absolute',
-                left: '40px',
-                top: '80px',
-                bottom: '-32px',
-                width: '2px',
-                background: 'linear-gradient(180deg, rgba(7, 57, 60, 0.5) 0%, rgba(144, 221, 240, 0.3) 100%)',
-                zIndex: 0,
-              }
-            }}>
-              <Box sx={{ 
-                width: '80px', 
-                height: '80px', 
-                borderRadius: '50%',
-                background: 'linear-gradient(135deg, #07393c 0%, #90ddf0 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                mr: 4,
-                position: 'relative',
-                zIndex: 1,
-                boxShadow: '0 0 30px rgba(7, 57, 60, 0.3)',
-              }}>
-                <PlayArrowIcon sx={{ fontSize: '2.5rem', color: 'white' }} />
-              </Box>
-              <Box sx={{ flex: 1, pt: 1 }}>
-                <Typography variant="h4" sx={{ mb: 3, fontWeight: 600, color: 'text.primary' }}>
-                  3. Wende die erlernten Strategien{' '}
-                  <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'success.light' }}>
-                    direkt an
-                  </Box>
-                </Typography>
-                <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
-                  Setze das Gelernte sofort mit deinem{' '}
-                  <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'success.light' }}>
-                    nächsten Release
-                  </Box>{' '}
-                  um und teste dein Wissen in der Praxis. Echte Erfahrungen sammeln ist der Schlüssel zum Erfolg.
-                </Typography>
-              </Box>
-            </Box>
-
-            {/* Step 4 */}
-            <Box sx={{ 
-              display: 'flex', 
-              alignItems: 'flex-start',
-              position: 'relative',
-            }}>
-              <Box sx={{ 
-                width: '80px', 
-                height: '80px', 
-                borderRadius: '50%',
-                background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                mr: 4,
-                position: 'relative',
-                zIndex: 1,
-                boxShadow: '0 0 30px rgba(144, 221, 240, 0.4)',
-                animation: 'pulse-glow 2s ease-in-out infinite',
-              }}>
-                <AutoModeIcon sx={{ fontSize: '2.5rem', color: 'white' }} />
-              </Box>
-              <Box sx={{ flex: 1, pt: 1 }}>
-                <Typography variant="h4" sx={{ mb: 3, fontWeight: 600, color: 'text.primary' }}>
-                  4. Baue dir eine{' '}
-                  <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-                    automatisierte Fan-Gewinnungs-Maschine
-                  </Box>{' '}
-                  auf
-                </Typography>
-                <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
-                  Die dir{' '}
-                  <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-                    auf Autopilot im Schlaf
-                  </Box>{' '}
-                  neue potenzielle Hörer für deine Musik liefert und diese in langfristige Fans verwandelt.
-                </Typography>
-              </Box>
+            <Box sx={{ mb: 6 }}>
+              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
+                3. Setze deine Strategie um und wachse
+              </Typography>
+              <Typography variant="body1" sx={{ mb: 3, color: '#9e9e9e', textAlign: 'left' }}>
+                Implementiere das Gelernte konsequent und beobachte, wie deine Reichweite und Fanbase wächst.
+              </Typography>
             </Box>
           </Box>
-        </Container>
-      </Box>
 
-      {/* Marketing Strategy Section */}
-      <Box sx={{ py: 12, background: 'linear-gradient(135deg, #0a090c 0%, #07393c 100%)' }}>
-        <Container maxWidth="lg">
-          <Box sx={{ textAlign: 'center', mb: 10 }}>
-            <Typography variant="h2" sx={{ mb: 4, fontWeight: 700, color: 'text.primary' }}>
-              Deine{' '}
-              <Box component="span" sx={{ 
-                fontFamily: '"Instrument Serif", serif', 
-                fontStyle: 'italic', 
-                background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>
-                auf dich zugeschnittene
-              </Box>
-              <br />
-              Musikmarketing-Strategie
-            </Typography>
-            <Typography variant="h6" sx={{ mb: 6, color: 'text.secondary', maxWidth: '600px', mx: 'auto' }}>
-              Basierend auf deinen Ressourcen und Zielen entwickeln wir gemeinsam die perfekte{' '}
-              <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-                Marketing-Strategie
-              </Box>{' '}
-              für deine Musikkarriere.
-            </Typography>
-          </Box>
-
-          <Stack direction={{ xs: 'column', lg: 'row' }} spacing={4}>
-            {/* Branding & Artist Identity */}
-            <Card sx={{ 
-              flex: 1,
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(144, 221, 240, 0.3)',
-              borderRadius: '24px',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                border: '1px solid rgba(144, 221, 240, 0.5)',
-                boxShadow: '0 0 30px rgba(144, 221, 240, 0.3)',
-              },
-            }}>
-              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-                  Branding
-                </Box>{' '}
-                & Artist Identity
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.7 }}>
-                Entwickle eine starke, authentische Artist-Identität und ein konsistentes Branding, das dich von anderen abhebt. Im modernen Musikmarketing ist deine visuelle und emotionale Marke entscheidend für langfristigen Erfolg.
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 2, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-                Professionelles Musikmarketing beginnt mit einer klaren Positionierung: Wer bist du als Künstler? Welche Geschichte erzählst du? Ein durchdachtes Artist Branding hilft dir, auf Social Media Plattformen wie Instagram und TikTok sofort erkennbar zu sein und eine emotionale Verbindung zu deiner Zielgruppe aufzubauen.
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-                Lerne in unserer{' '}
-                <Box 
-                  component="a" 
-                  href="https://swipeup-marketing.com/strategy-session"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ 
-                    color: 'primary.light', 
-                    textDecoration: 'none',
-                    fontWeight: 600,
-                    '&:hover': { textDecoration: 'underline' }
-                  }}
-                >
-                  Strategy-Session
-                </Box>
-                , wie du deine Artist Identity strategisch entwickelst und für dein Musikmarketing nutzt.
-              </Typography>
-              <Button
-                variant="contained"
-                href="https://swipeup-marketing.com/strategy-session"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ 
-                  mb: 1,
-                  background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-                  boxShadow: '0 0 20px rgba(144, 221, 240, 0.3)',
-                  '&:hover': {
-                    boxShadow: '0 0 30px rgba(144, 221, 240, 0.5)',
-                  }
-                }}
-              >
-                Strategy-Session
-              </Button>
-            </Card>
-
-            {/* Organisches Wachstum */}
-            <Card sx={{ 
-              flex: 1,
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(44, 102, 110, 0.3)',
-              borderRadius: '24px',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                border: '1px solid rgba(44, 102, 110, 0.5)',
-                boxShadow: '0 0 30px rgba(44, 102, 110, 0.3)',
-              },
-            }}>
-              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
-                Organisches Wachstum auf{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'secondary.light' }}>
-                  Instagram & TikTok
-                </Box>
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.7 }}>
-                Baue eine echte Fanbase auf durch authentischen Content und strategisches Community Building. Organisches Musikmarketing auf Social Media ist der nachhaltigste Weg, um langfristige Fans zu gewinnen.
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 2, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-                Instagram und TikTok sind die wichtigsten Plattformen für modernes Musikmarketing. Mit der richtigen Content-Strategie kannst du täglich neue Hörer erreichen und deine Musik viral verbreiten. Lerne in unserem{' '}
-                <Box 
-                  component="a" 
-                  href="/instagram-marketing-musiker"
-                  sx={{ 
-                    color: 'secondary.light', 
-                    textDecoration: 'none',
-                    fontWeight: 600,
-                    '&:hover': { textDecoration: 'underline' }
-                  }}
-                >
-                  Instagram Marketing Guide
-                </Box>
-                , wie du mit authentischem Content deine Reichweite organisch steigerst.
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-                Im{' '}
-                <Box 
-                  component="a" 
-                  href="https://swipeup-marketing.com/365-content-club"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ 
-                    color: 'secondary.light', 
-                    textDecoration: 'none',
-                    fontWeight: 600,
-                    '&:hover': { textDecoration: 'underline' }
-                  }}
-                >
-                  365 Content Club
-                </Box>
-                {' '}erhältst du täglich Content-Ideen und Strategien für erfolgreiches Social Media Musikmarketing.
-              </Typography>
-              <Button
-                variant="contained"
-                href="https://swipeup-marketing.com/365-content-club"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ 
-                  mb: 1,
-                  background: 'linear-gradient(135deg, #2c666e 0%, #07393c 100%)',
-                  boxShadow: '0 0 20px rgba(44, 102, 110, 0.3)',
-                  '&:hover': {
-                    boxShadow: '0 0 30px rgba(44, 102, 110, 0.5)',
-                  }
-                }}
-              >
-                365 Content Club
-              </Button>
-            </Card>
-          </Stack>
-
-          <Stack direction={{ xs: 'column', lg: 'row' }} spacing={4} sx={{ mt: 4 }}>
-            {/* Paid Ads */}
-            <Card sx={{ 
-              flex: 1,
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(7, 57, 60, 0.3)',
-              borderRadius: '24px',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                border: '1px solid rgba(7, 57, 60, 0.5)',
-                boxShadow: '0 0 30px rgba(7, 57, 60, 0.3)',
-              },
-            }}>
-              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'success.light' }}>
-                  Paid Ads
-                </Box>{' '}
-                als Hebel für Wachstum
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.7 }}>
-                Nutze Instagram & Facebook Ads strategisch, um deine Reichweite auf Autopilot zu skalieren. Paid Advertising ist der schnellste Weg, um im Musikmarketing messbare Ergebnisse zu erzielen.
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 2, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-                Mit professionellem Musikmarketing durch Instagram Ads kannst du gezielt neue Hörer erreichen und deine Spotify Streams exponentiell steigern. Facebook Ads für Musiker ermöglichen präzises Targeting und messbare ROI-Optimierung.
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-                Das{' '}
-                <Box 
-                  component="a" 
-                  href="https://song.so/instagram-ads-blueprint"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ 
-                    color: 'success.light', 
-                    textDecoration: 'none',
-                    fontWeight: 600,
-                    '&:hover': { textDecoration: 'underline' }
-                  }}
-                >
-                  Instagram Ads Blueprint
-                </Box>
-                {' '}zeigt dir Schritt-für-Schritt, wie du erfolgreiche Werbekampagnen für deine Musik aufsetzt und optimierst.
-              </Typography>
-              <Button
-                variant="contained"
-                href="https://song.so/instagram-ads-blueprint"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ 
-                  mb: 1,
-                  background: 'linear-gradient(135deg, #07393c 0%, #2c666e 100%)',
-                  boxShadow: '0 0 20px rgba(7, 57, 60, 0.3)',
-                  '&:hover': {
-                    boxShadow: '0 0 30px rgba(7, 57, 60, 0.5)',
-                  }
-                }}
-              >
-                Instagram Ads Blueprint
-              </Button>
-            </Card>
-
-            {/* Spotify Algorithmus */}
-            <Card sx={{ 
-              flex: 1,
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(144, 221, 240, 0.3)',
-              borderRadius: '24px',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                border: '1px solid rgba(144, 221, 240, 0.5)',
-                boxShadow: '0 0 30px rgba(144, 221, 240, 0.3)',
-              },
-            }}>
-              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-                  Spotify Algorithmus
-                </Box>{' '}
-                verstehen & gewinnen
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.7 }}>
-                Lerne, wie der Spotify Algorithmus funktioniert und wie du ihn für maximale Streams nutzt. Der Spotify Algorithmus ist ein zentraler Bestandteil erfolgreichen Musikmarketings im Streaming-Zeitalter.
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 2, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-                Verstehe die Mechanismen hinter Spotify's Discover Weekly, Release Radar und algorithmischen Playlists. Professionelles Musikmarketing für Spotify bedeutet, die richtigen Signale zu senden: Save-Rate, Skip-Rate und Completion-Rate optimieren.
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-                Mit gezielten{' '}
-                <Box 
-                  component="a" 
-                  href="https://song.so/instagram-ads-blueprint"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ 
-                    color: 'primary.light', 
-                    textDecoration: 'none',
-                    fontWeight: 600,
-                    '&:hover': { textDecoration: 'underline' }
-                  }}
-                >
-                  Instagram Ads
-                </Box>
-                {' '}kannst du qualifizierte Hörer auf deine Spotify-Tracks lenken und so den Algorithmus positiv beeinflussen.
-              </Typography>
-              <Button
-                variant="contained"
-                href="https://song.so/instagram-ads-blueprint"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ 
-                  mb: 1,
-                  background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-                  boxShadow: '0 0 20px rgba(144, 221, 240, 0.3)',
-                  '&:hover': {
-                    boxShadow: '0 0 30px rgba(144, 221, 240, 0.5)',
-                  }
-                }}
-              >
-                Instagram Ads Blueprint
-              </Button>
-            </Card>
-          </Stack>
-
-          <Stack direction={{ xs: 'column', md: 'row' }} spacing={4} sx={{ mt: 4 }}>
-            {/* Direct-To-Fan Channels */}
-            <Card sx={{ 
-              flex: 1,
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(44, 102, 110, 0.3)',
-              borderRadius: '24px',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                border: '1px solid rgba(44, 102, 110, 0.5)',
-                boxShadow: '0 0 30px rgba(44, 102, 110, 0.3)',
-              },
-            }}>
-              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'secondary.light' }}>
-                  Direct-To-Fan
-                </Box>{' '}
-                Channels aufbauen
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.7 }}>
-                Baue E-Mail Listen und WhatsApp Channels auf, um deine Fans direkt zu erreichen und zu monetarisieren. Direct-To-Fan Marketing ist die Zukunft nachhaltigen Musikmarketings.
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 2, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-                Unabhängigkeit von Social Media Algorithmen: Mit eigenen Kommunikationskanälen behältst du die Kontrolle über dein Musikmarketing. E-Mail Marketing und WhatsApp ermöglichen direkten Kontakt zu deinen treuesten Fans.
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-                Mit{' '}
-                <Box 
-                  component="a" 
-                  href="https://song.so"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ 
-                    color: 'secondary.light', 
-                    textDecoration: 'none',
-                    fontWeight: 600,
-                    '&:hover': { textDecoration: 'underline' }
-                  }}
-                >
-                  song.so
-                </Box>
-                {' '}kannst du professionelle Landing Pages erstellen und deine Fan-Datenbank strategisch aufbauen.
-              </Typography>
-              <Button
-                variant="contained"
-                href="https://song.so"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ 
-                  mb: 1,
-                  background: 'linear-gradient(135deg, #2c666e 0%, #07393c 100%)',
-                  boxShadow: '0 0 20px rgba(44, 102, 110, 0.3)',
-                  '&:hover': {
-                    boxShadow: '0 0 30px rgba(44, 102, 110, 0.5)',
-                  }
-                }}
-              >
-                song.so
-              </Button>
-            </Card>
-
-            {/* Kostenlose Analyse */}
-            <Card sx={{ 
-              flex: 1,
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(7, 57, 60, 0.3)',
-              borderRadius: '24px',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                border: '1px solid rgba(7, 57, 60, 0.5)',
-                boxShadow: '0 0 30px rgba(7, 57, 60, 0.3)',
-              },
-            }}>
-              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'success.light' }}>
-                  Kostenlose
-                </Box>{' '}
-                Artist-Analyse
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.7 }}>
-                Erhalte eine kostenlose Analyse deiner Artist-Präsenz und individuelle Empfehlungen. Professionelles Musikmarketing beginnt mit einer ehrlichen Bestandsaufnahme.
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 2, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-                Unsere Musikmarketing-Experten analysieren deine Social Media Präsenz, Spotify Performance und dein aktuelles Branding. Du erhältst konkrete Handlungsempfehlungen für deine nächsten Schritte im Musikmarketing.
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-                Die{' '}
-                <Box 
-                  component="a" 
-                  href="https://swipeup-marketing.com/analyse"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ 
-                    color: 'success.light', 
-                    textDecoration: 'none',
-                    fontWeight: 600,
-                    '&:hover': { textDecoration: 'underline' }
-                  }}
-                >
-                  kostenlose Profil-Analyse
-                </Box>
-                {' '}zeigt dir, wo du im Vergleich zu anderen Artists stehst und welche Quick Wins du sofort umsetzen kannst.
-              </Typography>
-              <Button
-                variant="contained"
-                href="https://swipeup-marketing.com/analyse"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ 
-                  mb: 1,
-                  background: 'linear-gradient(135deg, #07393c 0%, #2c666e 100%)',
-                  boxShadow: '0 0 20px rgba(7, 57, 60, 0.3)',
-                  '&:hover': {
-                    boxShadow: '0 0 30px rgba(7, 57, 60, 0.5)',
-                  }
-                }}
-              >
-                Kostenlose Profil-Analyse
-              </Button>
-            </Card>
-          </Stack>
-        </Container>
-      </Box>
-
-      {/* What Makes Us Special Section */}
-      <Box sx={{ py: 12, background: 'linear-gradient(135deg, #07393c 0%, #0a090c 100%)', position: 'relative' }}>
-        <Container maxWidth="lg">
-          <Box sx={{ textAlign: 'center', mb: 10 }}>
-            <Typography variant="h2" sx={{ 
-              mb: 6, 
-              fontWeight: 700, 
-              color: 'text.primary',
-              textAlign: 'center'
-            }}>
-              Das zeichnet{' '}
-              <Box component="span" sx={{ 
-                fontFamily: '"Instrument Serif", serif', 
-                fontStyle: 'italic', 
-                background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>
-                musikmarketing.de
-              </Box>{' '}
-              aus
-            </Typography>
-          </Box>
-
-          <Stack direction={{ xs: 'column', md: 'row' }} spacing={6}>
-            <Box sx={{ 
-              flex: 1, 
-              textAlign: 'center', 
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              borderRadius: '24px',
-              border: '1px solid rgba(144, 221, 240, 0.2)',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                border: '1px solid rgba(144, 221, 240, 0.4)',
-                boxShadow: '0 0 30px rgba(144, 221, 240, 0.2)',
-                transform: 'translateY(-4px)',
-              }
-            }}>
-              <Box sx={{ mb: 3 }}>
-                <CheckCircleIcon sx={{ fontSize: '4rem', color: 'primary.light' }} />
-              </Box>
-              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
-                Umfangreiche{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-                  Komplettlösungen
-                </Box>
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.6 }}>
-                Unsere Online-Kurse haben den Anspruch, deine einzige Quelle für Informationen zu sein. 
-                Du lernst bei uns alles, was du als{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-                  Artist brauchst
-                </Box>
-                , um dich erfolgreich selbst zu vermarkten – kein Vorwissen nötig.
-              </Typography>
-            </Box>
-
-            <Box sx={{ 
-              flex: 1, 
-              textAlign: 'center', 
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              borderRadius: '24px',
-              border: '1px solid rgba(44, 102, 110, 0.2)',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                border: '1px solid rgba(44, 102, 110, 0.4)',
-                boxShadow: '0 0 30px rgba(44, 102, 110, 0.2)',
-                transform: 'translateY(-4px)',
-              }
-            }}>
-              <Box sx={{ mb: 3 }}>
-                <TrendingUpIcon sx={{ fontSize: '4rem', color: 'secondary.light' }} />
-              </Box>
-              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
-                Aktuelles Wissen direkt aus der{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'secondary.light' }}>
-                  Praxis
-                </Box>
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.6 }}>
-                Alle gelehrten Skills setzen wir selbst täglich ein, sowie hunderte{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'secondary.light' }}>
-                  erfolgreicher Artists
-                </Box>
-                , die ihre Karriere mit diesen Strategien aufgebaut haben.
-              </Typography>
-            </Box>
-
-            <Box sx={{ 
-              flex: 1, 
-              textAlign: 'center', 
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              borderRadius: '24px',
-              border: '1px solid rgba(7, 57, 60, 0.2)',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                border: '1px solid rgba(7, 57, 60, 0.4)',
-                boxShadow: '0 0 30px rgba(7, 57, 60, 0.2)',
-                transform: 'translateY(-4px)',
-              }
-            }}>
-              <Box sx={{ mb: 3 }}>
-                <BarChartIcon sx={{ fontSize: '4rem', color: 'success.light' }} />
-              </Box>
-              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
-                Großes{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'success.light' }}>
-                  Marktpotenzial
-                </Box>
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.6 }}>
-                Zu jedem dieser Skills haben wir genügend Beispiele von Artists, die ausschließlich mit einem dieser Skills eine{' '}
-                <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'success.light' }}>
-                  erfolgreiche Musikkarriere
-                </Box>{' '}
-                aufgebaut haben.
-              </Typography>
-            </Box>
-          </Stack>
-        </Container>
-      </Box>
-
-      {/* Musikmarketing Begriffserklärungen Section */}
-      <Box sx={{ py: 12, background: 'linear-gradient(135deg, #0a090c 0%, #07393c 100%)' }}>
-        <Container maxWidth="lg">
-          <Typography variant="h2" sx={{ 
-            mb: 6, 
-            fontWeight: 700, 
-            color: 'text.primary',
-            textAlign: 'center'
-          }}>
-            Was ist{' '}
-            <Box component="span" sx={{ 
-              fontFamily: '"Instrument Serif", serif', 
-              fontStyle: 'italic', 
-              background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}>
-              Musikmarketing
-            </Box>
-            ?
-          </Typography>
-
+          {/* CTA Section */}
           <Box sx={{ 
-            maxWidth: '900px', 
-            mx: 'auto',
             p: 4,
-            background: 'rgba(10, 9, 12, 0.4)',
-            backdropFilter: 'blur(20px)',
-            borderRadius: '24px',
-            border: '1px solid rgba(144, 221, 240, 0.2)',
+            background: '#1a1a1a',
+            border: '1px solid #2a2a2a',
+            borderRadius: '4px',
+            textAlign: 'left'
           }}>
-            <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.8 }}>
-              <strong>Musikmarketing</strong> umfasst alle strategischen Maßnahmen, um Musik und Künstler erfolgreich zu vermarkten und eine treue Fanbase aufzubauen. Im digitalen Zeitalter hat sich Musikmarketing grundlegend verändert: Während früher Labels und Radio die Hauptrolle spielten, können Artists heute durch Social Media Marketing, Streaming-Optimierung und Direct-To-Fan Strategien eigenständig eine erfolgreiche Karriere aufbauen.
+            <Typography variant="h3" sx={{ mb: 2, fontWeight: 700, color: '#ffffff' }}>
+              Bereit durchzustarten?
             </Typography>
-
-            <Typography variant="h4" sx={{ mb: 3, mt: 5, fontWeight: 600, color: 'primary.light' }}>
-              Die wichtigsten Bereiche im Musikmarketing
+            <Typography variant="body1" sx={{ mb: 3, color: '#9e9e9e' }}>
+              Buche jetzt deine kostenlose Strategy-Session und erhalte einen individuellen Plan für deine Musikkarriere.
             </Typography>
-
-            <Typography variant="h6" sx={{ mb: 2, mt: 4, fontWeight: 600, color: 'text.primary' }}>
-              Social Media Marketing für Musiker
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.8 }}>
-              Instagram und TikTok sind heute die wichtigsten Plattformen für Musikmarketing. Durch authentischen Content, Behind-The-Scenes Einblicke und strategisches Community Building können Artists organisch wachsen. Erfolgreiche Musikmarketing-Strategien auf Social Media kombinieren Unterhaltung mit Mehrwert und schaffen emotionale Verbindungen zur Zielgruppe. Die Algorithmen belohnen konsistente Aktivität und hohe Engagement-Raten.
-            </Typography>
-
-            <Typography variant="h6" sx={{ mb: 2, mt: 4, fontWeight: 600, color: 'text.primary' }}>
-              Spotify Marketing & Streaming-Optimierung
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.8 }}>
-              Der Spotify Algorithmus ist ein zentraler Faktor im modernen Musikmarketing. Durch Optimierung von Save-Rate, Skip-Rate und Completion-Rate können Artists die Wahrscheinlichkeit erhöhen, in algorithmischen Playlists wie Discover Weekly und Release Radar gefeatured zu werden. Professionelles Musikmarketing für Spotify beinhaltet Pre-Save Kampagnen, Playlist Pitching und strategische Release-Planung.
-            </Typography>
-
-            <Typography variant="h6" sx={{ mb: 2, mt: 4, fontWeight: 600, color: 'text.primary' }}>
-              Paid Advertising im Musikmarketing
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.8 }}>
-              Instagram Ads und Facebook Ads ermöglichen präzises Targeting und skalierbare Reichweite. Im Musikmarketing werden Paid Ads eingesetzt, um Spotify Streams zu steigern, Social Media Follower zu gewinnen oder Ticket-Sales für Konzerte zu pushen. Der große Vorteil: Messbare Ergebnisse und volle Kontrolle über Budget und Zielgruppe. Erfolgreiche Musikmarketing-Kampagnen mit Paid Ads erzielen oft ROI von 3:1 bis 10:1.
-            </Typography>
-
-            <Typography variant="h6" sx={{ mb: 2, mt: 4, fontWeight: 600, color: 'text.primary' }}>
-              Artist Branding & Identität
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.8 }}>
-              Starkes Branding ist die Grundlage erfolgreichen Musikmarketings. Eine klare Artist Identity hilft dabei, sich von der Masse abzuheben und eine emotionale Verbindung zur Zielgruppe aufzubauen. Professionelles Musikmarketing beginnt mit der Definition der eigenen Positionierung: Wer bin ich als Artist? Welche Story erzähle ich? Welche Werte vertrete ich? Ein konsistentes visuelles und emotionales Branding über alle Kanäle hinweg ist entscheidend.
-            </Typography>
-
-            <Typography variant="h6" sx={{ mb: 2, mt: 4, fontWeight: 600, color: 'text.primary' }}>
-              Direct-To-Fan Marketing
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.8 }}>
-              Die Zukunft des Musikmarketings liegt in der direkten Beziehung zwischen Artist und Fan. E-Mail Marketing, WhatsApp Channels und eigene Communities ermöglichen Unabhängigkeit von Social Media Algorithmen. Artists können ihre treuesten Fans direkt erreichen, exklusive Inhalte teilen und Merchandise oder Konzert-Tickets verkaufen. Direct-To-Fan Musikmarketing schafft nachhaltige Einnahmequellen und loyale Fanbeziehungen.
-            </Typography>
-
-            <Typography variant="h6" sx={{ mb: 2, mt: 4, fontWeight: 600, color: 'text.primary' }}>
-              Content Marketing für Musiker
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 0, color: 'text.secondary', lineHeight: 1.8 }}>
-              Regelmäßiger, hochwertiger Content ist das Herzstück modernen Musikmarketings. Neben der Musik selbst sind Behind-The-Scenes Videos, Tutorials, Vlogs und authentische Einblicke in den Alltag wichtige Content-Formate. Erfolgreiche Musikmarketing-Strategien nutzen Content, um Persönlichkeit zu zeigen, Expertise zu demonstrieren und eine Community aufzubauen. Der Schlüssel liegt in Konsistenz und Authentizität.
-            </Typography>
+            <Button
+              variant="contained"
+              size="large"
+              href="https://swipeup-marketing.com/strategy-session"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Jetzt kostenlose Beratung buchen
+            </Button>
           </Box>
-        </Container>
-      </Box>
-
-      {/* FAQ Section */}
-      <Box sx={{ py: 12, background: 'linear-gradient(135deg, #0a090c 0%, #07393c 100%)' }}>
-        <Container maxWidth="lg">
-          <Typography variant="h2" sx={{ 
-            mb: 8, 
-            fontWeight: 700, 
-            color: 'text.primary',
-            textAlign: 'center'
-          }}>
-            Häufig gestellte Fragen zu{' '}
-            <Box component="span" sx={{ 
-              fontFamily: '"Instrument Serif", serif', 
-              fontStyle: 'italic', 
-              background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}>
-              Musikmarketing
-            </Box>
-          </Typography>
-
-          <Stack spacing={3} sx={{ maxWidth: '900px', mx: 'auto' }}>
-            {/* FAQ 1 */}
-            <Box sx={{ 
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              borderRadius: '20px',
-              border: '1px solid rgba(144, 221, 240, 0.2)',
-            }}>
-              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'primary.light' }}>
-                Wie viel kostet Musikmarketing?
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Die Kosten für Musikmarketing variieren stark je nach Strategie. Organisches Marketing auf Social Media ist kostenlos, erfordert aber Zeit und Konsistenz. Paid Ads starten ab 5-10€ pro Tag und können beliebig skaliert werden. Professionelle Musikmarketing-Agenturen verlangen zwischen 500€ und 5.000€ pro Monat. Unsere Online-Kurse bieten eine kostengünstige Alternative: Einmalig zwischen 97€ und 497€ für lebenslanges Wissen, das du immer wieder anwenden kannst.
-              </Typography>
-            </Box>
-
-            {/* FAQ 2 */}
-            <Box sx={{ 
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              borderRadius: '20px',
-              border: '1px solid rgba(44, 102, 110, 0.2)',
-            }}>
-              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'secondary.light' }}>
-                Wie lange dauert es, bis Musikmarketing Ergebnisse zeigt?
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Mit Paid Ads können erste Ergebnisse innerhalb von 24-48 Stunden sichtbar sein. Organisches Musikmarketing auf Instagram und TikTok benötigt in der Regel 3-6 Monate konsistenter Arbeit, bis signifikantes Wachstum eintritt. Der Spotify Algorithmus reagiert meist nach 2-4 Wochen auf optimierte Releases. Wichtig: Musikmarketing ist ein Marathon, kein Sprint. Nachhaltiger Erfolg erfordert Geduld und kontinuierliche Optimierung.
-              </Typography>
-            </Box>
-
-            {/* FAQ 3 */}
-            <Box sx={{ 
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              borderRadius: '20px',
-              border: '1px solid rgba(7, 57, 60, 0.2)',
-            }}>
-              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'success.light' }}>
-                Brauche ich eine Musikmarketing-Agentur oder kann ich es selbst machen?
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Viele erfolgreiche Artists machen ihr Musikmarketing selbst – besonders in der Anfangsphase. Mit den richtigen Kursen und Tools ist DIY-Musikmarketing absolut möglich und oft sogar effektiver, da du deine Musik am besten kennst. Eine Agentur macht Sinn, wenn du bereits ein Budget von 2.000€+ pro Monat hast und dich voll auf die Musik konzentrieren möchtest. Für den Start empfehlen wir: Lerne die Grundlagen selbst, teste verschiedene Strategien, und hole dir dann bei Bedarf professionelle Unterstützung für Skalierung.
-              </Typography>
-            </Box>
-
-            {/* FAQ 4 */}
-            <Box sx={{ 
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              borderRadius: '20px',
-              border: '1px solid rgba(144, 221, 240, 0.2)',
-            }}>
-              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'primary.light' }}>
-                Welche Social Media Plattform ist am wichtigsten für Musikmarketing?
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Instagram und TikTok sind aktuell die wichtigsten Plattformen für Musikmarketing. TikTok bietet das größte virale Potenzial und kann Songs über Nacht zum Hit machen. Instagram ist ideal für Community Building und Direct-To-Fan Kommunikation. YouTube bleibt wichtig für Musikvideos und langfristigen Content. Die beste Strategie: Fokussiere dich auf 1-2 Plattformen, wo deine Zielgruppe aktiv ist, statt überall präsent sein zu wollen.
-              </Typography>
-            </Box>
-
-            {/* FAQ 5 */}
-            <Box sx={{ 
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              borderRadius: '20px',
-              border: '1px solid rgba(44, 102, 110, 0.2)',
-            }}>
-              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'secondary.light' }}>
-                Wie bekomme ich mehr Spotify Streams durch Musikmarketing?
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Mehr Spotify Streams erreichst du durch eine Kombination aus Pre-Save Kampagnen, Playlist Pitching, Instagram Ads und organischem Social Media Marketing. Wichtig ist, dass du qualifizierte Hörer auf deine Tracks lenkst, die deine Musik wirklich mögen – nur so sendest du positive Signale an den Spotify Algorithmus. Vermeide Fake Streams oder Bot-Services, diese schaden langfristig. Fokussiere dich auf Save-Rate und Completion-Rate statt nur auf Stream-Zahlen.
-              </Typography>
-            </Box>
-
-            {/* FAQ 6 */}
-            <Box sx={{ 
-              p: 4,
-              background: 'rgba(10, 9, 12, 0.6)',
-              backdropFilter: 'blur(20px)',
-              borderRadius: '20px',
-              border: '1px solid rgba(7, 57, 60, 0.2)',
-            }}>
-              <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'success.light' }}>
-                Was ist der Unterschied zwischen organischem und bezahltem Musikmarketing?
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Organisches Musikmarketing bedeutet, Reichweite ohne Werbebudget aufzubauen – durch Content, Community Building und Engagement auf Social Media. Es kostet Zeit statt Geld und baut nachhaltige, loyale Fans auf. Bezahltes Musikmarketing (Paid Ads) nutzt Werbebudget für schnelle, skalierbare Reichweite. Die beste Strategie kombiniert beide Ansätze: Organisch für Community und Authentizität, Paid Ads für Skalierung und schnelle Ergebnisse.
-              </Typography>
-            </Box>
-          </Stack>
-        </Container>
-      </Box>
-
-      {/* CTA Section */}
-      <Box sx={{ 
-        py: 12, 
-        background: 'linear-gradient(135deg, #07393c 0%, #0a090c 100%)', 
-        color: 'white', 
-        textAlign: 'center',
-        position: 'relative',
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: `
-            radial-gradient(circle at 30% 30%, rgba(144, 221, 240, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 70% 70%, rgba(44, 102, 110, 0.1) 0%, transparent 50%)
-          `,
-          pointerEvents: 'none',
-        }
-      }}>
-        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-          <Typography variant="h3" sx={{ 
-            mb: 4, 
-            fontWeight: 700,
-            p: 3,
-            background: 'rgba(10, 9, 12, 0.4)',
-            backdropFilter: 'blur(20px)',
-            borderRadius: '32px',
-            border: '1px solid rgba(144, 221, 240, 0.2)',
-            display: 'inline-block'
-          }}>
-            Bereit für deine{' '}
-            <Box component="span" sx={{ 
-              fontFamily: '"Instrument Serif", serif', 
-              fontStyle: 'italic',
-              background: 'linear-gradient(135deg, #90ddf0 0%, #2c666e 100%)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}>
-              maßgeschneiderte Strategie
-            </Box>
-            ?
-          </Typography>
-          
-          <Typography variant="h6" sx={{ mb: 6, opacity: 0.9, maxWidth: '600px', mx: 'auto' }}>
-            Erhalte deine{' '}
-            <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', color: 'primary.light' }}>
-              persönliche Artist-Beratung
-            </Box>{' '}
-            und entwickle gemeinsam mit uns die perfekte Marketing-Strategie für deine Musikkarriere.
-          </Typography>
-          
-          <Button
-            variant="contained"
-            size="large"
-            href="https://swipeup-marketing.com/strategy-session"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              px: 6,
-              py: 2,
-              fontSize: '1.2rem',
-              fontWeight: 600,
-              backgroundColor: 'white',
-              color: '#000000',
-              borderRadius: '50px',
-              textTransform: 'none',
-              boxShadow: '0 0 30px rgba(255, 255, 255, 0.2)',
-              '&:hover': {
-                backgroundColor: 'grey.100',
-                color: '#000000',
-                transform: 'translateY(-2px)',
-                boxShadow: '0 0 40px rgba(255, 255, 255, 0.3)',
-              },
-            }}
-          >
-            Kostenlose{' '}
-            <Box component="span" sx={{ fontFamily: '"Instrument Serif", serif', fontStyle: 'italic', ml: 0.5 }}>
-              Strategy-Session
-            </Box>
-          </Button>
         </Container>
       </Box>
     </>

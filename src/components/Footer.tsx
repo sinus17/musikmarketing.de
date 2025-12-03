@@ -8,7 +8,6 @@ import {
   Divider,
 } from '@mui/material';
 import {
-  MusicNote as MusicNoteIcon,
   Instagram as InstagramIcon,
   YouTube as YouTubeIcon,
   Twitter as TwitterIcon,
@@ -20,23 +19,20 @@ const Footer = () => {
       component="footer"
       sx={{
         bgcolor: '#000000',
-        color: 'white',
+        color: '#9e9e9e',
         py: 6,
+        borderTop: '1px solid #2a2a2a',
       }}
     >
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           {/* Brand */}
           <Grid item xs={12} md={6}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-              <MusicNoteIcon sx={{ color: 'primary.light', mr: 1, fontSize: '2rem' }} />
-              <Typography variant="h6" component="div" sx={{ fontWeight: 700 }}>
-                Musikmarketing.de
-              </Typography>
-            </Box>
-            <Typography variant="body1" sx={{ color: 'grey.300', mb: 3, lineHeight: 1.6 }}>
-              Professionelles Musikmarketing für Musiker & Künstler. 
-              Steigere deine Reichweite mit unseren bewährten Marketing-Strategien und Tools.
+            <Typography variant="h6" component="div" sx={{ fontWeight: 600, mb: 2, color: '#ffffff' }}>
+              Musikmarketing.de
+            </Typography>
+            <Typography variant="body2" sx={{ color: '#9e9e9e', mb: 3, lineHeight: 1.6 }}>
+              Professionelles Musikmarketing für Musiker & Künstler.
             </Typography>
             <Box sx={{ display: 'flex', gap: 1 }}>
               <IconButton
@@ -44,8 +40,8 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  color: 'grey.400',
-                  '&:hover': { color: 'primary.light' },
+                  color: '#9e9e9e',
+                  '&:hover': { color: '#ffffff' },
                 }}
               >
                 <InstagramIcon />
@@ -55,8 +51,8 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  color: 'grey.400',
-                  '&:hover': { color: 'primary.light' },
+                  color: '#9e9e9e',
+                  '&:hover': { color: '#ffffff' },
                 }}
               >
                 <YouTubeIcon />
@@ -66,8 +62,8 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  color: 'grey.400',
-                  '&:hover': { color: 'primary.light' },
+                  color: '#9e9e9e',
+                  '&:hover': { color: '#ffffff' },
                 }}
               >
                 <TwitterIcon />
@@ -77,16 +73,17 @@ const Footer = () => {
 
           {/* Services */}
           <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
+            <Typography variant="h6" sx={{ fontWeight: 600, mb: 2, color: '#ffffff', fontSize: '0.875rem' }}>
               Unsere Services
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
               <Link
                 href="/musikmarketing-agentur"
                 sx={{
-                  color: 'grey.300',
+                  color: '#9e9e9e',
                   textDecoration: 'none',
-                  '&:hover': { color: 'primary.light' },
+                  fontSize: '0.875rem',
+                  '&:hover': { color: '#ffffff' },
                 }}
               >
                 Musikmarketing Agentur
@@ -96,9 +93,10 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  color: 'grey.300',
+                  color: '#9e9e9e',
                   textDecoration: 'none',
-                  '&:hover': { color: 'primary.light' },
+                  fontSize: '0.875rem',
+                  '&:hover': { color: '#ffffff' },
                 }}
               >
                 Instagram Ads Blueprint
@@ -108,9 +106,10 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  color: 'grey.300',
+                  color: '#9e9e9e',
                   textDecoration: 'none',
-                  '&:hover': { color: 'primary.light' },
+                  fontSize: '0.875rem',
+                  '&:hover': { color: '#ffffff' },
                 }}
               >
                 365 Content Club
@@ -120,9 +119,10 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  color: 'grey.300',
+                  color: '#9e9e9e',
                   textDecoration: 'none',
-                  '&:hover': { color: 'primary.light' },
+                  fontSize: '0.875rem',
+                  '&:hover': { color: '#ffffff' },
                 }}
               >
                 Social Media Analyse
@@ -132,16 +132,17 @@ const Footer = () => {
 
           {/* Blog */}
           <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
+            <Typography variant="h6" sx={{ fontWeight: 600, mb: 2, color: '#ffffff', fontSize: '0.875rem' }}>
               Blog
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
               <Link
                 href="/blog"
                 sx={{
-                  color: 'grey.300',
+                  color: '#9e9e9e',
                   textDecoration: 'none',
-                  '&:hover': { color: 'primary.light' },
+                  fontSize: '0.875rem',
+                  '&:hover': { color: '#ffffff' },
                 }}
               >
                 Alle Artikel
@@ -149,9 +150,10 @@ const Footer = () => {
               <Link
                 href="/blog/was-ist-musikmarketing"
                 sx={{
-                  color: 'grey.300',
+                  color: '#9e9e9e',
                   textDecoration: 'none',
-                  '&:hover': { color: 'primary.light' },
+                  fontSize: '0.875rem',
+                  '&:hover': { color: '#ffffff' },
                 }}
               >
                 Was ist Musikmarketing?
@@ -159,9 +161,10 @@ const Footer = () => {
               <Link
                 href="/blog/spotify-verdienst"
                 sx={{
-                  color: 'grey.300',
+                  color: '#9e9e9e',
                   textDecoration: 'none',
-                  '&:hover': { color: 'primary.light' },
+                  fontSize: '0.875rem',
+                  '&:hover': { color: '#ffffff' },
                 }}
               >
                 Spotify Verdienst
@@ -169,9 +172,10 @@ const Footer = () => {
               <Link
                 href="/blog/musikmarketing-tipps"
                 sx={{
-                  color: 'grey.300',
+                  color: '#9e9e9e',
                   textDecoration: 'none',
-                  '&:hover': { color: 'primary.light' },
+                  fontSize: '0.875rem',
+                  '&:hover': { color: '#ffffff' },
                 }}
               >
                 Musikmarketing Tipps
@@ -179,9 +183,10 @@ const Footer = () => {
               <Link
                 href="/blog/song-vermarkten"
                 sx={{
-                  color: 'grey.300',
+                  color: '#9e9e9e',
                   textDecoration: 'none',
-                  '&:hover': { color: 'primary.light' },
+                  fontSize: '0.875rem',
+                  '&:hover': { color: '#ffffff' },
                 }}
               >
                 Song vermarkten
@@ -191,19 +196,19 @@ const Footer = () => {
 
         </Grid>
 
-        <Divider sx={{ my: 4, borderColor: 'grey.800' }} />
+        <Divider sx={{ my: 4, borderColor: '#2a2a2a' }} />
         
-        <Box sx={{ textAlign: 'center' }}>
-          <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3, mb: 2 }}>
+        <Box sx={{ textAlign: 'left' }}>
+          <Box sx={{ display: 'flex', gap: 3, mb: 2 }}>
             <Link
               href="https://swipeup-marketing.com/impressum"
               target="_blank"
               rel="noopener noreferrer"
               sx={{
-                color: 'grey.400',
+                color: '#9e9e9e',
                 textDecoration: 'none',
-                fontSize: '0.875rem',
-                '&:hover': { color: 'primary.light' },
+                fontSize: '0.75rem',
+                '&:hover': { color: '#ffffff' },
               }}
             >
               Impressum
@@ -213,16 +218,16 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               sx={{
-                color: 'grey.400',
+                color: '#9e9e9e',
                 textDecoration: 'none',
-                fontSize: '0.875rem',
-                '&:hover': { color: 'primary.light' },
+                fontSize: '0.75rem',
+                '&:hover': { color: '#ffffff' },
               }}
             >
               Datenschutz
             </Link>
           </Box>
-          <Typography variant="body2" sx={{ color: 'grey.400' }}>
+          <Typography variant="body2" sx={{ color: '#9e9e9e', fontSize: '0.75rem' }}>
             &copy; 2025 Musikmarketing.de. Alle Rechte vorbehalten.
           </Typography>
         </Box>
