@@ -12,13 +12,6 @@ import UltimativerLeitfaden from './pages/UltimativerLeitfaden';
 import MarketingHandbuch from './pages/MarketingHandbuch';
 import AdsSchaltenLernen from './pages/AdsSchaltenLernen';
 import Blog from './pages/Blog';
-import WasIstMusikmarketing from './pages/blog/WasIstMusikmarketing';
-import SpotifyVerdienst from './pages/blog/SpotifyVerdienst';
-import SongVeroeffentlichenKosten from './pages/blog/SongVeroeffentlichenKosten';
-import MusikmarketingTipps from './pages/blog/MusikmarketingTipps';
-import MusikplattformVergleich from './pages/blog/MusikplattformVergleich';
-import SongVermarkten from './pages/blog/SongVermarkten';
-import MusikBekannt from './pages/blog/MusikBekannt';
 import BlogPost from './pages/blog/BlogPost';
 import InstagramMarketingMusiker from './pages/InstagramMarketingMusiker';
 import Navigation from './components/Navigation';
@@ -73,13 +66,6 @@ function AppLayout() {
           <Route path="/marketing-handbuch-fuer-artists" element={<MarketingHandbuch />} />
           <Route path="/ads-schalten-lernen" element={<AdsSchaltenLernen />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/was-ist-musikmarketing" element={<WasIstMusikmarketing />} />
-          <Route path="/blog/spotify-verdienst" element={<SpotifyVerdienst />} />
-          <Route path="/blog/song-veroeffentlichen-kosten" element={<SongVeroeffentlichenKosten />} />
-          <Route path="/blog/musikmarketing-tipps" element={<MusikmarketingTipps />} />
-          <Route path="/blog/musikplattform-vergleich" element={<MusikplattformVergleich />} />
-          <Route path="/blog/song-vermarkten" element={<SongVermarkten />} />
-          <Route path="/blog/musik-bekannt" element={<MusikBekannt />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/instagram-marketing-musiker" element={<InstagramMarketingMusiker />} />
         </Routes>

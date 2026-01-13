@@ -1,66 +1,68 @@
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Box, Container, Typography, Stack } from '@mui/material';
+import { Box, Container, Typography, Stack, CircularProgress, Chip } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { supabase } from '../lib/supabase';
+
+interface Post {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  cover_image: string | null;
+  status: 'draft' | 'published';
+  published_date: string | null;
+  author: string;
+  tags: string[];
+  created_at: string;
+}
 
 export default function Blog() {
-  const blogPosts = [
-    {
-      path: '/blog/was-ist-musikmarketing',
-      emoji: '🎯',
-      title: 'Was ist Musikmarketing?',
-      description: 'Definition, Strategien & Tipps für Artists',
-      date: '16. Januar 2025',
-      readTime: '8 Min.'
-    },
-    {
-      path: '/blog/spotify-verdienst',
-      emoji: '💰',
-      title: 'Spotify Verdienst',
-      description: 'Wie viel zahlt Spotify pro Stream?',
-      date: '16. Januar 2025',
-      readTime: '7 Min.'
-    },
-    {
-      path: '/blog/song-veroeffentlichen-kosten',
-      emoji: '💵',
-      title: 'Song veröffentlichen Kosten',
-      description: 'Komplette Kostenübersicht für 2024',
-      date: '16. Januar 2025',
-      readTime: '7 Min.'
-    },
-    {
-      path: '/blog/musikmarketing-tipps',
-      emoji: '✨',
-      title: '10 Musikmarketing Tipps',
-      description: 'Strategien für mehr Reichweite',
-      date: '16. Januar 2025',
-      readTime: '9 Min.'
-    },
-    {
-      path: '/blog/musikplattform-vergleich',
-      emoji: '📊',
-      title: 'Musikplattform Vergleich',
-      description: 'Welche Plattform zahlt am besten?',
-      date: '16. Januar 2025',
-      readTime: '7 Min.'
-    },
-    {
-      path: '/blog/song-vermarkten',
-      emoji: '🚀',
-      title: 'Song vermarkten',
-      description: '7-Schritte-Plan für Artists',
-      date: '16. Januar 2025',
-      readTime: '8 Min.'
-    },
-    {
-      path: '/blog/musik-bekannt',
-      emoji: '⭐',
-      title: 'Mit Musik bekannt werden',
-      description: '5 Strategien für Artists',
-      date: '16. Januar 2025',
-      readTime: '8 Min.'
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    checkAuthAndFetchPosts();
+  }, []);
+
+  const checkAuthAndFetchPosts = async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+    setIsLoggedIn(!!session);
+    await fetchPosts(!!session);
+  };
+
+  const fetchPosts = async (loggedIn: boolean) => {
+    try {
+      let query = supabase
+        .from('musikmarketing_de_posts')
+        .select('*')
+        .order('published_date', { ascending: false, nullsFirst: false })
+        .order('created_at', { ascending: false });
+
+      if (!loggedIn) {
+        query = query.eq('status', 'published');
+      }
+
+      const { data, error } = await query;
+
+      if (error) throw error;
+      setPosts(data || []);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    } finally {
+      setLoading(false);
     }
-  ];
+  };
+
+  const formatDate = (dateString: string | null) => {
+    if (!dateString) return '';
+    return new Date(dateString).toLocaleDateString('de-DE', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    });
+  };
 
   return (
     <>
@@ -106,68 +108,148 @@ export default function Blog() {
           </Typography>
 
           {/* Blog Posts Grid */}
-          <Stack spacing={2}>
-            {blogPosts.map((post) => (
-              <Link
-                key={post.path}
-                to={post.path}
-                style={{ textDecoration: 'none' }}
-              >
-                <Box
-                  sx={{
-                    p: 3,
-                    background: '#000000',
-                    border: '1px solid #2a2a2a',
-                    borderRadius: '4px',
-                    transition: 'border-color 0.2s',
-                    '&:hover': {
-                      border: '1px solid #4a4a4a',
-                    }
-                  }}
+          {loading ? (
+            <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}>
+              <CircularProgress sx={{ color: '#fff' }} />
+            </Box>
+          ) : posts.length === 0 ? (
+            <Box sx={{ textAlign: 'center', py: 8 }}>
+              <Typography sx={{ color: '#666' }}>
+                Noch keine Blog-Posts vorhanden
+              </Typography>
+            </Box>
+          ) : (
+            <Stack spacing={2}>
+              {posts.map((post) => (
+                <Link
+                  key={post.id}
+                  to={`/blog/${post.slug}`}
+                  style={{ textDecoration: 'none' }}
                 >
-                  <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
-                    <Typography sx={{ fontSize: '2rem' }}>
-                      {post.emoji}
-                    </Typography>
-                    <Box sx={{ flex: 1 }}>
-                      <Typography 
-                        variant="h3" 
-                        sx={{ 
-                          fontSize: '1.25rem',
-                          fontWeight: 600,
-                          color: '#ffffff',
-                          mb: 0.5,
-                          textAlign: 'left'
+                  <Box
+                    sx={{
+                      p: 3,
+                      background: '#000000',
+                      border: '1px solid #2a2a2a',
+                      borderRadius: '4px',
+                      transition: 'border-color 0.2s',
+                      '&:hover': {
+                        border: '1px solid #4a4a4a',
+                      }
+                    }}
+                  >
+                    {/* Cover Image */}
+                    {post.cover_image && (
+                      <Box
+                        component="img"
+                        src={post.cover_image}
+                        alt={post.title}
+                        sx={{
+                          width: '100%',
+                          height: 200,
+                          objectFit: 'cover',
+                          borderRadius: 1,
+                          mb: 2,
                         }}
-                      >
-                        {post.title}
-                      </Typography>
-                      <Typography 
-                        variant="body2" 
-                        sx={{ 
-                          color: '#9e9e9e',
-                          mb: 1,
-                          textAlign: 'left'
-                        }}
-                      >
-                        {post.description}
-                      </Typography>
-                      <Typography 
-                        variant="caption" 
-                        sx={{ 
-                          color: '#6e6e6e',
-                          fontSize: '0.75rem',
-                          textAlign: 'left'
-                        }}
-                      >
-                        {post.date} • {post.readTime}
-                      </Typography>
+                      />
+                    )}
+
+                    <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
+                      <Box sx={{ flex: 1 }}>
+                        {/* Draft Badge */}
+                        {isLoggedIn && post.status === 'draft' && (
+                          <Chip
+                            label="ENTWURF"
+                            size="small"
+                            sx={{
+                              bgcolor: '#ff9800',
+                              color: '#000',
+                              fontWeight: 700,
+                              fontSize: '0.7rem',
+                              mb: 1,
+                            }}
+                          />
+                        )}
+
+                        <Typography 
+                          variant="h3" 
+                          sx={{ 
+                            fontSize: '1.25rem',
+                            fontWeight: 600,
+                            color: '#ffffff',
+                            mb: 0.5,
+                            textAlign: 'left'
+                          }}
+                        >
+                          {post.title}
+                        </Typography>
+                        
+                        {post.excerpt && (
+                          <Typography 
+                            variant="body2" 
+                            sx={{ 
+                              color: '#9e9e9e',
+                              mb: 1,
+                              textAlign: 'left'
+                            }}
+                          >
+                            {post.excerpt}
+                          </Typography>
+                        )}
+
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap' }}>
+                          <Typography 
+                            variant="caption" 
+                            sx={{ 
+                              color: '#6e6e6e',
+                              fontSize: '0.75rem',
+                            }}
+                          >
+                            {formatDate(post.published_date || post.created_at)}
+                          </Typography>
+                          {post.author && (
+                            <>
+                              <Typography variant="caption" sx={{ color: '#6e6e6e' }}>•</Typography>
+                              <Typography 
+                                variant="caption" 
+                                sx={{ 
+                                  color: '#6e6e6e',
+                                  fontSize: '0.75rem',
+                                }}
+                              >
+                                {post.author}
+                              </Typography>
+                            </>
+                          )}
+                        </Box>
+
+                        {/* Tags */}
+                        {post.tags && post.tags.length > 0 && (
+                          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mt: 1.5 }}>
+                            {post.tags.map((tag) => (
+                              <Chip
+                                key={tag}
+                                label={tag}
+                                size="small"
+                                sx={{
+                                  bgcolor: '#1a1a1a',
+                                  color: '#999',
+                                  border: '1px solid #333',
+                                  fontSize: '0.7rem',
+                                  height: 'auto',
+                                  py: 0.5,
+                                }}
+                              />
+                            ))}
+                          </Box>
+                        )}
+                      </Box>
                     </Box>
                   </Box>
-                </Box>
-              </Link>
-            ))}
-          </Stack>
+                </Link>
+              ))}
+            </Stack>
+          )}
         </Container>
       </Box>
     </>
