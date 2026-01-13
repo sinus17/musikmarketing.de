@@ -84,61 +84,6 @@ const Home = () => {
         py: 8,
       }}>
         <Container maxWidth="lg">
-          {/* Hero Section - Left Aligned */}
-          <Box sx={{ mb: 8 }}>
-            <Typography 
-              variant="h1" 
-              sx={{ 
-                mb: 3,
-                fontWeight: 700,
-                color: '#ffffff',
-                textAlign: 'left',
-              }}
-            >
-              Lerne Musikmarketing, welches Artists zum wachsen bringt
-            </Typography>
-            
-            <Typography 
-              variant="body1" 
-              sx={{ 
-                mb: 4, 
-                color: '#9e9e9e',
-                maxWidth: '700px',
-                textAlign: 'left',
-              }}
-            >
-              Erlerne essenzielle Musikmarketing-Skills, um dich als Artist erfolgreich selbst zu vermarkten in einer Zeit, in der Sichtbarkeit auf Social Media immer wichtiger wird.
-            </Typography>
-            
-            <Box sx={{ mb: 4 }}>
-              <Button
-                variant="contained"
-                href="https://swipeup-marketing.com/analyse"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Kostenlose Beratung erhalten
-              </Button>
-            </Box>
-
-            {/* Google Reviews */}
-            <Box 
-              component="a"
-              href="https://swipeup-marketing.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                display: 'block',
-                textDecoration: 'none',
-                '&:hover': { opacity: 0.8 }
-              }}
-            >
-              <Typography variant="body2" sx={{ color: '#9e9e9e' }}>
-                5.0 ★★★★★ Basierend auf 69 Bewertungen
-              </Typography>
-            </Box>
-          </Box>
-
           {/* Blog Section - Media Outlet Style */}
           <Box sx={{ mb: 8 }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
