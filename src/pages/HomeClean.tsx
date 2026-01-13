@@ -1,15 +1,64 @@
 import { Helmet } from 'react-helmet-async';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Box,
   Container,
   Typography,
   Button,
   Stack,
+  Grid,
+  Chip,
 } from '@mui/material';
+import { supabase } from '../lib/supabase';
+
+interface Post {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  cover_image: string | null;
+  status: 'draft' | 'published';
+  published_date: string | null;
+  author: string;
+  tags: string[];
+  created_at: string;
+}
 
 const Home = () => {
-  const [selectedCurrency, setSelectedCurrency] = useState<'time' | 'money' | 'balanced'>('balanced');
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loadingPosts, setLoadingPosts] = useState(true);
+
+  useEffect(() => {
+    fetchLatestPosts();
+  }, []);
+
+  const fetchLatestPosts = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('musikmarketing_de_posts')
+        .select('*')
+        .eq('status', 'published')
+        .order('published_date', { ascending: false, nullsFirst: false })
+        .limit(3);
+
+      if (error) throw error;
+      setPosts(data || []);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    } finally {
+      setLoadingPosts(false);
+    }
+  };
+
+  const formatDate = (dateString: string | null) => {
+    if (!dateString) return '';
+    return new Date(dateString).toLocaleDateString('de-DE', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    });
+  };
 
   return (
     <>
@@ -90,174 +139,188 @@ const Home = () => {
             </Box>
           </Box>
 
-          {/* Journey Section */}
+          {/* Blog Section - Media Outlet Style */}
           <Box sx={{ mb: 8 }}>
-            <Typography variant="h2" sx={{ 
-              mb: 4, 
-              fontWeight: 700, 
-              color: '#ffffff',
-              textAlign: 'left'
-            }}>
-              Dein Weg, um als Artist sichtbar zu werden
-            </Typography>
-
-            {/* Step 1 */}
-            <Box sx={{ mb: 6 }}>
-              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
-                1. Lerne die Grundlagen
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
+              <Typography variant="h2" sx={{ 
+                fontWeight: 700, 
+                color: '#ffffff',
+                textAlign: 'left'
+              }}>
+                Neueste Artikel
               </Typography>
-              <Typography variant="body1" sx={{ mb: 3, color: '#9e9e9e', textAlign: 'left' }}>
-                Wie man in der heutigen Zeit Releases mit modernen und erprobten Strategien vermarktet und mit den 2 Währungen (Zeit und/oder Geld) bezahlt. Lege fest, wie viel du von was einsetzen kannst.
-              </Typography>
-              
-              {/* Currency Options */}
-              <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
-                <Box 
-                  onClick={() => setSelectedCurrency('money')}
-                  sx={{ 
-                    flex: 1,
-                    p: 2,
-                    background: selectedCurrency === 'money' ? '#1a1a1a' : '#0a0a0a',
-                    border: selectedCurrency === 'money' ? '1px solid #4a4a4a' : '1px solid #2a2a2a',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                    '&:hover': { border: '1px solid #4a4a4a' }
-                  }}>
-                  <Typography variant="body2" sx={{ fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
-                    💰 Nur Geld, keine Zeit
-                  </Typography>
-                </Box>
-                <Box 
-                  onClick={() => setSelectedCurrency('balanced')}
-                  sx={{ 
-                    flex: 1,
-                    p: 2,
-                    background: '#1a1a1a',
-                    border: '1px solid #4a4a4a',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                    '&:hover': { border: '1px solid #6a6a6a' }
-                  }}>
-                  <Typography variant="body2" sx={{ fontWeight: 700, color: '#ffffff', textAlign: 'left' }}>
-                    ⚖️ Etwas Geld, etwas Zeit
-                  </Typography>
-                  <Typography variant="caption" sx={{ display: 'block', color: '#9e9e9e', textAlign: 'left' }}>
-                    Empfohlen
-                  </Typography>
-                </Box>
-                <Box 
-                  onClick={() => setSelectedCurrency('time')}
-                  sx={{ 
-                    flex: 1,
-                    p: 2,
-                    background: selectedCurrency === 'time' ? '#1a1a1a' : '#0a0a0a',
-                    border: selectedCurrency === 'time' ? '1px solid #4a4a4a' : '1px solid #2a2a2a',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                    '&:hover': { border: '1px solid #4a4a4a' }
-                  }}>
-                  <Typography variant="body2" sx={{ fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
-                    ⏰ Nur Zeit, kein Geld
-                  </Typography>
-                </Box>
-              </Stack>
+              <Button
+                component={Link}
+                to="/blog"
+                sx={{
+                  color: '#fff',
+                  textTransform: 'none',
+                  fontWeight: 500,
+                  '&:hover': { color: '#9e9e9e' }
+                }}
+              >
+                Alle Artikel →
+              </Button>
             </Box>
 
-            {/* Step 2 */}
-            <Box sx={{ mb: 6 }}>
-              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
-                2. Eigne dir diese Strategien mit Hilfe unserer intensiven Online-Kurse an
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 3, color: '#9e9e9e', textAlign: 'left' }}>
-                Kompakte, aber intensive Online-Kurse unter 7 Tagen. Alles was du brauchst, um sofort loszulegen – ohne Zeitverschwendung.
-              </Typography>
+            {!loadingPosts && posts.length > 0 && (
+              <Grid container spacing={3}>
+                {/* Featured Post - Large */}
+                {posts[0] && (
+                  <Grid item xs={12} md={8}>
+                    <Link to={`/blog/${posts[0].slug}`} style={{ textDecoration: 'none' }}>
+                      <Box
+                        sx={{
+                          height: '100%',
+                          background: '#0a0a0a',
+                          border: '1px solid #2a2a2a',
+                          borderRadius: '8px',
+                          overflow: 'hidden',
+                          transition: 'all 0.3s',
+                          '&:hover': {
+                            border: '1px solid #4a4a4a',
+                            transform: 'translateY(-4px)',
+                          }
+                        }}
+                      >
+                        {posts[0].cover_image && (
+                          <Box
+                            component="img"
+                            src={posts[0].cover_image}
+                            alt={posts[0].title}
+                            sx={{
+                              width: '100%',
+                              height: 400,
+                              objectFit: 'cover',
+                            }}
+                          />
+                        )}
+                        <Box sx={{ p: 4 }}>
+                          {posts[0].tags && posts[0].tags.length > 0 && (
+                            <Chip
+                              label={posts[0].tags[0]}
+                              size="small"
+                              sx={{
+                                bgcolor: '#1a1a1a',
+                                color: '#fff',
+                                border: '1px solid #333',
+                                mb: 2,
+                                fontWeight: 600,
+                                fontSize: '0.75rem',
+                              }}
+                            />
+                          )}
+                          <Typography
+                            variant="h3"
+                            sx={{
+                              fontSize: '1.75rem',
+                              fontWeight: 700,
+                              color: '#ffffff',
+                              mb: 2,
+                              lineHeight: 1.3,
+                            }}
+                          >
+                            {posts[0].title}
+                          </Typography>
+                          {posts[0].excerpt && (
+                            <Typography
+                              variant="body1"
+                              sx={{
+                                color: '#9e9e9e',
+                                mb: 2,
+                                lineHeight: 1.6,
+                              }}
+                            >
+                              {posts[0].excerpt}
+                            </Typography>
+                          )}
+                          <Typography variant="caption" sx={{ color: '#666', fontSize: '0.875rem' }}>
+                            {formatDate(posts[0].published_date || posts[0].created_at)}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Link>
+                  </Grid>
+                )}
 
-              {/* Dynamic Recommendations */}
-              {selectedCurrency === 'balanced' && (
-                <Box sx={{ 
-                  p: 3,
-                  background: '#1a1a1a',
-                  border: '1px solid #4a4a4a',
-                  borderRadius: '4px',
-                }}>
-                  <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
-                    🎯 Empfohlen für dich
-                  </Typography>
-                  <Typography variant="body1" sx={{ mb: 2, color: '#9e9e9e', textAlign: 'left' }}>
-                    Perfekte Balance aus Zeit und Budget - ideal für nachhaltiges Wachstum
-                  </Typography>
-                  <Button
-                    variant="contained"
-                    href="https://song.so/instagram-ads-blueprint"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Instagram Ads Blueprint
-                  </Button>
-                </Box>
-              )}
+                {/* Side Posts - Smaller */}
+                <Grid item xs={12} md={4}>
+                  <Stack spacing={3}>
+                    {posts.slice(1, 3).map((post) => (
+                      <Link key={post.id} to={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
+                        <Box
+                          sx={{
+                            background: '#0a0a0a',
+                            border: '1px solid #2a2a2a',
+                            borderRadius: '8px',
+                            overflow: 'hidden',
+                            transition: 'all 0.3s',
+                            '&:hover': {
+                              border: '1px solid #4a4a4a',
+                              transform: 'translateY(-2px)',
+                            }
+                          }}
+                        >
+                          {post.cover_image && (
+                            <Box
+                              component="img"
+                              src={post.cover_image}
+                              alt={post.title}
+                              sx={{
+                                width: '100%',
+                                height: 180,
+                                objectFit: 'cover',
+                              }}
+                            />
+                          )}
+                          <Box sx={{ p: 3 }}>
+                            {post.tags && post.tags.length > 0 && (
+                              <Chip
+                                label={post.tags[0]}
+                                size="small"
+                                sx={{
+                                  bgcolor: '#1a1a1a',
+                                  color: '#fff',
+                                  border: '1px solid #333',
+                                  mb: 1.5,
+                                  fontWeight: 600,
+                                  fontSize: '0.7rem',
+                                  height: 'auto',
+                                  py: 0.5,
+                                }}
+                              />
+                            )}
+                            <Typography
+                              variant="h5"
+                              sx={{
+                                fontSize: '1.1rem',
+                                fontWeight: 600,
+                                color: '#ffffff',
+                                mb: 1,
+                                lineHeight: 1.3,
+                              }}
+                            >
+                              {post.title}
+                            </Typography>
+                            <Typography variant="caption" sx={{ color: '#666', fontSize: '0.8rem' }}>
+                              {formatDate(post.published_date || post.created_at)}
+                            </Typography>
+                          </Box>
+                        </Box>
+                      </Link>
+                    ))}
+                  </Stack>
+                </Grid>
+              </Grid>
+            )}
 
-              {selectedCurrency === 'time' && (
-                <Box sx={{ 
-                  p: 3,
-                  background: '#1a1a1a',
-                  border: '1px solid #4a4a4a',
-                  borderRadius: '4px',
-                }}>
-                  <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
-                    ⏰ Perfekt für dich
-                  </Typography>
-                  <Typography variant="body1" sx={{ mb: 2, color: '#9e9e9e', textAlign: 'left' }}>
-                    Organisches Wachstum durch Content - investiere Zeit statt Geld
-                  </Typography>
-                  <Button
-                    variant="contained"
-                    href="https://swipeup-marketing.com/365-content-club"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    365 Content Club
-                  </Button>
-                </Box>
-              )}
-
-              {selectedCurrency === 'money' && (
-                <Box sx={{ 
-                  p: 3,
-                  background: '#1a1a1a',
-                  border: '1px solid #4a4a4a',
-                  borderRadius: '4px',
-                }}>
-                  <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
-                    💰 Ideal für dich
-                  </Typography>
-                  <Typography variant="body1" sx={{ mb: 2, color: '#9e9e9e', textAlign: 'left' }}>
-                    Schnelle Ergebnisse durch professionelle Beratung - investiere Geld statt Zeit
-                  </Typography>
-                  <Button
-                    variant="contained"
-                    href="https://swipeup-marketing.com/strategy-session"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Strategy-Session buchen
-                  </Button>
-                </Box>
-              )}
-            </Box>
-
-            {/* Step 3 */}
-            <Box sx={{ mb: 6 }}>
-              <Typography variant="h4" sx={{ mb: 2, fontWeight: 600, color: '#ffffff', textAlign: 'left' }}>
-                3. Setze deine Strategie um und wachse
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 3, color: '#9e9e9e', textAlign: 'left' }}>
-                Implementiere das Gelernte konsequent und beobachte, wie deine Reichweite und Fanbase wächst.
-              </Typography>
-            </Box>
+            {!loadingPosts && posts.length === 0 && (
+              <Box sx={{ textAlign: 'center', py: 8 }}>
+                <Typography sx={{ color: '#666' }}>
+                  Noch keine Blog-Posts vorhanden
+                </Typography>
+              </Box>
+            )}
           </Box>
 
           {/* CTA Section */}
