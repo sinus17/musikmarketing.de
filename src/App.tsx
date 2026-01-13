@@ -19,9 +19,17 @@ import MusikmarketingTipps from './pages/blog/MusikmarketingTipps';
 import MusikplattformVergleich from './pages/blog/MusikplattformVergleich';
 import SongVermarkten from './pages/blog/SongVermarkten';
 import MusikBekannt from './pages/blog/MusikBekannt';
+import BlogPost from './pages/blog/BlogPost';
 import InstagramMarketingMusiker from './pages/InstagramMarketingMusiker';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+
+// Admin Pages
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import BlogManagement from './pages/admin/BlogManagement';
+import BlogCreate from './pages/admin/BlogCreate';
+import BlogEdit from './pages/admin/BlogEdit';
 
 // Initialize Google Analytics
 ReactGA.initialize('G-13021393531');
@@ -37,6 +45,112 @@ function PageViewTracker() {
   return null;
 }
 
+// Layout wrapper to conditionally show Navigation/Footer
+function AppLayout() {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith('/admin');
+
+  if (isAdminRoute) {
+    return (
+      <Routes>
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/blog" element={<BlogManagement />} />
+        <Route path="/admin/blog/create" element={<BlogCreate />} />
+        <Route path="/admin/blog/edit/:id" element={<BlogEdit />} />
+      </Routes>
+    );
+  }
+
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Navigation />
+      <main style={{ flexGrow: 1 }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/musikmarketing-agentur" element={<MusikmarketingAgentur />} />
+          <Route path="/ultimativer-leitfaden" element={<UltimativerLeitfaden />} />
+          <Route path="/marketing-handbuch-fuer-artists" element={<MarketingHandbuch />} />
+          <Route path="/ads-schalten-lernen" element={<AdsSchaltenLernen />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/was-ist-musikmarketing" element={<WasIstMusikmarketing />} />
+          <Route path="/blog/spotify-verdienst" element={<SpotifyVerdienst />} />
+          <Route path="/blog/song-veroeffentlichen-kosten" element={<SongVeroeffentlichenKosten />} />
+          <Route path="/blog/musikmarketing-tipps" element={<MusikmarketingTipps />} />
+          <Route path="/blog/musikplattform-vergleich" element={<MusikplattformVergleich />} />
+          <Route path="/blog/song-vermarkten" element={<SongVermarkten />} />
+          <Route path="/blog/musik-bekannt" element={<MusikBekannt />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/instagram-marketing-musiker" element={<InstagramMarketingMusiker />} />
+        </Routes>
+      </main>
+      <Footer />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsent
+        location="bottom"
+        buttonText="Akzeptieren"
+        declineButtonText="Ablehnen"
+        enableDeclineButton
+        onAccept={() => {
+          ReactGA.gtag('consent', 'update', {
+            analytics_storage: 'granted'
+          });
+        }}
+        onDecline={() => {
+          ReactGA.gtag('consent', 'update', {
+            analytics_storage: 'denied'
+          });
+        }}
+        style={{
+          background: '#000000',
+          borderTop: '1px solid #2a2a2a',
+          padding: '20px',
+          alignItems: 'center',
+        }}
+        buttonStyle={{
+          background: '#ffffff',
+          color: '#000000',
+          fontSize: '14px',
+          fontWeight: 500,
+          borderRadius: '4px',
+          padding: '8px 16px',
+          border: 'none',
+          cursor: 'pointer',
+        }}
+        declineButtonStyle={{
+          background: 'transparent',
+          color: '#9e9e9e',
+          fontSize: '14px',
+          borderRadius: '4px',
+          padding: '8px 16px',
+          border: '1px solid #2a2a2a',
+          cursor: 'pointer',
+        }}
+        contentStyle={{
+          flex: '1 0 300px',
+          margin: '0 20px',
+        }}
+      >
+        <span style={{ fontSize: '14px', color: '#9e9e9e' }}>
+          Diese Website verwendet Cookies, um die Nutzererfahrung zu verbessern und Analysen durchzuführen. 
+          Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.{' '}
+          <a 
+            href="/datenschutz" 
+            style={{ 
+              color: '#ffffff', 
+              textDecoration: 'underline',
+              fontWeight: 400 
+            }}
+          >
+            Mehr erfahren
+          </a>
+        </span>
+      </CookieConsent>
+    </div>
+  );
+}
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -44,92 +158,7 @@ function App() {
       <HelmetProvider>
         <Router>
           <PageViewTracker />
-          <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-            <Navigation />
-            
-            <main style={{ flexGrow: 1 }}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/musikmarketing-agentur" element={<MusikmarketingAgentur />} />
-                <Route path="/ultimativer-leitfaden" element={<UltimativerLeitfaden />} />
-                <Route path="/marketing-handbuch-fuer-artists" element={<MarketingHandbuch />} />
-                <Route path="/ads-schalten-lernen" element={<AdsSchaltenLernen />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/was-ist-musikmarketing" element={<WasIstMusikmarketing />} />
-                <Route path="/blog/spotify-verdienst" element={<SpotifyVerdienst />} />
-                <Route path="/blog/song-veroeffentlichen-kosten" element={<SongVeroeffentlichenKosten />} />
-                <Route path="/blog/musikmarketing-tipps" element={<MusikmarketingTipps />} />
-                <Route path="/blog/musikplattform-vergleich" element={<MusikplattformVergleich />} />
-                <Route path="/blog/song-vermarkten" element={<SongVermarkten />} />
-                <Route path="/blog/musik-bekannt" element={<MusikBekannt />} />
-                <Route path="/instagram-marketing-musiker" element={<InstagramMarketingMusiker />} />
-              </Routes>
-            </main>
-            
-            <Footer />
-            
-            {/* Cookie Consent Banner */}
-            <CookieConsent
-              location="bottom"
-              buttonText="Akzeptieren"
-              declineButtonText="Ablehnen"
-              enableDeclineButton
-              onAccept={() => {
-                ReactGA.gtag('consent', 'update', {
-                  analytics_storage: 'granted'
-                });
-              }}
-              onDecline={() => {
-                ReactGA.gtag('consent', 'update', {
-                  analytics_storage: 'denied'
-                });
-              }}
-              style={{
-                background: '#000000',
-                borderTop: '1px solid #2a2a2a',
-                padding: '20px',
-                alignItems: 'center',
-              }}
-              buttonStyle={{
-                background: '#ffffff',
-                color: '#000000',
-                fontSize: '14px',
-                fontWeight: 500,
-                borderRadius: '4px',
-                padding: '8px 16px',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-              declineButtonStyle={{
-                background: 'transparent',
-                color: '#9e9e9e',
-                fontSize: '14px',
-                borderRadius: '4px',
-                padding: '8px 16px',
-                border: '1px solid #2a2a2a',
-                cursor: 'pointer',
-              }}
-              contentStyle={{
-                flex: '1 0 300px',
-                margin: '0 20px',
-              }}
-            >
-              <span style={{ fontSize: '14px', color: '#9e9e9e' }}>
-                Diese Website verwendet Cookies, um die Nutzererfahrung zu verbessern und Analysen durchzuführen. 
-                Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.{' '}
-                <a 
-                  href="/datenschutz" 
-                  style={{ 
-                    color: '#ffffff', 
-                    textDecoration: 'underline',
-                    fontWeight: 400 
-                  }}
-                >
-                  Mehr erfahren
-                </a>
-              </span>
-            </CookieConsent>
-          </div>
+          <AppLayout />
         </Router>
       </HelmetProvider>
     </ThemeProvider>
