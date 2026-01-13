@@ -247,6 +247,19 @@ const Home = () => {
                             >
                               {post.title}
                             </Typography>
+                            {post.excerpt && (
+                              <Typography
+                                variant="body2"
+                                sx={{
+                                  color: '#9e9e9e',
+                                  mb: 1.5,
+                                  lineHeight: 1.5,
+                                  fontSize: '0.875rem',
+                                }}
+                              >
+                                {post.excerpt.length > 120 ? `${post.excerpt.substring(0, 120)}...` : post.excerpt}
+                              </Typography>
+                            )}
                             <Typography variant="caption" sx={{ color: '#666', fontSize: '0.8rem' }}>
                               {formatDate(post.published_date || post.created_at)}
                             </Typography>
