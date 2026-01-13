@@ -20,7 +20,6 @@ import { Menu as MenuIcon, Close as CloseIcon, KeyboardArrowDown } from '@mui/ic
 
 const Navigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [leitfaedenAnchor, setLeitfaedenAnchor] = useState<null | HTMLElement>(null);
   const [agenturAnchor, setAgenturAnchor] = useState<null | HTMLElement>(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -30,16 +29,6 @@ const Navigation = () => {
   };
 
   const menuItems = [
-    { 
-      label: 'Leitfäden', 
-      hasDropdown: true,
-      subItems: [
-        { label: 'Instagram Marketing für Musiker', href: '/instagram-marketing-musiker' },
-        { label: 'Ultimativer Leitfaden', href: '/ultimativer-leitfaden' },
-        { label: 'Marketing Handbuch', href: '/marketing-handbuch-fuer-artists' },
-        { label: 'Ads schalten lernen', href: '/ads-schalten-lernen' },
-      ]
-    },
     { 
       label: 'Agentur',
       hasDropdown: true,
@@ -137,12 +126,10 @@ const Navigation = () => {
                   sx={{ position: 'relative' }}
                   onMouseEnter={(e) => {
                     if (item.hasDropdown) {
-                      if (item.label === 'Leitfäden') setLeitfaedenAnchor(e.currentTarget);
                       if (item.label === 'Agentur') setAgenturAnchor(e.currentTarget);
                     }
                   }}
                   onMouseLeave={() => {
-                    if (item.label === 'Leitfäden') setLeitfaedenAnchor(null);
                     if (item.label === 'Agentur') setAgenturAnchor(null);
                   }}
                 >
@@ -168,15 +155,13 @@ const Navigation = () => {
                   
                   {item.hasDropdown && (
                     <Menu
-                      anchorEl={item.label === 'Leitfäden' ? leitfaedenAnchor : agenturAnchor}
-                      open={Boolean(item.label === 'Leitfäden' ? leitfaedenAnchor : agenturAnchor)}
+                      anchorEl={agenturAnchor}
+                      open={Boolean(agenturAnchor)}
                       onClose={() => {
-                        if (item.label === 'Leitfäden') setLeitfaedenAnchor(null);
                         if (item.label === 'Agentur') setAgenturAnchor(null);
                       }}
                       MenuListProps={{
                         onMouseLeave: () => {
-                          if (item.label === 'Leitfäden') setLeitfaedenAnchor(null);
                           if (item.label === 'Agentur') setAgenturAnchor(null);
                         }
                       }}
@@ -197,7 +182,6 @@ const Navigation = () => {
                           target={subItem.external ? "_blank" : undefined}
                           rel={subItem.external ? "noopener noreferrer" : undefined}
                           onClick={() => {
-                            if (item.label === 'Leitfäden') setLeitfaedenAnchor(null);
                             if (item.label === 'Agentur') setAgenturAnchor(null);
                           }}
                           sx={{

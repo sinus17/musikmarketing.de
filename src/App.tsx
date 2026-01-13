@@ -8,12 +8,8 @@ import CookieConsent from 'react-cookie-consent';
 import theme from './theme';
 import Home from './pages/HomeClean';
 import MusikmarketingAgentur from './pages/MusikmarketingAgentur';
-import UltimativerLeitfaden from './pages/UltimativerLeitfaden';
-import MarketingHandbuch from './pages/MarketingHandbuch';
-import AdsSchaltenLernen from './pages/AdsSchaltenLernen';
 import Blog from './pages/Blog';
 import BlogPost from './pages/blog/BlogPost';
-import InstagramMarketingMusiker from './pages/InstagramMarketingMusiker';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
@@ -62,12 +58,8 @@ function AppLayout() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/musikmarketing-agentur" element={<MusikmarketingAgentur />} />
-          <Route path="/ultimativer-leitfaden" element={<UltimativerLeitfaden />} />
-          <Route path="/marketing-handbuch-fuer-artists" element={<MarketingHandbuch />} />
-          <Route path="/ads-schalten-lernen" element={<AdsSchaltenLernen />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/instagram-marketing-musiker" element={<InstagramMarketingMusiker />} />
         </Routes>
       </main>
       <Footer />
