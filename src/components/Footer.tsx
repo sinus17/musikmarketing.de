@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import {
   Box,
   Container,
@@ -12,8 +13,38 @@ import {
   YouTube as YouTubeIcon,
   Twitter as TwitterIcon,
 } from '@mui/icons-material';
+import { supabase } from '../lib/supabase';
+
+interface Post {
+  id: string;
+  title: string;
+  slug: string;
+  status: 'draft' | 'published';
+}
 
 const Footer = () => {
+  const [latestPosts, setLatestPosts] = useState<Post[]>([]);
+
+  useEffect(() => {
+    fetchLatestPosts();
+  }, []);
+
+  const fetchLatestPosts = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('musikmarketing_de_posts')
+        .select('id, title, slug, status')
+        .eq('status', 'published')
+        .order('published_date', { ascending: false, nullsFirst: false })
+        .limit(4);
+
+      if (error) throw error;
+      setLatestPosts(data || []);
+    } catch (error) {
+      console.error('Error fetching latest posts:', error);
+    }
+  };
+
   return (
     <Box
       component="footer"
@@ -147,50 +178,20 @@ const Footer = () => {
               >
                 Alle Artikel
               </Link>
-              <Link
-                href="/blog/was-ist-musikmarketing"
-                sx={{
-                  color: '#9e9e9e',
-                  textDecoration: 'none',
-                  fontSize: '0.875rem',
-                  '&:hover': { color: '#ffffff' },
-                }}
-              >
-                Was ist Musikmarketing?
-              </Link>
-              <Link
-                href="/blog/spotify-verdienst"
-                sx={{
-                  color: '#9e9e9e',
-                  textDecoration: 'none',
-                  fontSize: '0.875rem',
-                  '&:hover': { color: '#ffffff' },
-                }}
-              >
-                Spotify Verdienst
-              </Link>
-              <Link
-                href="/blog/musikmarketing-tipps"
-                sx={{
-                  color: '#9e9e9e',
-                  textDecoration: 'none',
-                  fontSize: '0.875rem',
-                  '&:hover': { color: '#ffffff' },
-                }}
-              >
-                Musikmarketing Tipps
-              </Link>
-              <Link
-                href="/blog/song-vermarkten"
-                sx={{
-                  color: '#9e9e9e',
-                  textDecoration: 'none',
-                  fontSize: '0.875rem',
-                  '&:hover': { color: '#ffffff' },
-                }}
-              >
-                Song vermarkten
-              </Link>
+              {latestPosts.map((post) => (
+                <Link
+                  key={post.id}
+                  href={`/blog/${post.slug}`}
+                  sx={{
+                    color: '#9e9e9e',
+                    textDecoration: 'none',
+                    fontSize: '0.875rem',
+                    '&:hover': { color: '#ffffff' },
+                  }}
+                >
+                  {post.title}
+                </Link>
+              ))}
             </Box>
           </Grid>
 
