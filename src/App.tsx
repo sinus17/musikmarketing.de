@@ -5,6 +5,7 @@ import { CssBaseline } from '@mui/material';
 import { useEffect } from 'react';
 import ReactGA from 'react-ga4';
 import CookieConsent from 'react-cookie-consent';
+import { Analytics } from '@vercel/analytics/react';
 import theme from './theme';
 import Home from './pages/HomeClean';
 import MusikmarketingAgentur from './pages/MusikmarketingAgentur';
@@ -138,6 +139,7 @@ function App() {
           <PageViewTracker />
           <AppLayout />
         </Router>
+        <Analytics />
       </HelmetProvider>
     </ThemeProvider>
   );

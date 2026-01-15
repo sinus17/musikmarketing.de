@@ -1,4 +1,51 @@
+# Default rules for all crawlers
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api
+
+# Google Bot
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+Crawl-delay: 0
+
+# OpenAI GPT Bot
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+
+# ChatGPT User Agent
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin
+
+# Anthropic Claude Bot
+User-agent: Claude-Web
+Allow: /
+Disallow: /admin
+
+# Perplexity AI Bot
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+
+# Google Gemini Bot
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin
+
+# Common AI Crawlers
+User-agent: CCBot
+Allow: /
+Disallow: /admin
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /admin
 
 Sitemap: https://musikmarketing.de/sitemap.xml

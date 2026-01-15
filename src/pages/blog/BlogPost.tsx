@@ -8,6 +8,7 @@ import {
   Typography,
   Chip,
   CircularProgress,
+  Button,
 } from '@mui/material'
 
 interface Post {
@@ -238,6 +239,64 @@ export default function BlogPost() {
             }}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+
+          {/* CTA Block */}
+          <Box
+            sx={{
+              mt: 6,
+              mb: 4,
+              p: 4,
+              bgcolor: '#1a1a1a',
+              borderRadius: 3,
+              border: '1px solid #333',
+              textAlign: 'center',
+            }}
+          >
+            <Typography
+              variant="h3"
+              sx={{
+                fontWeight: 900,
+                color: '#fff',
+                mb: 2,
+                fontSize: { xs: '1.75rem', md: '2.25rem' },
+              }}
+            >
+              Bereit durchzustarten?
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: '#999',
+                mb: 3,
+                fontSize: '1.1rem',
+                maxWidth: 600,
+                mx: 'auto',
+              }}
+            >
+              Buche jetzt deine kostenlose Strategy-Session und erhalte einen individuellen Plan für deine Musikkarriere.
+            </Typography>
+            <Button
+              variant="contained"
+              size="large"
+              href="https://swipeup-marketing.com/strategy-session"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                bgcolor: '#fff',
+                color: '#000',
+                fontWeight: 700,
+                fontSize: '1rem',
+                px: 4,
+                py: 1.5,
+                textTransform: 'none',
+                '&:hover': {
+                  bgcolor: '#e0e0e0',
+                },
+              }}
+            >
+              Jetzt kostenlose Beratung buchen
+            </Button>
+          </Box>
         </Container>
       </Box>
     </>
