@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Box, Container, Typography, Stack, CircularProgress, Chip } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
+import { generateBreadcrumbSchema } from '../utils/seo';
 
 interface Post {
   id: string;
@@ -21,6 +22,11 @@ export default function Blog() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://musikmarketing.de' },
+    { name: 'Blog', url: 'https://musikmarketing.de/blog' },
+  ]);
 
   useEffect(() => {
     checkAuthAndFetchPosts();
@@ -67,14 +73,22 @@ export default function Blog() {
   return (
     <>
       <Helmet>
-        <title>Musikmarketing Blog | Tipps & Strategien für Artists</title>
-        <meta name="description" content="Lerne Musikmarketing: Spotify Promotion, Social Media Strategien, Release-Planung & mehr. Praxiserprobte Tipps für Independent Artists." />
-        <meta name="keywords" content="Musikmarketing Blog, Artist Marketing, Spotify Tipps, Social Media für Musiker, Musikpromotion" />
+        <title>Musikmarketing Blog: Tipps & Strategien für Artists 2026</title>
+        <meta name="description" content="Musikmarketing Blog mit praxiserprobten Tipps: Spotify Promotion, Instagram Marketing, TikTok Strategien & Release-Planung für Independent Artists." />
+        <meta name="keywords" content="Musikmarketing Blog, Artist Marketing, Spotify Tipps, Social Media für Musiker, Musikpromotion, Instagram Marketing, TikTok für Musiker" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://musikmarketing.de/blog" />
-        <meta property="og:title" content="Musikmarketing Blog | Tipps & Strategien für Artists" />
-        <meta property="og:description" content="Lerne Musikmarketing: Spotify Promotion, Social Media Strategien, Release-Planung & mehr." />
+        <meta property="og:title" content="Musikmarketing Blog: Tipps & Strategien für Artists 2026" />
+        <meta property="og:description" content="Musikmarketing Blog mit praxiserprobten Tipps: Spotify Promotion, Instagram Marketing, TikTok Strategien & Release-Planung für Independent Artists." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://musikmarketing.de/blog" />
+        <meta property="og:image" content="https://musikmarketing.de/musikmarketing.png" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            ...breadcrumbSchema
+          })}
+        </script>
       </Helmet>
 
       <Box sx={{ 
@@ -98,14 +112,36 @@ export default function Blog() {
           <Typography 
             variant="body1" 
             sx={{ 
-              mb: 6, 
+              mb: 3, 
               color: '#9e9e9e',
-              maxWidth: '700px',
+              maxWidth: '800px',
               textAlign: 'left',
+              fontSize: '1.1rem',
             }}
           >
-            Praxiserprobte Tipps und Strategien für Independent Artists
+            Praxiserprobte Musikmarketing-Tipps und Strategien für Independent Artists
           </Typography>
+
+          {/* SEO Content Box */}
+          <Box sx={{ 
+            mb: 6,
+            p: 3,
+            background: '#0a0a0a',
+            border: '1px solid #2a2a2a',
+            borderRadius: '8px',
+            maxWidth: '800px',
+          }}>
+            <Typography sx={{ color: '#b0b0b0', mb: 2, lineHeight: 1.7 }}>
+              Willkommen im <strong style={{ color: '#ffffff' }}>Musikmarketing Blog</strong> von musikmarketing.de. 
+              Hier findest du aktuelle Artikel, Guides und Strategien rund um <strong style={{ color: '#ffffff' }}>Musikpromotion</strong>, 
+              Social Media Marketing und Artist Development. Alle Inhalte basieren auf praktischer Erfahrung aus hunderten 
+              erfolgreichen Kampagnen.
+            </Typography>
+            <Typography sx={{ color: '#b0b0b0', lineHeight: 1.7 }}>
+              Themen: Instagram Marketing für Musiker, Spotify Promotion, TikTok Strategien, Release-Planung, 
+              Paid Ads für Artists und vieles mehr.
+            </Typography>
+          </Box>
 
           {/* Blog Posts Grid */}
           {loading ? (

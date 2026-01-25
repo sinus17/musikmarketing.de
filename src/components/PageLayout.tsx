@@ -11,6 +11,8 @@ interface PageLayoutProps {
   ctaDescription?: string;
   ctaButtonText?: string;
   ctaButtonLink?: string;
+  canonical?: string;
+  schema?: any;
 }
 
 const PageLayout = ({ 
@@ -21,7 +23,9 @@ const PageLayout = ({
   ctaTitle = "Bereit durchzustarten?",
   ctaDescription = "Buche jetzt deine kostenlose Strategy-Session und erhalte einen individuellen Plan für deine Musikkarriere.",
   ctaButtonText = "Kostenlose Beratung buchen",
-  ctaButtonLink = "https://swipeup-marketing.com/strategy-session"
+  ctaButtonLink = "https://swipeup-marketing.com/strategy-session",
+  canonical,
+  schema
 }: PageLayoutProps) => {
   return (
     <>
@@ -30,9 +34,20 @@ const PageLayout = ({
         <meta name="description" content={description} />
         {keywords && <meta name="keywords" content={keywords} />}
         <meta name="robots" content="index, follow" />
+        {canonical && <link rel="canonical" href={canonical} />}
         <meta property="og:title" content={`${title} | Musikmarketing.de`} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
+        {canonical && <meta property="og:url" content={canonical} />}
+        <meta property="og:image" content="https://musikmarketing.de/musikmarketing.png" />
+        {schema && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              '@context': 'https://schema.org',
+              ...schema
+            })}
+          </script>
+        )}
       </Helmet>
 
       <Box sx={{ 
