@@ -99,11 +99,22 @@ const Navigation = () => {
                 display: 'flex', 
                 alignItems: 'center', 
                 textDecoration: 'none',
+                gap: 1.5,
                 '&:hover': {
                   opacity: 0.7,
                 }
               }}
             >
+              <Box
+                component="img"
+                src="/favicon/musikmarketing-logo.png"
+                alt="musikmarketing.de Logo"
+                sx={{
+                  width: 32,
+                  height: 32,
+                  objectFit: 'contain',
+                }}
+              />
               <Typography
                 variant="h6"
                 component="div"
