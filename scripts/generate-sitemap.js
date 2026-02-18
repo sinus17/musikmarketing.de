@@ -3,7 +3,12 @@ import fs from 'fs'
 import path from 'path'
 
 const supabaseUrl = process.env.VITE_SUPABASE_URL || 'https://tiofwmkrbnxgmolifcgw.supabase.co'
-const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpb2Z3bWtyYm54Z21vbGlmY2d3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAyOTI0NDksImV4cCI6MjA3NTg2ODQ0OX0.-IA1Wp3b45n0rDFHJoG1rce8LwT7yXcDgzUnt1gloxo'
+const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY
+
+if (!supabaseAnonKey) {
+  console.error('❌ Error: VITE_SUPABASE_ANON_KEY not set in environment variables')
+  process.exit(1)
+}
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey)
 

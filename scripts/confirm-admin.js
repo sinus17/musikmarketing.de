@@ -2,7 +2,7 @@ import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = 'https://tiofwmkrbnxgmolifcgw.supabase.co'
 // For admin operations, we need the service role key, but we'll use a workaround with SQL
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpb2Z3bWtyYm54Z21vbGlmY2d3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAyOTI0NDksImV4cCI6MjA3NTg2ODQ0OX0.-IA1Wp3b45n0rDFHJoG1rce8LwT7yXcDgzUnt1gloxo'
+const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY || 'USE_ENV_VAR'
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
