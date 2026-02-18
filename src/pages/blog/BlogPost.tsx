@@ -114,21 +114,7 @@ export default function BlogPost() {
 
       <Box sx={{ bgcolor: '#000', minHeight: '100vh', py: 8 }}>
         <Container maxWidth="md">
-          {/* Cover Image */}
-          {post.cover_image && (
-            <Box
-              component="img"
-              src={post.cover_image}
-              alt={post.title}
-              sx={{
-                width: '100%',
-                height: 400,
-                objectFit: 'cover',
-                borderRadius: 2,
-                mb: 4,
-              }}
-            />
-          )}
+          {/* Cover Image - Disabled */}
 
           {/* Draft Badge */}
           {isLoggedIn && post.status === 'draft' && (

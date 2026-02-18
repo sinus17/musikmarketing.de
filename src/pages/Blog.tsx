@@ -174,21 +174,7 @@ export default function Blog() {
                       }
                     }}
                   >
-                    {/* Cover Image */}
-                    {post.cover_image && (
-                      <Box
-                        component="img"
-                        src={post.cover_image}
-                        alt={post.title}
-                        sx={{
-                          width: '100%',
-                          height: 200,
-                          objectFit: 'cover',
-                          borderRadius: 1,
-                          mb: 2,
-                        }}
-                      />
-                    )}
+                    {/* Cover Image - Disabled */}
 
                     <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
                       <Box sx={{ flex: 1 }}>
