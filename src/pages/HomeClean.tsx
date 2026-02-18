@@ -272,28 +272,26 @@ const Home = () => {
                   to="/blog/musikmarketing-2026-komplette-strategie"
                   sx={{
                     p: 4,
-                    background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
-                    border: '2px solid #ff6b00',
-                    borderRadius: '12px',
+                    background: '#0a0a0a',
+                    border: '1px solid #2a2a2a',
+                    borderRadius: '8px',
                     textDecoration: 'none',
                     transition: 'all 0.3s ease',
                     display: 'flex',
                     flexDirection: 'column',
                     height: '100%',
                     '&:hover': {
-                      borderColor: '#ff8c00',
+                      borderColor: '#4a4a4a',
                       transform: 'translateY(-4px)',
-                      boxShadow: '0 12px 24px rgba(255, 107, 0, 0.2)',
+                      boxShadow: '0 8px 16px rgba(255, 255, 255, 0.1)',
                     }
                   }}
                 >
                   <Typography sx={{ 
-                    fontSize: '0.85rem',
-                    color: '#ff6b00',
-                    fontWeight: 700,
-                    mb: 1,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
+                    fontSize: '0.9rem',
+                    color: '#b0b0b0',
+                    fontWeight: 600,
+                    mb: 2,
                   }}>
                     🎯 Komplette Strategie
                   </Typography>
@@ -314,7 +312,7 @@ const Home = () => {
                   }}>
                     Die 4 Säulen moderner Musikmarketing + 30-Tage Action Plan + Case Studies von echten Künstlern
                   </Typography>
-                  <Box sx={{ mt: 'auto', color: '#ff6b00', fontWeight: 600 }}>
+                  <Box sx={{ mt: 'auto', color: '#ffffff', fontWeight: 600 }}>
                     Jetzt lesen →
                   </Box>
                 </Box>
@@ -327,28 +325,26 @@ const Home = () => {
                   to="/blog/tiktok-fuer-deutschsprachige-musiker-viral-strategien"
                   sx={{
                     p: 4,
-                    background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
-                    border: '2px solid #00d4ff',
-                    borderRadius: '12px',
+                    background: '#0a0a0a',
+                    border: '1px solid #2a2a2a',
+                    borderRadius: '8px',
                     textDecoration: 'none',
                     transition: 'all 0.3s ease',
                     display: 'flex',
                     flexDirection: 'column',
                     height: '100%',
                     '&:hover': {
-                      borderColor: '#00e6ff',
+                      borderColor: '#4a4a4a',
                       transform: 'translateY(-4px)',
-                      boxShadow: '0 12px 24px rgba(0, 212, 255, 0.2)',
+                      boxShadow: '0 8px 16px rgba(255, 255, 255, 0.1)',
                     }
                   }}
                 >
                   <Typography sx={{ 
-                    fontSize: '0.85rem',
-                    color: '#00d4ff',
-                    fontWeight: 700,
-                    mb: 1,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
+                    fontSize: '0.9rem',
+                    color: '#b0b0b0',
+                    fontWeight: 600,
+                    mb: 2,
                   }}>
                     🚀 Viral gehen
                   </Typography>
@@ -369,7 +365,7 @@ const Home = () => {
                   }}>
                     5 Viral-Formeln + Algorithmus-Breakdown + Von Views zu Spotify Streams
                   </Typography>
-                  <Box sx={{ mt: 'auto', color: '#00d4ff', fontWeight: 600 }}>
+                  <Box sx={{ mt: 'auto', color: '#ffffff', fontWeight: 600 }}>
                     Jetzt lesen →
                   </Box>
                 </Box>
@@ -382,28 +378,26 @@ const Home = () => {
                   to="/blog/0-auf-10k-follower-ohne-fake-plays"
                   sx={{
                     p: 4,
-                    background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
-                    border: '2px solid #00ff88',
-                    borderRadius: '12px',
+                    background: '#0a0a0a',
+                    border: '1px solid #2a2a2a',
+                    borderRadius: '8px',
                     textDecoration: 'none',
                     transition: 'all 0.3s ease',
                     display: 'flex',
                     flexDirection: 'column',
                     height: '100%',
                     '&:hover': {
-                      borderColor: '#00ff99',
+                      borderColor: '#4a4a4a',
                       transform: 'translateY(-4px)',
-                      boxShadow: '0 12px 24px rgba(0, 255, 136, 0.2)',
+                      boxShadow: '0 8px 16px rgba(255, 255, 255, 0.1)',
                     }
                   }}
                 >
                   <Typography sx={{ 
-                    fontSize: '0.85rem',
-                    color: '#00ff88',
-                    fontWeight: 700,
-                    mb: 1,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
+                    fontSize: '0.9rem',
+                    color: '#b0b0b0',
+                    fontWeight: 600,
+                    mb: 2,
                   }}>
                     📈 Organisches Wachstum
                   </Typography>
@@ -424,7 +418,7 @@ const Home = () => {
                   }}>
                     90-Tage Masterplan + Release Strategy + Community Building System
                   </Typography>
-                  <Box sx={{ mt: 'auto', color: '#00ff88', fontWeight: 600 }}>
+                  <Box sx={{ mt: 'auto', color: '#ffffff', fontWeight: 600 }}>
                     Jetzt lesen →
                   </Box>
                 </Box>
@@ -437,28 +431,26 @@ const Home = () => {
                   to="/blog/tiktok-shop-musiker-merchandise-2026"
                   sx={{
                     p: 4,
-                    background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
-                    border: '2px solid #ff1493',
-                    borderRadius: '12px',
+                    background: '#0a0a0a',
+                    border: '1px solid #2a2a2a',
+                    borderRadius: '8px',
                     textDecoration: 'none',
                     transition: 'all 0.3s ease',
                     display: 'flex',
                     flexDirection: 'column',
                     height: '100%',
                     '&:hover': {
-                      borderColor: '#ff69b4',
+                      borderColor: '#4a4a4a',
                       transform: 'translateY(-4px)',
-                      boxShadow: '0 12px 24px rgba(255, 20, 147, 0.2)',
+                      boxShadow: '0 8px 16px rgba(255, 255, 255, 0.1)',
                     }
                   }}
                 >
                   <Typography sx={{ 
-                    fontSize: '0.85rem',
-                    color: '#ff1493',
-                    fontWeight: 700,
-                    mb: 1,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
+                    fontSize: '0.9rem',
+                    color: '#b0b0b0',
+                    fontWeight: 600,
+                    mb: 2,
                   }}>
                     💰 Monetisierung
                   </Typography>
@@ -479,7 +471,7 @@ const Home = () => {
                   }}>
                     Setup-Guide + Preisgestaltung + Marketing-Strategie für TikTok Shop
                   </Typography>
-                  <Box sx={{ mt: 'auto', color: '#ff1493', fontWeight: 600 }}>
+                  <Box sx={{ mt: 'auto', color: '#ffffff', fontWeight: 600 }}>
                     Jetzt lesen →
                   </Box>
                 </Box>
@@ -509,14 +501,14 @@ const Home = () => {
               Jede Plattform braucht andere Strategien. Finde deine nächsten Schritte für:
             </Typography>
 
-            <Grid container spacing={2} sx={{ maxWidth: '900px', mx: 'auto' }}>
+            <Grid container spacing={2} sx={{ maxWidth: '900px', mx: 'auto', justifyContent: 'center' }}>
               {[
-                { icon: '🎵', label: 'Spotify Marketing', color: '#1DB954' },
-                { icon: '📱', label: 'Instagram Reels', color: '#E1306C' },
-                { icon: '🎬', label: 'YouTube Shorts', color: '#FF0000' },
-                { icon: '🎵', label: 'TikTok Viral', color: '#00D4FF' },
-                { icon: '💬', label: 'Discord Communities', color: '#5865F2' },
-                { icon: '📧', label: 'Email Marketing', color: '#EA4335' },
+                { icon: '🎵', label: 'Spotify Marketing' },
+                { icon: '📱', label: 'Instagram Reels' },
+                { icon: '🎬', label: 'YouTube Shorts' },
+                { icon: '🎵', label: 'TikTok Viral' },
+                { icon: '💬', label: 'Discord Communities' },
+                { icon: '📧', label: 'Email Marketing' },
               ].map((platform, idx) => (
                 <Grid item xs={12} sm={6} md={4} key={idx}>
                   <Box sx={{
@@ -528,8 +520,8 @@ const Home = () => {
                     transition: 'all 0.3s ease',
                     cursor: 'pointer',
                     '&:hover': {
-                      borderColor: platform.color,
-                      boxShadow: `0 8px 16px ${platform.color}33`,
+                      borderColor: '#4a4a4a',
+                      boxShadow: '0 8px 16px rgba(255, 255, 255, 0.1)',
                     }
                   }}>
                     <Typography sx={{ fontSize: '2.5rem', mb: 1 }}>
