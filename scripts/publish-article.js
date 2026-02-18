@@ -16,8 +16,14 @@ const __dirname = path.dirname(__filename);
 // CONFIG
 // ============================================
 
-const SUPABASE_URL = 'https://tiofwmkrbnxgmolifcgw.supabase.co';
-const SUPABASE_SERVICE_ROLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpb2Z3bWtyYm54Z21vbGlmY2d3Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MDI5MjQ0OSwiZXhwIjoyMDc1ODY4NDQ5fQ.aoVHSt3evyhJOKY5_3LbUYlfbrFbuvKOC_NLgNIz4IU';
+const SUPABASE_URL = process.env.SUPABASE_URL || 'https://tiofwmkrbnxgmolifcgw.supabase.co';
+const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!SUPABASE_SERVICE_ROLE_KEY) {
+  console.error('❌ Error: SUPABASE_SERVICE_ROLE_KEY not set in environment variables');
+  console.error('ℹ️  Please set it in .env.local or as an environment variable');
+  process.exit(1);
+}
 const TABLE_NAME = 'musikmarketing_de_posts';
 const BASE_URL = 'https://musikmarketing.de/blog';
 
