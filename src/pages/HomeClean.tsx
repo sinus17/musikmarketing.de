@@ -14,8 +14,6 @@ import {
   Divider,
   List,
   ListItem,
-  ListItemIcon,
-  ListItemText,
 } from '@mui/material';
 import { supabase } from '../lib/supabase';
 import { generateOrganizationSchema, generateWebSiteSchema, generateFAQSchema } from '../utils/seo';
@@ -35,7 +33,6 @@ interface Post {
 
 const HomeFullGuide = () => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [loadingPosts, setLoadingPosts] = useState(true);
 
   useEffect(() => {
     fetchLatestPosts();
@@ -54,8 +51,6 @@ const HomeFullGuide = () => {
       setPosts(data || []);
     } catch (error) {
       console.error('Error fetching posts:', error);
-    } finally {
-      setLoadingPosts(false);
     }
   };
 
@@ -450,6 +445,70 @@ const HomeFullGuide = () => {
                 </Typography>
               </CardContent>
             </Card>
+          </Box>
+
+          <Divider sx={{ my: 6 }} />
+
+          {/* PLATFORM HUB */}
+          <Box sx={{ mb: 6 }}>
+            <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#1a1a1a', textAlign: 'center' }}>
+              Musikmarketing nach Plattform
+            </Typography>
+            <Typography sx={{ 
+              fontSize: '1.1rem',
+              color: '#777',
+              mb: 4,
+              textAlign: 'center',
+              maxWidth: '700px',
+              mx: 'auto',
+            }}>
+              Jede Plattform braucht andere Strategien. Wähle deine nächsten Schritte:
+            </Typography>
+
+            <Grid container spacing={2} sx={{ maxWidth: '900px', mx: 'auto', justifyContent: 'center' }}>
+              {[
+                { icon: '🎵', label: 'Spotify Marketing', slug: 'spotify-marketing-musiker-2026' },
+                { icon: '📱', label: 'Instagram Reels', slug: 'instagram-reels-musik-promotion-strategie' },
+                { icon: '🎬', label: 'YouTube Shorts', slug: 'youtube-shorts-musik' },
+                { icon: '🎵', label: 'TikTok Viral', slug: 'tiktok-viral-musiker' },
+                { icon: '💬', label: 'Discord Community', slug: 'discord-community-musiker' },
+                { icon: '📧', label: 'Email Marketing', slug: 'email-marketing-musiker-fan-liste' },
+              ].map((platform) => (
+                <Grid item xs={12} sm={6} md={4} key={platform.slug}>
+                  <Link to={`/blog/${platform.slug}`} style={{ textDecoration: 'none' }}>
+                    <Box sx={{
+                      p: 3,
+                      background: '#f9f9f9',
+                      border: '1px solid #e0e0e0',
+                      borderRadius: '8px',
+                      textAlign: 'center',
+                      transition: 'all 0.3s ease',
+                      cursor: 'pointer',
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      '&:hover': {
+                        borderColor: '#00d4ff',
+                        boxShadow: '0 8px 16px rgba(0, 212, 255, 0.2)',
+                        transform: 'translateY(-4px)',
+                      }
+                    }}>
+                      <Typography sx={{ fontSize: '2.5rem', mb: 1 }}>
+                        {platform.icon}
+                      </Typography>
+                      <Typography sx={{ 
+                        fontSize: '1.1rem',
+                        fontWeight: 600,
+                        color: '#1a1a1a',
+                      }}>
+                        {platform.label}
+                      </Typography>
+                    </Box>
+                  </Link>
+                </Grid>
+              ))}
+            </Grid>
           </Box>
 
           <Divider sx={{ my: 6 }} />
