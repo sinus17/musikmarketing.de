@@ -475,7 +475,7 @@ const HomeFullGuide = () => {
                 { icon: '📧', label: 'Email Marketing', slug: 'email-marketing-musiker-fan-liste' },
               ].map((platform) => (
                 <Grid item xs={12} sm={6} md={4} key={platform.slug}>
-                  <Link to={`/blog/${platform.slug}`} style={{ textDecoration: 'none' }}>
+                  <Link to={`/blog/${platform.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
                     <Box sx={{
                       p: 3,
                       background: '#f9f9f9',
