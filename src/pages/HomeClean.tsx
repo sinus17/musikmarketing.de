@@ -10,7 +10,6 @@ import {
   Grid,
   Card,
   CardContent,
-  Chip,
   Divider,
   List,
   ListItem,
@@ -153,21 +152,6 @@ const HomeFullGuide = () => {
             Fans aufbauen. Streams messen. Musik vermarkten.
             <br />
             <strong>Vollständig kostenlos. Praktisch umzusetzen. Für jeden Musiker.</strong>
-          </Typography>
-
-          <Stack 
-            direction="row" 
-            spacing={3} 
-            sx={{ mt: 4, justifyContent: 'center', flexWrap: 'wrap' }}
-          >
-            <Chip label="6000+ Wörter" size="small" variant="outlined" sx={{ color: '#aaa', borderColor: '#555' }} />
-            <Chip label="8 Kapitel" size="small" variant="outlined" sx={{ color: '#aaa', borderColor: '#555' }} />
-            <Chip label="Aktualisiert 2026" size="small" variant="outlined" sx={{ color: '#aaa', borderColor: '#555' }} />
-            <Chip label="30-Tage Action Plan" size="small" variant="outlined" sx={{ color: '#aaa', borderColor: '#555' }} />
-          </Stack>
-
-          <Typography sx={{ fontSize: '0.9em', color: '#666', mt: 3 }}>
-            Scroll down für den kompletten Guide
           </Typography>
         </Container>
       </Box>
