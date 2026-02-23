@@ -95,16 +95,16 @@ const HomeFullGuide = () => {
   return (
     <>
       <Helmet>
-        <title>Musikmarketing in Deutschland 2026: Der komplette Leitfaden</title>
+        <title>musikmarketing.de | Tipps & Strategien für Musiker:innen</title>
         <meta 
           name="description" 
-          content="Musikmarketing Komplettanleitung 2026: 4-Schritt-Framework, Platform-Strategien, Traffic-Generation, 30-Tage Action Plan. Von Anfänger zu Profi — vollständig kostenlos." 
+          content="Praktische Musik-Marketing Tipps & bewährte Strategien. Organisches Wachstum, Paid Ads, TikTok, Spotify, Instagram. Kostenlos & sofort umsetzbar." 
         />
         <meta name="keywords" content="Musikmarketing, Musikmarketing Deutschland, Musik vermarkten, Musikpromotion, Artist Marketing, Social Media Marketing, Spotify, Instagram Ads, TikTok Marketing" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://musikmarketing.de/" />
-        <meta property="og:title" content="Musikmarketing in Deutschland 2026: Der komplette Leitfaden" />
-        <meta property="og:description" content="6000+ Wörter Komplettanleitung zu erfolgreichem Musikmarketing. Kostenlos, praktisch, für jeden Musiker." />
+        <meta property="og:title" content="musikmarketing.de | Tipps & Strategien für Musiker:innen" />
+        <meta property="og:description" content="Praktische Musik-Marketing Tipps & bewährte Strategien. Organisches Wachstum, Paid Ads, TikTok, Spotify, Instagram. Kostenlos & sofort umsetzbar." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://musikmarketing.de/" />
         <meta property="og:image" content="https://musikmarketing.de/musikmarketing-hero.jpg" />
