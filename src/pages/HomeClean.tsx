@@ -170,7 +170,7 @@ const HomeFullGuide = () => {
                 <ListItem>
                   <Typography 
                     component="a" 
-                    href="#chapter-1" 
+                    href="#was-ist-musikmarketing" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
                     1. Definition + Kernproblem
@@ -179,7 +179,7 @@ const HomeFullGuide = () => {
                 <ListItem>
                   <Typography 
                     component="a" 
-                    href="#chapter-2" 
+                    href="#4-schritt-framework" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
                     2. Das 4-Schritt-Framework
@@ -188,7 +188,7 @@ const HomeFullGuide = () => {
                 <ListItem>
                   <Typography 
                     component="a" 
-                    href="#chapter-3" 
+                    href="#platform-deep-dives-2026" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
                     3. Platform Deep-Dives 2026
@@ -197,7 +197,7 @@ const HomeFullGuide = () => {
                 <ListItem>
                   <Typography 
                     component="a" 
-                    href="#chapter-4" 
+                    href="#traffic-strategien-organic-vs-paid" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
                     4. Traffic-Strategien
@@ -210,7 +210,7 @@ const HomeFullGuide = () => {
                 <ListItem>
                   <Typography 
                     component="a" 
-                    href="#chapter-5" 
+                    href="#haeufige-fehler" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
                     5. Häufige Fehler
@@ -219,7 +219,7 @@ const HomeFullGuide = () => {
                 <ListItem>
                   <Typography 
                     component="a" 
-                    href="#chapter-6" 
+                    href="#30-tage-action-plan" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
                     6. 30-Tage Action Plan
@@ -228,7 +228,7 @@ const HomeFullGuide = () => {
                 <ListItem>
                   <Typography 
                     component="a" 
-                    href="#chapter-7" 
+                    href="#faq" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
                     7. FAQ
@@ -237,7 +237,7 @@ const HomeFullGuide = () => {
                 <ListItem>
                   <Typography 
                     component="a" 
-                    href="#chapter-8" 
+                    href="#naechster-schritt" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
                     8. Nächste Schritte
@@ -256,7 +256,7 @@ const HomeFullGuide = () => {
         <Container maxWidth="md">
 
           {/* KAPITEL 1 */}
-          <Box id="chapter-1" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+          <Box id="was-ist-musikmarketing" sx={{ mb: 6, scrollMarginTop: '80px' }}>
             <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
               1. Was ist Musikmarketing? (Und warum funktionieren Standard-Tipps nicht)
             </Typography>
@@ -338,7 +338,7 @@ const HomeFullGuide = () => {
           <Divider sx={{ my: 6, borderColor: '#333' }} />
 
           {/* KAPITEL 2 */}
-          <Box id="chapter-2" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+          <Box id="4-schritt-framework" sx={{ mb: 6, scrollMarginTop: '80px' }}>
             <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
               2. Das 4-Schritt-Framework (Bewährt &amp; Messbar)
             </Typography>
@@ -411,7 +411,7 @@ const HomeFullGuide = () => {
           <Divider sx={{ my: 6, borderColor: '#333' }} />
 
           {/* KAPITEL 3 */}
-          <Box id="chapter-3" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+          <Box id="platform-deep-dives-2026" sx={{ mb: 6, scrollMarginTop: '80px' }}>
             <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
               3. Platform Deep-Dives 2026
             </Typography>
@@ -526,7 +526,7 @@ const HomeFullGuide = () => {
           <Divider sx={{ my: 6, borderColor: '#333' }} />
 
           {/* KAPITEL 4 */}
-          <Box id="chapter-4" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+          <Box id="traffic-strategien-organic-vs-paid" sx={{ mb: 6, scrollMarginTop: '80px' }}>
             <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
               4. Traffic-Strategien 2026: Organic vs. Paid
             </Typography>
@@ -595,7 +595,7 @@ const HomeFullGuide = () => {
           <Divider sx={{ my: 6, borderColor: '#333' }} />
 
           {/* KAPITEL 5 */}
-          <Box id="chapter-5" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+          <Box id="haeufige-fehler" sx={{ mb: 6, scrollMarginTop: '80px' }}>
             <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
               5. Häufige Fehler (Und wie du sie vermeidest)
             </Typography>
@@ -661,7 +661,7 @@ const HomeFullGuide = () => {
           <Divider sx={{ my: 6, borderColor: '#333' }} />
 
           {/* KAPITEL 6 */}
-          <Box id="chapter-6" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+          <Box id="30-tage-action-plan" sx={{ mb: 6, scrollMarginTop: '80px' }}>
             <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
               6. 30-Tage Action Plan
             </Typography>
@@ -730,7 +730,7 @@ const HomeFullGuide = () => {
           <Divider sx={{ my: 6, borderColor: '#333' }} />
 
           {/* KAPITEL 7 */}
-          <Box id="chapter-7" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+          <Box id="faq" sx={{ mb: 6, scrollMarginTop: '80px' }}>
             <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 4, color: '#fff' }}>
               7. FAQ
             </Typography>
@@ -761,7 +761,7 @@ const HomeFullGuide = () => {
           <Divider sx={{ my: 6, borderColor: '#333' }} />
 
           {/* KAPITEL 8 */}
-          <Box id="chapter-8" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+          <Box id="naechster-schritt" sx={{ mb: 6, scrollMarginTop: '80px' }}>
             <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
               8. Dein nächster Schritt
             </Typography>
