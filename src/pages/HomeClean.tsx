@@ -108,6 +108,10 @@ const HomeFullGuide = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://musikmarketing.de/" />
         <meta property="og:image" content="https://musikmarketing.de/musikmarketing-hero.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="musikmarketing.de | Tipps & Strategien für Musiker:innen" />
+        <meta name="twitter:description" content="Praktische Musik-Marketing Tipps & bewährte Strategien. Organisches Wachstum, Paid Ads, TikTok, Spotify, Instagram. Kostenlos & sofort umsetzbar." />
+        <meta name="twitter:image" content="https://musikmarketing.de/musikmarketing-hero.jpg" />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
