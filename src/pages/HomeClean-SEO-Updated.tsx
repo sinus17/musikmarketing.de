@@ -30,7 +30,6 @@ interface Post {
 
 const HomeUpdated = () => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [loadingPosts, setLoadingPosts] = useState(true);
 
   useEffect(() => {
     fetchLatestPosts();
@@ -49,8 +48,6 @@ const HomeUpdated = () => {
       setPosts(data || []);
     } catch (error) {
       console.error('Error fetching posts:', error);
-    } finally {
-      setLoadingPosts(false);
     }
   };
 

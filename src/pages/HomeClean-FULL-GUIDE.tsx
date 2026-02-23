@@ -13,9 +13,7 @@ import {
   Chip,
   Divider,
   List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
+  ListItem
 } from '@mui/material';
 import { supabase } from '../lib/supabase';
 import { generateOrganizationSchema, generateWebSiteSchema, generateFAQSchema } from '../utils/seo';
@@ -35,7 +33,6 @@ interface Post {
 
 const HomeFullGuide = () => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [loadingPosts, setLoadingPosts] = useState(true);
 
   useEffect(() => {
     fetchLatestPosts();
@@ -54,8 +51,6 @@ const HomeFullGuide = () => {
       setPosts(data || []);
     } catch (error) {
       console.error('Error fetching posts:', error);
-    } finally {
-      setLoadingPosts(false);
     }
   };
 
