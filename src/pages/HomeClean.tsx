@@ -889,11 +889,12 @@ const HomeFullGuide = () => {
                       textDecoration: 'none',
                       color: 'inherit',
                       background: '#1a1a1a',
-                      border: '1px solid #333',
-                      transition: 'transform 0.3s, box-shadow 0.3s',
+                      border: '2px solid #555',
+                      transition: 'transform 0.3s, box-shadow 0.3s, border-color 0.3s',
                       '&:hover': {
                         transform: 'translateY(-4px)',
                         boxShadow: '0 8px 24px rgba(255,255,255,0.1)',
+                        borderColor: '#fff',
                       }
                     }}
                   >
