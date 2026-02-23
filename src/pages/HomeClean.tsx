@@ -467,12 +467,12 @@ const HomeFullGuide = () => {
 
             <Grid container spacing={2} sx={{ maxWidth: '900px', mx: 'auto', justifyContent: 'center' }}>
               {[
-                { icon: '🎵', label: 'Spotify Marketing', slug: 'spotify-marketing-musiker-2026' },
-                { icon: '📱', label: 'Instagram Reels', slug: 'instagram-reels-musik-promotion-strategie' },
+                { icon: '🎵', label: 'Spotify Marketing', slug: 'spotify-marketing-streams' },
+                { icon: '📱', label: 'Instagram Reels', slug: 'instagram-reels-musik-strategie' },
                 { icon: '🎬', label: 'YouTube Shorts', slug: 'youtube-shorts-musik' },
-                { icon: '🎵', label: 'TikTok Viral', slug: 'tiktok-viral-musiker' },
-                { icon: '💬', label: 'Discord Community', slug: 'discord-community-musiker' },
-                { icon: '📧', label: 'Email Marketing', slug: 'email-marketing-musiker-fan-liste' },
+                { icon: '🔴', label: 'TikTok Viral', slug: 'tiktok-musikmarketing-guide' },
+                { icon: '📊', label: 'Musikmarketing Fehler', slug: 'musikmarketing-fehler-vermeiden' },
+                { icon: '💰', label: 'Budget & ROI', slug: 'musikmarketing-budget-roi' },
               ].map((platform) => (
                 <Grid item xs={12} sm={6} md={4} key={platform.slug}>
                   <Link to={`/blog/${platform.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
