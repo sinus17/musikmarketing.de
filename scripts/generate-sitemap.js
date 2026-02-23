@@ -3,14 +3,16 @@ import fs from 'fs'
 import path from 'path'
 import dotenv from 'dotenv'
 
-// Load .env.local
+// Load .env.local (for local development)
 dotenv.config({ path: '.env.local' })
 
-const supabaseUrl = process.env.VITE_SUPABASE_URL || 'https://tiofwmkrbnxgmolifcgw.supabase.co'
+const supabaseUrl = process.env.VITE_SUPABASE_URL
 const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY
 
-if (!supabaseAnonKey) {
-  console.error('❌ Error: VITE_SUPABASE_ANON_KEY not set in environment variables')
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error('❌ Error: VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY must be set')
+  console.error('   - Local: Create .env.local or use netlify.toml')
+  console.error('   - Netlify: Set environment variables in Site Settings')
   process.exit(1)
 }
 

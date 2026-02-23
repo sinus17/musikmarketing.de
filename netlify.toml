@@ -1,0 +1,16 @@
+[build]
+command = "npm run build"
+publish = "dist"
+
+# Environment variables for Netlify
+# IMPORTANT: Set these in Netlify UI under Site Settings → Build & Deploy → Environment
+[build.environment]
+# These are public Supabase keys (safe to expose)
+VITE_SUPABASE_URL = "https://tiofwmkrbnxgmolifcgw.supabase.co"
+VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpb2Z3bWtyYm54Z21vbGlmY2d3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAyOTI0NDksImV4cCI6MjA3NTg2ODQ0OX0.-IA1Wp3b45n0rDFHJoG1rce8LwT7yXcDgzUnt1gloxo"
+
+# Redirect SPA to index.html
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
