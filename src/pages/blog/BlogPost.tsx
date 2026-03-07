@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { supabase } from '../../lib/supabase'
 import {
@@ -9,6 +9,10 @@ import {
   Chip,
   CircularProgress,
   Button,
+  Grid,
+  Card,
+  CardContent,
+  Pagination,
 } from '@mui/material'
 
 interface Post {
@@ -32,6 +36,9 @@ export default function BlogPost() {
   const [error, setError] = useState('')
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [authChecked, setAuthChecked] = useState(false)
+  const [relatedPosts, setRelatedPosts] = useState<Post[]>([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const postsPerPage = 12
 
   useEffect(() => {
     checkAuth()
@@ -64,11 +71,35 @@ export default function BlogPost() {
 
       if (error) throw error
       setPost(data)
+      
+      fetchRelatedPosts(data.id)
     } catch (error: any) {
       console.error('Error fetching post:', error)
       setError('Artikel nicht gefunden')
     } finally {
       setLoading(false)
+    }
+  }
+
+  const fetchRelatedPosts = async (currentPostId: string) => {
+    try {
+      let query = supabase
+        .from('musikmarketing_de_posts')
+        .select('*')
+        .neq('id', currentPostId)
+        .order('created_at', { ascending: false })
+        .limit(60)
+
+      if (!isLoggedIn) {
+        query = query.eq('status', 'published')
+      }
+
+      const { data, error } = await query
+
+      if (error) throw error
+      setRelatedPosts(data || [])
+    } catch (error: any) {
+      console.error('Error fetching related posts:', error)
     }
   }
 
@@ -284,6 +315,107 @@ export default function BlogPost() {
             </Button>
           </Box>
         </Container>
+
+        {/* Related Articles Section */}
+        {relatedPosts.length > 0 && (
+          <Box sx={{ bgcolor: '#000', py: 6 }}>
+            <Container maxWidth="lg">
+              <Typography
+                variant="h2"
+                sx={{
+                  fontWeight: 700,
+                  color: '#fff',
+                  mb: 4,
+                  fontSize: { xs: '1.5rem', md: '2rem' },
+                }}
+              >
+                Weitere Artikel zum Musikmarketing
+              </Typography>
+
+              <Grid container spacing={3}>
+                {relatedPosts
+                  .slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)
+                  .map((relatedPost) => (
+                    <Grid item xs={12} sm={6} md={3} key={relatedPost.id}>
+                      <Card
+                        component={Link}
+                        to={`/blog/${relatedPost.slug}`}
+                        sx={{
+                          bgcolor: '#0a0a0a',
+                          border: '1px solid #2a2a2a',
+                          borderRadius: 1,
+                          transition: 'border-color 0.2s',
+                          textDecoration: 'none',
+                          display: 'block',
+                          height: '100%',
+                          '&:hover': {
+                            borderColor: '#4a4a4a',
+                          },
+                        }}
+                      >
+                        <CardContent sx={{ p: 2.5 }}>
+                          <Typography
+                            sx={{
+                              fontSize: '1rem',
+                              fontWeight: 600,
+                              color: '#fff',
+                              mb: 1,
+                              lineHeight: 1.4,
+                            }}
+                          >
+                            {relatedPost.title}
+                          </Typography>
+                          <Typography
+                            sx={{
+                              fontSize: '0.875rem',
+                              color: '#9e9e9e',
+                              mb: 1.5,
+                              lineHeight: 1.5,
+                              display: '-webkit-box',
+                              WebkitLineClamp: 3,
+                              WebkitBoxOrient: 'vertical',
+                              overflow: 'hidden',
+                            }}
+                          >
+                            {relatedPost.excerpt}
+                          </Typography>
+                          <Typography
+                            sx={{
+                              fontSize: '0.75rem',
+                              color: '#6e6e6e',
+                            }}
+                          >
+                            {formatDate(relatedPost.published_date || relatedPost.created_at)}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  ))}
+              </Grid>
+
+              {/* Pagination */}
+              {relatedPosts.length > postsPerPage && (
+                <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+                  <Pagination
+                    count={Math.ceil(relatedPosts.length / postsPerPage)}
+                    page={currentPage}
+                    onChange={(_, page) => setCurrentPage(page)}
+                    sx={{
+                      '& .MuiPaginationItem-root': {
+                        color: '#fff',
+                        borderColor: '#333',
+                      },
+                      '& .MuiPaginationItem-root.Mui-selected': {
+                        bgcolor: '#fff',
+                        color: '#000',
+                      },
+                    }}
+                  />
+                </Box>
+              )}
+            </Container>
+          </Box>
+        )}
       </Box>
     </>
   )

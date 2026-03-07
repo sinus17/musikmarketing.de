@@ -13,6 +13,7 @@ import {
   Divider,
   List,
   ListItem,
+  Pagination,
 } from '@mui/material';
 import { supabase } from '../lib/supabase';
 import { generateOrganizationSchema, generateWebSiteSchema, generateFAQSchema } from '../utils/seo';
@@ -32,6 +33,8 @@ interface Post {
 
 const HomeFullGuide = () => {
   const [posts, setPosts] = useState<Post[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 12;
 
   useEffect(() => {
     fetchLatestPosts();
@@ -43,8 +46,8 @@ const HomeFullGuide = () => {
         .from('musikmarketing_de_posts')
         .select('*')
         .eq('status', 'published')
-        .order('published_date', { ascending: false, nullsFirst: false })
-        .limit(3);
+        .order('created_at', { ascending: false })
+        .limit(60);
 
       if (error) throw error;
       setPosts(data || []);
@@ -840,21 +843,6 @@ const HomeFullGuide = () => {
                 Starte deinen 30-Tage Plan
               </Button>
               
-              <Button 
-                variant="outlined"
-                sx={{
-                  color: '#fff',
-                  borderColor: '#555',
-                  px: 4,
-                  py: 1.8,
-                  fontSize: '1rem',
-                  fontWeight: 'bold',
-                  textTransform: 'none',
-                  '&:hover': { background: '#333' },
-                }}
-              >
-                Tritt unserer Community bei
-              </Button>
             </Stack>
 
             <Typography sx={{ fontSize: '0.9em', color: '#666', mt: 3 }}>
@@ -883,8 +871,10 @@ const HomeFullGuide = () => {
             </Typography>
 
             <Grid container spacing={3}>
-              {posts.map((post) => (
-                <Grid item xs={12} sm={6} md={4} key={post.id}>
+              {posts
+                .slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)
+                .map((post) => (
+                <Grid item xs={12} sm={6} md={3} key={post.id}>
                   <Card 
                     component={Link}
                     to={`/blog/${post.slug}`}
@@ -927,6 +917,26 @@ const HomeFullGuide = () => {
                 </Grid>
               ))}
             </Grid>
+
+            {posts.length > postsPerPage && (
+              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 6 }}>
+                <Pagination
+                  count={Math.ceil(posts.length / postsPerPage)}
+                  page={currentPage}
+                  onChange={(_, page) => setCurrentPage(page)}
+                  sx={{
+                    '& .MuiPaginationItem-root': {
+                      color: '#fff',
+                      borderColor: '#555',
+                    },
+                    '& .MuiPaginationItem-root.Mui-selected': {
+                      bgcolor: '#fff',
+                      color: '#000',
+                    },
+                  }}
+                />
+              </Box>
+            )}
           </Container>
         </Box>
       )}

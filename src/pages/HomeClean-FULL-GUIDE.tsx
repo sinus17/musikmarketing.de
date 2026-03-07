@@ -760,21 +760,6 @@ const HomeFullGuide = () => {
                 Starte deinen 30-Tage Plan
               </Button>
               
-              <Button 
-                variant="outlined"
-                sx={{
-                  color: '#0066cc',
-                  borderColor: '#0066cc',
-                  px: 4,
-                  py: 1.8,
-                  fontSize: '1rem',
-                  fontWeight: 'bold',
-                  textTransform: 'none',
-                  '&:hover': { background: '#f0f9ff' },
-                }}
-              >
-                Tritt unserer Community bei
-              </Button>
             </Stack>
 
             <Typography sx={{ fontSize: '0.9em', color: '#999', mt: 3 }}>
