@@ -43,7 +43,6 @@ export default function Blog() {
       let query = supabase
         .from('musikmarketing_de_posts')
         .select('*')
-        .order('published_date', { ascending: false, nullsFirst: false })
         .order('created_at', { ascending: false });
 
       if (!loggedIn) {

@@ -10,6 +10,7 @@
     "generate:sitemap": "node scripts/generate-sitemap.js",
     "submit:google": "node scripts/submit-to-google.js",
     "publish": "node scripts/publish-article.js",
+    "publish:all": "node publish-all-articles.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

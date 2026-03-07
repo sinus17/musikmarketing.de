@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 
 // Load .env.local (for local development)
 dotenv.config({ path: '.env.local' })
+dotenv.config({ path: '.env' })
 
 const supabaseUrl = process.env.VITE_SUPABASE_URL
 const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY
