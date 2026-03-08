@@ -31,13 +31,24 @@ interface Post {
   created_at: string;
 }
 
+interface YouTubeVideo {
+  id: string;
+  title: string;
+  description: string;
+  thumbnail: string;
+  publishedAt: string;
+  videoId: string;
+}
+
 const HomeFullGuide = () => {
   const [posts, setPosts] = useState<Post[]>([]);
+  const [videos, setVideos] = useState<YouTubeVideo[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 12;
 
   useEffect(() => {
     fetchLatestPosts();
+    fetchYouTubeVideos();
   }, []);
 
   const fetchLatestPosts = async () => {
@@ -53,6 +64,41 @@ const HomeFullGuide = () => {
       setPosts(data || []);
     } catch (error) {
       console.error('Error fetching posts:', error);
+    }
+  };
+
+  const fetchYouTubeVideos = async () => {
+    try {
+      const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
+      const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
+
+      if (!API_KEY || !CHANNEL_ID) {
+        console.error('YouTube API credentials not configured');
+        return;
+      }
+
+      const response = await fetch(
+        `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=6&type=video`
+      );
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch YouTube videos');
+      }
+
+      const data = await response.json();
+
+      const videoList: YouTubeVideo[] = data.items.map((item: any) => ({
+        id: item.id.videoId,
+        title: item.snippet.title,
+        description: item.snippet.description,
+        thumbnail: item.snippet.thumbnails.high.url,
+        publishedAt: item.snippet.publishedAt,
+        videoId: item.id.videoId,
+      }));
+
+      setVideos(videoList);
+    } catch (err: any) {
+      console.error('Error fetching YouTube videos:', err);
     }
   };
 
@@ -162,6 +208,137 @@ const HomeFullGuide = () => {
           </Typography>
         </Container>
       </Box>
+
+      {/* ============================================
+          YOUTUBE VIDEOS GRID
+          ============================================ */}
+      {videos.length > 0 && (
+        <Box sx={{ pb: 6, background: '#0a0a0a' }}>
+          <Container maxWidth="lg">
+            <Typography
+              sx={{
+                fontSize: { xs: '1.8rem', md: '2rem' },
+                fontWeight: 700,
+                mb: 4,
+                color: '#fff',
+                textAlign: 'center',
+              }}
+            >
+              Neueste Videos
+            </Typography>
+            <Grid container spacing={3}>
+              {videos.map((video) => (
+                <Grid item xs={12} sm={6} md={4} key={video.id}>
+                  <Card
+                    component="a"
+                    href={`https://www.youtube.com/watch?v=${video.videoId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      bgcolor: '#1a1a1a',
+                      border: '2px solid #555',
+                      borderRadius: 2,
+                      transition: 'transform 0.3s, box-shadow 0.3s, border-color 0.3s',
+                      textDecoration: 'none',
+                      display: 'block',
+                      height: '100%',
+                      '&:hover': {
+                        transform: 'translateY(-4px)',
+                        boxShadow: '0 8px 24px rgba(255,255,255,0.1)',
+                        borderColor: '#fff',
+                      },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        position: 'relative',
+                        paddingTop: '56.25%',
+                        backgroundImage: `url(${video.thumbnail})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        filter: 'grayscale(100%)',
+                        transition: 'filter 0.3s',
+                        '&:hover': {
+                          filter: 'grayscale(0%)',
+                        },
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          position: 'absolute',
+                          top: '50%',
+                          left: '50%',
+                          transform: 'translate(-50%, -50%)',
+                          width: 60,
+                          height: 60,
+                          bgcolor: 'rgba(255, 0, 0, 0.8)',
+                          borderRadius: '50%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          '&:hover': {
+                            bgcolor: 'rgba(255, 0, 0, 1)',
+                          },
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            width: 0,
+                            height: 0,
+                            borderLeft: '15px solid white',
+                            borderTop: '10px solid transparent',
+                            borderBottom: '10px solid transparent',
+                            ml: '5px',
+                          }}
+                        />
+                      </Box>
+                    </Box>
+                    <CardContent sx={{ p: 2.5 }}>
+                      <Typography
+                        sx={{
+                          fontSize: '1rem',
+                          fontWeight: 600,
+                          color: '#fff',
+                          mb: 1,
+                          lineHeight: 1.4,
+                          display: '-webkit-box',
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden',
+                        }}
+                      >
+                        {video.title}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontSize: '0.875rem',
+                          color: '#9e9e9e',
+                          mb: 1.5,
+                          lineHeight: 1.5,
+                          display: '-webkit-box',
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden',
+                        }}
+                      >
+                        {video.description}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontSize: '0.75rem',
+                          color: '#6e6e6e',
+                        }}
+                      >
+                        {formatDate(video.publishedAt)}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
+        </Box>
+      )}
 
       {/* ============================================
           TABLE OF CONTENTS

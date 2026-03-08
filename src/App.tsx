@@ -11,6 +11,7 @@ import Home from './pages/HomeClean';
 import MusikmarketingAgentur from './pages/MusikmarketingAgentur';
 import Blog from './pages/Blog';
 import BlogPost from './pages/blog/BlogPost';
+import Podcast from './pages/Podcast';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
@@ -61,6 +62,7 @@ function AppLayout() {
           <Route path="/musikmarketing-agentur" element={<MusikmarketingAgentur />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/podcast" element={<Podcast />} />
         </Routes>
       </main>
       <Footer />
