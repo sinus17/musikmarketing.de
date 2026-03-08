@@ -189,9 +189,9 @@ const HomeFullGuide = () => {
               color: '#fff',
             }}
           >
-            Musikmarketing in Deutschland 2026
+            musikmarketing.de
             <br />
-            Der komplette Leitfaden
+            Tipps & Strategien für Musiker:innen
           </Typography>
           
           <Typography 
@@ -202,9 +202,7 @@ const HomeFullGuide = () => {
               lineHeight: 1.6,
             }}
           >
-            Fans aufbauen. Streams messen. Musik vermarkten.
-            <br />
-            <strong>Vollständig kostenlos. Praktisch umzusetzen. Für jeden Musiker.</strong>
+            Social Media Reichweite aufbauen, Spotify Hörer steigern & mehr Tickets verkaufen.
           </Typography>
         </Container>
       </Box>
