@@ -16,7 +16,7 @@ import {
   Pagination,
 } from '@mui/material';
 import { supabase } from '../lib/supabase';
-import { generateOrganizationSchema, generateWebSiteSchema, generateFAQSchema } from '../utils/seo';
+import { generateOrganizationSchema, generateWebSiteSchema, generateFAQSchema, generateBreadcrumbSchema } from '../utils/seo';
 
 interface Post {
   id: string;
@@ -111,6 +111,10 @@ const HomeFullGuide = () => {
     });
   };
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://musikmarketing.de/' }
+  ]);
+
   const organizationSchema = generateOrganizationSchema();
   const websiteSchema = generateWebSiteSchema();
   
@@ -144,27 +148,27 @@ const HomeFullGuide = () => {
   return (
     <>
       <Helmet>
-        <title>musikmarketing.de | Tipps & Strategien für Musiker:innen</title>
+        <title>Musikmarketing Guide 2026 | Meta Ads, TikTok & Spotify Strategien für Artists</title>
         <meta 
           name="description" 
-          content="Praktische Musik-Marketing Tipps & bewährte Strategien. Organisches Wachstum, Paid Ads, TikTok, Spotify, Instagram. Kostenlos & sofort umsetzbar." 
+          content="Professionelles Musikmarketing mit €3,5M Ad Spend Erfahrung. Meta Ads, TikTok Ads, Spotify Marketing & Fan-CRM. Praktische Strategien für Artists & Labels. Kostenlos & sofort umsetzbar." 
         />
-        <meta name="keywords" content="Musikmarketing, Musikmarketing Deutschland, Musik vermarkten, Musikpromotion, Artist Marketing, Social Media Marketing, Spotify, Instagram Ads, TikTok Marketing" />
+        <meta name="keywords" content="Musikmarketing 2026, Musikmarketing Deutschland, Meta Ads für Musiker, TikTok Ads Musik, Spotify Marketing, Artist Marketing, Social Media Marketing, Fan-CRM, Musik Promotion" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://musikmarketing.de/" />
-        <meta property="og:title" content="musikmarketing.de | Tipps & Strategien für Musiker:innen" />
-        <meta property="og:description" content="Praktische Musik-Marketing Tipps & bewährte Strategien. Organisches Wachstum, Paid Ads, TikTok, Spotify, Instagram. Kostenlos & sofort umsetzbar." />
+        <meta property="og:title" content="Musikmarketing Guide 2026 | Meta Ads, TikTok & Spotify Strategien" />
+        <meta property="og:description" content="Professionelles Musikmarketing mit €3,5M Ad Spend Erfahrung. Meta Ads, TikTok, Spotify Marketing & Fan-CRM für Artists." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://musikmarketing.de/" />
         <meta property="og:image" content="https://musikmarketing.de/musikmarketing-hero.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="musikmarketing.de | Tipps & Strategien für Musiker:innen" />
-        <meta name="twitter:description" content="Praktische Musik-Marketing Tipps & bewährte Strategien. Organisches Wachstum, Paid Ads, TikTok, Spotify, Instagram. Kostenlos & sofort umsetzbar." />
+        <meta name="twitter:title" content="Musikmarketing Guide 2026 | Meta Ads, TikTok & Spotify Strategien" />
+        <meta name="twitter:description" content="Professionelles Musikmarketing mit €3,5M Ad Spend Erfahrung. Meta Ads, TikTok, Spotify Marketing & Fan-CRM." />
         <meta name="twitter:image" content="https://musikmarketing.de/musikmarketing-hero.jpg" />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
-            '@graph': [organizationSchema, websiteSchema, faqSchema]
+            '@graph': [organizationSchema, websiteSchema, faqSchema, breadcrumbSchema]
           })}
         </script>
       </Helmet>
@@ -189,9 +193,9 @@ const HomeFullGuide = () => {
               color: '#fff',
             }}
           >
-            musikmarketing.de
+            Musikmarketing 2026
             <br />
-            Tipps & Strategien für Musiker:innen
+            Meta Ads, TikTok & Spotify Strategien für Artists
           </Typography>
           
           <Typography 

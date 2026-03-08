@@ -1,29 +1,48 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
-import { useEffect } from 'react';
+import { CssBaseline, Box, CircularProgress } from '@mui/material';
+import { useEffect, Suspense, lazy } from 'react';
 import ReactGA from 'react-ga4';
 import CookieConsent from 'react-cookie-consent';
 import { Analytics } from '@vercel/analytics/react';
 import theme from './theme';
-import Home from './pages/HomeClean';
-import MusikmarketingAgentur from './pages/MusikmarketingAgentur';
-import Blog from './pages/Blog';
-import BlogPost from './pages/blog/BlogPost';
-import Podcast from './pages/Podcast';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
-// Admin Pages
-import AdminLogin from './pages/admin/AdminLogin';
-import AdminDashboard from './pages/admin/AdminDashboard';
-import BlogManagement from './pages/admin/BlogManagement';
-import BlogCreate from './pages/admin/BlogCreate';
-import BlogEdit from './pages/admin/BlogEdit';
+// Lazy load main pages for code splitting
+const Home = lazy(() => import('./pages/HomeClean'));
+const MusikmarketingAgentur = lazy(() => import('./pages/MusikmarketingAgentur'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/blog/BlogPost'));
+const Podcast = lazy(() => import('./pages/Podcast'));
+
+// Admin Pages - lazy loaded
+const AdminLogin = lazy(() => import('./pages/admin/AdminLogin'));
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
+const BlogManagement = lazy(() => import('./pages/admin/BlogManagement'));
+const BlogCreate = lazy(() => import('./pages/admin/BlogCreate'));
+const BlogEdit = lazy(() => import('./pages/admin/BlogEdit'));
 
 // Initialize Google Analytics
 ReactGA.initialize('G-13021393531');
+
+// Loading fallback component
+function PageLoader() {
+  return (
+    <Box
+      sx={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        bgcolor: '#000',
+      }}
+    >
+      <CircularProgress sx={{ color: '#fff' }} />
+    </Box>
+  );
+}
 
 // Component to track page views
 function PageViewTracker() {
@@ -43,13 +62,15 @@ function AppLayout() {
 
   if (isAdminRoute) {
     return (
-      <Routes>
-        <Route path="/admin" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/blog" element={<BlogManagement />} />
-        <Route path="/admin/blog/create" element={<BlogCreate />} />
-        <Route path="/admin/blog/edit/:id" element={<BlogEdit />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/blog" element={<BlogManagement />} />
+          <Route path="/admin/blog/create" element={<BlogCreate />} />
+          <Route path="/admin/blog/edit/:id" element={<BlogEdit />} />
+        </Routes>
+      </Suspense>
     );
   }
 
@@ -57,13 +78,15 @@ function AppLayout() {
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navigation />
       <main style={{ flexGrow: 1 }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/musikmarketing-agentur" element={<MusikmarketingAgentur />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/podcast" element={<Podcast />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/musikmarketing-agentur" element={<MusikmarketingAgentur />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/podcast" element={<Podcast />} />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
       
