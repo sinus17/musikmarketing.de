@@ -12,6 +12,7 @@ import {
   Instagram as InstagramIcon,
   YouTube as YouTubeIcon,
   Twitter as TwitterIcon,
+  LinkedIn as LinkedInIcon,
 } from '@mui/icons-material';
 import { supabase } from '../lib/supabase';
 
@@ -98,6 +99,41 @@ const Footer = () => {
                 }}
               >
                 <TwitterIcon />
+              </IconButton>
+              <IconButton
+                href="https://open.spotify.com/show/7CmLA9MzCq2xONqPRXynUJ?si=34a72b6884a6435d"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: '#9e9e9e',
+                  '&:hover': { 
+                    '& img': {
+                      filter: 'brightness(0) saturate(100%) invert(60%) sepia(98%) saturate(2476%) hue-rotate(86deg) brightness(96%) contrast(87%)',
+                    }
+                  },
+                }}
+              >
+                <Box
+                  component="img"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/500px-Spotify_logo_without_text.svg.png"
+                  alt="Spotify"
+                  sx={{
+                    width: 24,
+                    height: 24,
+                    filter: 'brightness(0) saturate(100%) invert(67%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(94%) contrast(89%)',
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                href="https://www.linkedin.com/in/philipp-luetzenburger/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: '#9e9e9e',
+                  '&:hover': { color: '#0A66C2' },
+                }}
+              >
+                <LinkedInIcon />
               </IconButton>
             </Box>
           </Grid>

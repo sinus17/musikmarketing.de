@@ -6,63 +6,99 @@ import {
   Typography,
   Grid,
   Card,
-  CardMedia,
   CardContent,
   CircularProgress,
   Pagination,
 } from '@mui/material';
 
-interface YouTubeVideo {
+interface PodcastEpisode {
   id: string;
   title: string;
   description: string;
   thumbnail: string;
   publishedAt: string;
-  videoId: string;
+  audioUrl: string;
+  duration: string;
+  link: string;
 }
 
 const Podcast = () => {
-  const [videos, setVideos] = useState<YouTubeVideo[]>([]);
+  const [episodes, setEpisodes] = useState<PodcastEpisode[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const videosPerPage = 12;
+  const episodesPerPage = 12;
 
   useEffect(() => {
-    fetchYouTubeVideos();
+    fetchPodcastEpisodes();
   }, []);
 
-  const fetchYouTubeVideos = async () => {
+  const fetchPodcastEpisodes = async () => {
     try {
-      const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
-      const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
-
-      if (!API_KEY || !CHANNEL_ID) {
-        throw new Error('YouTube API credentials not configured');
+      const RSS_FEED_URL = 'https://anchor.fm/s/10c5f7b68/podcast/rss';
+      
+      // Try direct fetch first (works if CORS is enabled), fallback to CORS proxy
+      let response;
+      try {
+        response = await fetch(RSS_FEED_URL);
+      } catch {
+        // Fallback to CORS proxy
+        response = await fetch(`https://corsproxy.io/?${encodeURIComponent(RSS_FEED_URL)}`);
       }
-
-      const response = await fetch(
-        `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=50&type=video`
-      );
 
       if (!response.ok) {
-        throw new Error('Failed to fetch YouTube videos');
+        throw new Error('Failed to fetch podcast RSS feed');
       }
 
-      const data = await response.json();
+      const xmlText = await response.text();
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
 
-      const videoList: YouTubeVideo[] = data.items.map((item: any) => ({
-        id: item.id.videoId,
-        title: item.snippet.title,
-        description: item.snippet.description,
-        thumbnail: item.snippet.thumbnails.high.url,
-        publishedAt: item.snippet.publishedAt,
-        videoId: item.id.videoId,
-      }));
+      const items = xmlDoc.querySelectorAll('item');
+      const episodeList: PodcastEpisode[] = Array.from(items).map((item, index) => {
+        const title = item.querySelector('title')?.textContent || '';
+        const description = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const enclosure = item.querySelector('enclosure');
+        const audioUrl = enclosure?.getAttribute('url') || '';
+        const originalLink = item.querySelector('link')?.textContent || '';
+        
+        // Convert podcasters.spotify.com link to open.spotify.com
+        let spotifyLink = originalLink;
+        if (originalLink.includes('podcasters.spotify.com')) {
+          // Try to get Spotify episode ID from guid
+          const guid = item.querySelector('guid')?.textContent || '';
+          const spotifyIdMatch = guid.match(/episode\/([a-zA-Z0-9]+)/);
+          if (spotifyIdMatch && spotifyIdMatch[1]) {
+            spotifyLink = `https://open.spotify.com/episode/${spotifyIdMatch[1]}`;
+          }
+        }
+        
+        // Try multiple ways to get the image
+        const itunesImage = item.querySelector('itunes\\:image')?.getAttribute('href') || 
+                           item.getElementsByTagName('itunes:image')[0]?.getAttribute('href') ||
+                           xmlDoc.querySelector('channel itunes\\:image')?.getAttribute('href') ||
+                           xmlDoc.getElementsByTagName('itunes:image')[0]?.getAttribute('href') ||
+                           xmlDoc.querySelector('channel > image > url')?.textContent || '';
+        
+        const duration = item.querySelector('itunes\\:duration')?.textContent || 
+                        item.getElementsByTagName('itunes:duration')[0]?.textContent || '';
 
-      setVideos(videoList);
+        return {
+          id: `episode-${index}`,
+          title,
+          description: description.replace(/<[^>]*>/g, ''), // Strip HTML tags
+          thumbnail: itunesImage,
+          publishedAt: pubDate,
+          audioUrl,
+          duration,
+          link: spotifyLink,
+        };
+      });
+
+      setEpisodes(episodeList);
     } catch (err: any) {
-      console.error('Error fetching YouTube videos:', err);
+      console.error('Error fetching podcast episodes:', err);
       setError(err.message);
     } finally {
       setLoading(false);
@@ -77,23 +113,18 @@ const Podcast = () => {
     });
   };
 
-  const paginatedVideos = videos.slice(
-    (currentPage - 1) * videosPerPage,
-    currentPage * videosPerPage
-  );
-
   return (
     <>
       <Helmet>
-        <title>Podcast | Musikmarketing.de</title>
+        <title>musikmarketing.de – Der Marketing-Podcast für Artists & Labels</title>
         <meta
           name="description"
-          content="Entdecke unsere YouTube Videos und Podcast-Episoden rund um Musikmarketing, Social Media Strategien und Artist Development."
+          content="Lerne, wie Du eine echte Fanbase aufbaust, Deine Releases erfolgreich vermarktest und mehr Tickets verkaufst. Mit Strategien aus echten Kampagnen und Einblicken von spannenden Gästen aus der Musikindustrie."
         />
-        <meta property="og:title" content="Podcast | Musikmarketing.de" />
+        <meta property="og:title" content="musikmarketing.de – Der Marketing-Podcast für Artists & Labels" />
         <meta
           property="og:description"
-          content="Entdecke unsere YouTube Videos und Podcast-Episoden rund um Musikmarketing, Social Media Strategien und Artist Development."
+          content="Lerne, wie Du eine echte Fanbase aufbaust, Deine Releases erfolgreich vermarktest und mehr Tickets verkaufst. Mit Strategien aus echten Kampagnen und Einblicken von spannenden Gästen aus der Musikindustrie."
         />
         <link rel="canonical" href="https://musikmarketing.de/podcast" />
       </Helmet>
@@ -115,7 +146,7 @@ const Podcast = () => {
               fontSize: { xs: '2rem', md: '3rem' },
             }}
           >
-            Podcast & Videos
+            musikmarketing.de – Der Marketing-Podcast für Artists & Labels
           </Typography>
 
           <Typography
@@ -125,9 +156,10 @@ const Podcast = () => {
               color: '#9e9e9e',
               maxWidth: '800px',
               fontSize: '1.1rem',
+              lineHeight: 1.6,
             }}
           >
-            Entdecke unsere YouTube Videos mit Tipps, Strategien und Insights rund um Musikmarketing
+            Lerne, wie Du eine echte Fanbase aufbaust, Deine Releases erfolgreich vermarktest und mehr Tickets verkaufst. Mit Strategien aus echten Kampagnen und Einblicken von spannenden Gästen aus der Musikindustrie.
           </Typography>
 
           {loading ? (
@@ -140,20 +172,22 @@ const Podcast = () => {
                 Fehler beim Laden der Videos: {error}
               </Typography>
             </Box>
-          ) : videos.length === 0 ? (
+          ) : episodes.length === 0 ? (
             <Box sx={{ textAlign: 'center', py: 8 }}>
               <Typography sx={{ color: '#999' }}>
-                Noch keine Videos verfügbar
+                Noch keine Podcast-Episoden verfügbar
               </Typography>
             </Box>
           ) : (
             <>
               <Grid container spacing={3}>
-                {paginatedVideos.map((video) => (
-                  <Grid item xs={12} sm={6} md={4} key={video.id}>
+                {episodes
+                  .slice((currentPage - 1) * episodesPerPage, currentPage * episodesPerPage)
+                  .map((episode) => (
+                  <Grid item xs={12} sm={6} md={4} key={episode.id}>
                     <Card
                       component="a"
-                      href={`https://www.youtube.com/watch?v=${video.videoId}`}
+                      href={episode.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       sx={{
@@ -162,7 +196,7 @@ const Podcast = () => {
                         borderRadius: 2,
                         transition: 'border-color 0.2s, transform 0.2s',
                         textDecoration: 'none',
-                        display: 'block',
+                        display: 'flex',
                         height: '100%',
                         '&:hover': {
                           borderColor: '#4a4a4a',
@@ -170,16 +204,48 @@ const Podcast = () => {
                         },
                       }}
                     >
-                      <CardMedia
-                        component="img"
-                        image={video.thumbnail}
-                        alt={video.title}
+                      {/* Play Button */}
+                      <Box
                         sx={{
-                          aspectRatio: '16/9',
-                          objectFit: 'cover',
+                          width: 80,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          bgcolor: '#1a1a1a',
+                          borderRight: '1px solid #2a2a2a',
+                          flexShrink: 0,
                         }}
-                      />
-                      <CardContent sx={{ p: 2.5 }}>
+                      >
+                        <Box
+                          sx={{
+                            width: 50,
+                            height: 50,
+                            bgcolor: '#fff',
+                            borderRadius: '50%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: 'transform 0.2s',
+                            '&:hover': {
+                              transform: 'scale(1.1)',
+                            },
+                          }}
+                        >
+                          <Box
+                            sx={{
+                              width: 0,
+                              height: 0,
+                              borderLeft: '15px solid #000',
+                              borderTop: '10px solid transparent',
+                              borderBottom: '10px solid transparent',
+                              ml: '5px',
+                            }}
+                          />
+                        </Box>
+                      </Box>
+
+                      {/* Content */}
+                      <CardContent sx={{ p: 2.5, flex: 1 }}>
                         <Typography
                           sx={{
                             fontSize: '1rem',
@@ -193,7 +259,7 @@ const Podcast = () => {
                             overflow: 'hidden',
                           }}
                         >
-                          {video.title}
+                          {episode.title}
                         </Typography>
                         <Typography
                           sx={{
@@ -207,26 +273,38 @@ const Podcast = () => {
                             overflow: 'hidden',
                           }}
                         >
-                          {video.description}
+                          {episode.description}
                         </Typography>
-                        <Typography
-                          sx={{
-                            fontSize: '0.75rem',
-                            color: '#6e6e6e',
-                          }}
-                        >
-                          {formatDate(video.publishedAt)}
-                        </Typography>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                          <Typography
+                            sx={{
+                              fontSize: '0.75rem',
+                              color: '#6e6e6e',
+                            }}
+                          >
+                            {formatDate(episode.publishedAt)}
+                          </Typography>
+                          {episode.duration && (
+                            <Typography
+                              sx={{
+                                fontSize: '0.75rem',
+                                color: '#6e6e6e',
+                              }}
+                            >
+                              {episode.duration}
+                            </Typography>
+                          )}
+                        </Box>
                       </CardContent>
                     </Card>
                   </Grid>
                 ))}
               </Grid>
 
-              {videos.length > videosPerPage && (
+              {episodes.length > episodesPerPage && (
                 <Box sx={{ display: 'flex', justifyContent: 'center', mt: 6 }}>
                   <Pagination
-                    count={Math.ceil(videos.length / videosPerPage)}
+                    count={Math.ceil(episodes.length / episodesPerPage)}
                     page={currentPage}
                     onChange={(_, page) => setCurrentPage(page)}
                     sx={{
