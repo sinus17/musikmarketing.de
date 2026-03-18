@@ -23,6 +23,7 @@ const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
 const BlogManagement = lazy(() => import('./pages/admin/BlogManagement'));
 const BlogCreate = lazy(() => import('./pages/admin/BlogCreate'));
 const BlogEdit = lazy(() => import('./pages/admin/BlogEdit'));
+const YouTubeArticleGenerator = lazy(() => import('./pages/admin/YouTubeArticleGenerator'));
 
 // Initialize Google Analytics
 ReactGA.initialize('G-13021393531');
@@ -69,6 +70,7 @@ function AppLayout() {
           <Route path="/admin/blog" element={<BlogManagement />} />
           <Route path="/admin/blog/create" element={<BlogCreate />} />
           <Route path="/admin/blog/edit/:id" element={<BlogEdit />} />
+          <Route path="/admin/youtube-article" element={<YouTubeArticleGenerator />} />
         </Routes>
       </Suspense>
     );

@@ -206,7 +206,18 @@ const HomeFullGuide = () => {
               lineHeight: 1.6,
             }}
           >
-            Social Media Reichweite aufbauen, Spotify Hörer steigern & mehr Tickets verkaufen.
+            Professionelles Musikmarketing für Independent Artists. Social Media Reichweite aufbauen, Spotify Hörer steigern & mehr Tickets verkaufen.
+          </Typography>
+          
+          <Typography 
+            sx={{ 
+              fontSize: { xs: '0.9rem', md: '1rem' },
+              mb: 3,
+              color: '#999',
+              lineHeight: 1.5,
+            }}
+          >
+            Meta Ads, TikTok Marketing, Spotify Promotion & Fan-CRM Strategien – bewährt mit über €3,5M Werbebudget Erfahrung.
           </Typography>
         </Container>
       </Box>
@@ -607,11 +618,11 @@ const HomeFullGuide = () => {
             </Typography>
 
             {/* TikTok */}
-            <Link to="/blog/tiktok-musikmarketing-guide" style={{ textDecoration: 'none', display: 'block' }}>
+            <Link to="/blog/was-ist-musikmarketing" style={{ textDecoration: 'none', display: 'block' }}>
               <Card sx={{ mb: 2.5, background: '#1a1a1a', border: '1px solid #333', cursor: 'pointer', transition: 'all 0.3s ease', '&:hover': { borderColor: '#666', boxShadow: '0 8px 16px rgba(200, 200, 200, 0.1)', transform: 'translateY(-2px)' } }}>
                 <CardContent>
                   <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
-                    🔴 TikTok — Das virale Potenzial
+                    🔴 TikTok — Musikmarketing mit viralem Potenzial
                   </Typography>
                   <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 1 }}>
                     <strong>Beste für:</strong> Schnelles Wachstum, virales Potenzial, Neue Listener Discovery
@@ -624,11 +635,11 @@ const HomeFullGuide = () => {
             </Link>
 
             {/* Instagram */}
-            <Link to="/blog/instagram-reels-musik-strategie" style={{ textDecoration: 'none', display: 'block' }}>
+            <Link to="/blog/was-ist-musikmarketing" style={{ textDecoration: 'none', display: 'block' }}>
               <Card sx={{ mb: 2.5, background: '#1a1a1a', border: '1px solid #333', cursor: 'pointer', transition: 'all 0.3s ease', '&:hover': { borderColor: '#666', boxShadow: '0 8px 16px rgba(200, 200, 200, 0.1)', transform: 'translateY(-2px)' } }}>
                 <CardContent>
                   <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
-                    📷 Instagram — Community Building
+                    📷 Instagram — Musikmarketing für Community Building
                   </Typography>
                   <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 1 }}>
                     <strong>Beste für:</strong> Community-Aufbau, Direct Engagement, Merchandise Verkauf
@@ -641,28 +652,28 @@ const HomeFullGuide = () => {
             </Link>
 
             {/* Spotify */}
-            <Link to="/blog/spotify-marketing-streams" style={{ textDecoration: 'none', display: 'block' }}>
+            <Link to="/blog/song-so-review" style={{ textDecoration: 'none', display: 'block' }}>
               <Card sx={{ mb: 2.5, background: '#1a1a1a', border: '1px solid #333', cursor: 'pointer', transition: 'all 0.3s ease', '&:hover': { borderColor: '#666', boxShadow: '0 8px 16px rgba(200, 200, 200, 0.1)', transform: 'translateY(-2px)' } }}>
                 <CardContent>
                   <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
-                    🎵 Spotify — Streaming Dominanz
+                    🎵 Spotify — Musikmarketing für Streaming Erfolg
                   </Typography>
                   <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 1 }}>
                     <strong>Beste für:</strong> Streams, Algorithmus Support, Revenue
                   </Typography>
                   <Typography sx={{ fontSize: '0.95em', color: '#999', lineHeight: 1.7 }}>
-                    <strong>Strategie:</strong> Pre-Save Kampagnen, Playlist Pitching, Consistent Releases (1x alle 4-6 Wochen). <strong>Resultat:</strong> 10.000-100.000 Streams/Release.
+                    <strong>Strategie:</strong> Pre-Save Kampagnen, Playlist Pitching, Consistent Releases. <strong>Resultat:</strong> 10.000-100.000 Streams/Release.
                   </Typography>
                 </CardContent>
               </Card>
             </Link>
 
             {/* YouTube */}
-            <Link to="/blog/youtube-shorts-musikmarketing" style={{ textDecoration: 'none', display: 'block' }}>
+            <Link to="/blog/was-ist-musikmarketing" style={{ textDecoration: 'none', display: 'block' }}>
               <Card sx={{ mb: 2.5, background: '#1a1a1a', border: '1px solid #333', cursor: 'pointer', transition: 'all 0.3s ease', '&:hover': { borderColor: '#666', boxShadow: '0 8px 16px rgba(200, 200, 200, 0.1)', transform: 'translateY(-2px)' } }}>
                 <CardContent>
                   <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
-                    🎥 YouTube — Long-Form Content
+                    🎥 YouTube — Musikmarketing mit Video Content
                   </Typography>
                   <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 1 }}>
                     <strong>Beste für:</strong> Monetisierung, Evergreen Content, Tutorials
@@ -675,11 +686,11 @@ const HomeFullGuide = () => {
             </Link>
 
             {/* Fehler vermeiden */}
-            <Link to="/blog/musikmarketing-fehler-vermeiden" style={{ textDecoration: 'none', display: 'block' }}>
+            <Link to="/blog/was-ist-musikmarketing" style={{ textDecoration: 'none', display: 'block' }}>
               <Card sx={{ mb: 3, background: '#1a1a1a', border: '1px solid #333', cursor: 'pointer', transition: 'all 0.3s ease', '&:hover': { borderColor: '#666', boxShadow: '0 8px 16px rgba(200, 200, 200, 0.1)', transform: 'translateY(-2px)' } }}>
                 <CardContent>
                   <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
-                    📊 Häufige Fehler vermeiden
+                    📊 Häufige Musikmarketing Fehler vermeiden
                   </Typography>
                   <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 1 }}>
                     <strong>Beste für:</strong> Realistische Erwartungen, häufige Anfängerfehler verstehen
@@ -692,11 +703,11 @@ const HomeFullGuide = () => {
             </Link>
 
             {/* Budget & ROI */}
-            <Link to="/blog/musikmarketing-budget-roi" style={{ textDecoration: 'none', display: 'block' }}>
+            <Link to="/blog/was-ist-musikmarketing" style={{ textDecoration: 'none', display: 'block' }}>
               <Card sx={{ mb: 3, background: '#1a1a1a', border: '1px solid #333', cursor: 'pointer', transition: 'all 0.3s ease', '&:hover': { borderColor: '#666', boxShadow: '0 8px 16px rgba(200, 200, 200, 0.1)', transform: 'translateY(-2px)' } }}>
                 <CardContent>
                   <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
-                    💰 Budget & ROI berechnen
+                    💰 Musikmarketing Budget & ROI berechnen
                   </Typography>
                   <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 1 }}>
                     <strong>Beste für:</strong> Budgetplanung, ROI Berechnung, Kostenoptimierung

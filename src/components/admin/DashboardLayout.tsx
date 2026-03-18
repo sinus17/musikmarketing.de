@@ -66,6 +66,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const navItems = [
     { name: 'Dashboard', href: '/admin/dashboard', icon: '📊' },
     { name: 'Blog', href: '/admin/blog', icon: '📝' },
+    { name: 'YouTube → Artikel', href: '/admin/youtube-article', icon: '🎬' },
     { name: 'Settings', href: '/admin/settings', icon: '⚙️' },
   ]
 
