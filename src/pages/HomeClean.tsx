@@ -151,19 +151,19 @@ const HomeFullGuide = () => {
         <title>Musikmarketing Guide 2026 | Meta Ads, TikTok & Spotify Strategien für Artists</title>
         <meta 
           name="description" 
-          content="Professionelles Musikmarketing mit €3,5M Ad Spend Erfahrung. Meta Ads, TikTok Ads, Spotify Marketing & Fan-CRM. Praktische Strategien für Artists & Labels. Kostenlos & sofort umsetzbar." 
+          content="Musikmarketing 2026. Meta Ads, TikTok & Spotify Strategien für Artists. Social Media Reichweite aufbauen, Spotify Hörer steigern & mehr Tickets verkaufen." 
         />
         <meta name="keywords" content="Musikmarketing 2026, Musikmarketing Deutschland, Meta Ads für Musiker, TikTok Ads Musik, Spotify Marketing, Artist Marketing, Social Media Marketing, Fan-CRM, Musik Promotion" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://musikmarketing.de/" />
         <meta property="og:title" content="Musikmarketing Guide 2026 | Meta Ads, TikTok & Spotify Strategien" />
-        <meta property="og:description" content="Professionelles Musikmarketing mit €3,5M Ad Spend Erfahrung. Meta Ads, TikTok, Spotify Marketing & Fan-CRM für Artists." />
+        <meta property="og:description" content="Musikmarketing 2026. Meta Ads, TikTok & Spotify Strategien für Artists. Social Media Reichweite aufbauen, Spotify Hörer steigern & mehr Tickets verkaufen." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://musikmarketing.de/" />
         <meta property="og:image" content="https://musikmarketing.de/musikmarketing-hero.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Musikmarketing Guide 2026 | Meta Ads, TikTok & Spotify Strategien" />
-        <meta name="twitter:description" content="Professionelles Musikmarketing mit €3,5M Ad Spend Erfahrung. Meta Ads, TikTok, Spotify Marketing & Fan-CRM." />
+        <meta name="twitter:description" content="Musikmarketing 2026. Meta Ads, TikTok & Spotify Strategien für Artists. Social Media Reichweite aufbauen, Spotify Hörer steigern & mehr Tickets verkaufen." />
         <meta name="twitter:image" content="https://musikmarketing.de/musikmarketing-hero.jpg" />
         <script type="application/ld+json">
           {JSON.stringify({
