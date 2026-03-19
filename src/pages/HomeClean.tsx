@@ -791,6 +791,192 @@ const HomeFullGuide = () => {
 
           <Divider sx={{ my: 6, borderColor: '#333' }} />
 
+          {/* NEW SECTION: Musikmarketing vs Musikpromotion */}
+          <Box id="musikmarketing-vs-promotion" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+            <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
+              Musikmarketing vs. Musikpromotion: Der entscheidende Unterschied
+            </Typography>
+
+            <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 3 }}>
+              Viele Artists verwechseln Musikmarketing mit Musikpromotion. Der Unterschied ist entscheidend für deinen langfristigen Erfolg:
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #444', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', mb: 2 }}>
+                  Musikpromotion (Kurzfristig)
+                </Typography>
+                <Stack spacing={1} sx={{ pl: 2 }}>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>✓ Fokus auf einzelne Releases</Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>✓ "Song raus, Post machen, hoffen"</Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>✓ Reichweite als Hauptziel</Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>✓ Abhängig von Gatekeepern (Playlists, Radio)</Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>✓ Keine Datensammlung</Typography>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #4caf50', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#4caf50', mb: 2 }}>
+                  Musikmarketing (Langfristig) ✅
+                </Typography>
+                <Stack spacing={1} sx={{ pl: 2 }}>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>✓ Fokus auf Karriere-Aufbau</Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>✓ Strategisches System mit messbaren KPIs</Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>✓ Conversion als Hauptziel (Fan → Kunde)</Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>✓ Kontrolle über eigene Daten (E-Mail-Liste, CRM)</Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>✓ Wiederkehrende Umsatzströme</Typography>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 2 }}>
+              <strong>Beispiel:</strong> Musikpromotion ist, wenn du 1000€ für Playlist-Pitching ausgibst und hoffst, dass es funktioniert. Musikmarketing ist, wenn du 1000€ in Meta Ads investierst, 500 E-Mail-Adressen sammelst und diese Fans über Jahre monetarisierst.
+            </Typography>
+
+            <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8 }}>
+              <strong>Die Wahrheit:</strong> Promotion ist ein Teil von Marketing – aber nicht das Ganze. Erfolgreiche Artists nutzen beides: Promotion für einzelne Releases, Marketing für die gesamte Karriere.
+            </Typography>
+          </Box>
+
+          <Divider sx={{ my: 6, borderColor: '#333' }} />
+
+          {/* NEW SECTION: Musikmarketing Budget */}
+          <Box id="musikmarketing-budget" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+            <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
+              Musikmarketing Budget 2026: Was kostet professionelles Marketing?
+            </Typography>
+
+            <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 3 }}>
+              Die häufigste Frage: "Wie viel sollte ich in Musikmarketing investieren?" Die Antwort hängt von deiner Karriere-Phase ab:
+            </Typography>
+
+            {/* Budget Level 1 */}
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #444', mb: 2.5 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', mb: 2 }}>
+                  Level 1: Hobby Artist (0-1.000 Fans)
+                </Typography>
+                <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#4caf50', mb: 2 }}>
+                  Budget: 0-500€/Monat
+                </Typography>
+                <Stack spacing={1.5}>
+                  <Box>
+                    <Typography sx={{ fontSize: '0.95em', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Strategie:
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb', lineHeight: 1.6 }}>
+                      100% Organic Content. Fokus auf Lernen und Experimentieren. Investiere Zeit statt Geld.
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '0.95em', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Budget-Verteilung:
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 0€ - Komplett organisch</Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 100-200€ - Erste Test-Ads (optional)</Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 50€ - Tools (Canva Pro, song.so)</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '0.95em', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Erwartete Ergebnisse:
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>50-200 neue Follower/Monat, 1.000-5.000 Streams/Monat</Typography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            {/* Budget Level 2 */}
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #444', mb: 2.5 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', mb: 2 }}>
+                  Level 2: Aufstrebender Artist (1.000-10.000 Fans)
+                </Typography>
+                <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#ff9800', mb: 2 }}>
+                  Budget: 500-2.000€/Monat
+                </Typography>
+                <Stack spacing={1.5}>
+                  <Box>
+                    <Typography sx={{ fontSize: '0.95em', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Strategie:
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb', lineHeight: 1.6 }}>
+                      70% Organic, 30% Paid Ads. Skaliere, was funktioniert. Baue E-Mail-Liste auf.
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '0.95em', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Budget-Verteilung:
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 300-800€ - Meta Ads (Facebook/Instagram)</Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 200-500€ - TikTok Ads</Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 100-200€ - Tools (Analytics, CRM)</Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 200-500€ - Content Production (Equipment, Editing)</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '0.95em', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Erwartete Ergebnisse:
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>500-2.000 neue Follower/Monat, 10.000-50.000 Streams/Monat</Typography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            {/* Budget Level 3 */}
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #444', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', mb: 2 }}>
+                  Level 3: Professional Artist (10.000-100.000 Fans)
+                </Typography>
+                <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#f44336', mb: 2 }}>
+                  Budget: 2.000-10.000€/Monat
+                </Typography>
+                <Stack spacing={1.5}>
+                  <Box>
+                    <Typography sx={{ fontSize: '0.95em', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Strategie:
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb', lineHeight: 1.6 }}>
+                      50% Organic, 50% Paid Ads. Vollzeit-Marketing. Team aufbauen (Manager, Social Media Manager).
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '0.95em', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Budget-Verteilung:
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 1.000-4.000€ - Meta Ads</Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 500-2.000€ - TikTok Ads</Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 500-1.000€ - Spotify Ads</Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 1.000-3.000€ - Team (Manager, Content Creator)</Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 500€ - Tools & Software</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '0.95em', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Erwartete Ergebnisse:
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>3.000-10.000 neue Follower/Monat, 100.000-500.000 Streams/Monat</Typography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #666', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff', mb: 2 }}>
+                  💡 Musikmarketing Budget-Regel
+                </Typography>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.8 }}>
+                  <strong>Die 80/20 Regel:</strong> Investiere 20% deines Budgets in Produktion (Studio, Mixing), 80% in Marketing. Der beste Song bringt nichts, wenn niemand ihn hört. Viele Artists machen es umgekehrt – und scheitern.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+
+          <Divider sx={{ my: 6, borderColor: '#333' }} />
+
           {/* KAPITEL 5 */}
           <Box id="haeufige-fehler" sx={{ mb: 6, scrollMarginTop: '80px' }}>
             <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
@@ -934,11 +1120,26 @@ const HomeFullGuide = () => {
 
             <Stack spacing={2}>
               {[
+                { q: 'Was ist Musikmarketing?', a: 'Musikmarketing ist das strategische System, um deine Musik den richtigen Menschen zu zeigen und sie in zahlende Fans zu verwandeln. Es kombiniert Content-Marketing, Paid Advertising, Fan-CRM und Plattform-Optimierung.' },
+                { q: 'Wie viel kostet Musikmarketing?', a: 'Anfänger: 0-500€/Monat (organisch), Aufstrebend: 500-2.000€/Monat, Professional: 2.000-10.000€/Monat. Die 80/20 Regel: 20% Produktion, 80% Marketing.' },
                 { q: 'Reicht organic ohne Ads?', a: 'Ja, aber es dauert 10x länger. Mit 1-2 Stunden Content/Tag brauchst du 12+ Monate. Mit 500€/Monat Ads: 3-6 Monate. Empfehlung: Starte organisch, investiere ab Monat 4.' },
-                { q: 'Welche Plattform ist am wichtigsten?', a: 'Es kommt auf dein Genre an. Top 3: TikTok (Discovery), Instagram (Community), Spotify (Streams). Fokussiere auf 1-2, nicht alles gleichzeitig.' },
+                { q: 'Welche Plattform ist am wichtigsten für Musikmarketing?', a: 'Es kommt auf dein Genre an. Top 3: TikTok (Discovery), Instagram (Community), Spotify (Streams). Fokussiere auf 1-2, nicht alles gleichzeitig.' },
                 { q: 'Wie lange bis ich Ergebnisse sehe?', a: '30 Tage erste Erfolge, 3 Monate solides Wachstum, 6 Monate echter Durchbruch. Geduld + Konsistenz = Key.' },
-                { q: 'Kann ich das alleine schaffen?', a: 'Ja! Mit 5-10 Stunden/Woche kannst du diesen Plan umsetzen. Wenn weniger Zeit: Investiere in Ads (Zeit → Budget).' },
-                { q: 'Wie messe ich meinen Erfolg?', a: 'Nutze Platform Analytics (Instagram Insights, YouTube Analytics, Spotify for Artists). Tracke monatlich: Follower-Wachstum, Engagement Rate, Conversions.' },
+                { q: 'Kann ich Musikmarketing alleine schaffen?', a: 'Ja! Mit 5-10 Stunden/Woche kannst du diesen Plan umsetzen. Wenn weniger Zeit: Investiere in Ads (Zeit → Budget).' },
+                { q: 'Wie messe ich meinen Musikmarketing Erfolg?', a: 'Nutze Platform Analytics (Instagram Insights, YouTube Analytics, Spotify for Artists). Tracke monatlich: Follower-Wachstum, Engagement Rate, Conversions, Cost per Stream.' },
+                { q: 'Was ist der Unterschied zwischen Musikmarketing und Musikpromotion?', a: 'Musikpromotion fokussiert auf einzelne Releases (kurzfristig). Musikmarketing baut deine gesamte Karriere auf (langfristig) mit messbaren KPIs und Fan-CRM.' },
+                { q: 'Welche Musikmarketing Tools brauche ich?', a: 'Essentials: Canva (Design), song.so (Link-Tracking), Meta Ads Manager, Spotify for Artists, Google Analytics. Optional: Mailchimp (E-Mail), Discord (Community).' },
+                { q: 'Wie baue ich eine E-Mail-Liste für Musikmarketing auf?', a: 'Lead Magnet anbieten (Gratis EP), Landing Page erstellen, über Social Media promoten, Pre-Save-Kampagnen nutzen. Ziel: 100 E-Mails im ersten Monat.' },
+                { q: 'Was sind die häufigsten Musikmarketing Fehler?', a: '1) Keine Strategie, 2) Keine Daten tracken, 3) Falsche Plattform, 4) Zu wenig Budget, 5) Nur Streams zählen statt echte Conversions.' },
+                { q: 'Brauche ich eine Musikmarketing Agentur?', a: 'Nicht am Anfang. Mache 1-2 Jahre solo, lerne die Basics. Agentur ab 2.000€/Monat Budget sinnvoll für Skalierung und internationale Kampagnen.' },
+                { q: 'Wie viel Zeit braucht Musikmarketing pro Woche?', a: 'Minimum: 5 Stunden/Woche (Content + Community). Optimal: 10-15 Stunden/Woche. Professional: 20+ Stunden oder Team einstellen.' },
+                { q: 'Was ist wichtiger: TikTok oder Instagram für Musikmarketing?', a: 'TikTok für Discovery (viral gehen), Instagram für Community (Fan-Beziehungen). Starte mit TikTok, baue dann Instagram aus.' },
+                { q: 'Wie funktionieren Meta Ads für Musikmarketing?', a: 'Zielgruppe nach Genre/Interessen definieren, Video-Ad erstellen, Budget 5-10€/Tag, auf Spotify/Pre-Save leiten. Cost per Click: 0,10-0,50€.' },
+                { q: 'Kann ich Musikmarketing kostenlos machen?', a: 'Ja, mit organischen Strategien. Aber es dauert 10x länger. Mit 500€/Monat wächst du 10x schneller. Empfehlung: Starte organisch, investiere später in Ads.' },
+                { q: 'Was ist ein Musikmarketing Plan?', a: 'Ein dokumentiertes Dokument mit: Zielgruppe, Zielen (Streams/Fans/Umsatz), Kanälen, Content-Kalender, Budget, KPIs. Ohne Plan bist du reaktiv statt proaktiv.' },
+                { q: 'Wie wichtig ist Spotify für Musikmarketing?', a: 'Sehr wichtig für Streams und Algorithmus-Support. Aber nicht alles: Spotify zahlt schlecht (0,003€/Stream). Fokus auf Fan-CRM und Merch/Tickets für echten Umsatz.' },
+                { q: 'Was ist Fan-CRM im Musikmarketing?', a: 'Customer Relationship Management für Fans. E-Mail-Liste, Discord-Community, WhatsApp-Gruppen. Ziel: Direkte Kommunikation ohne Plattform-Abhängigkeit.' },
+                { q: 'Wie starte ich mit Musikmarketing als Anfänger?', a: 'Wähle 2 Plattformen (TikTok + Instagram), poste 3-5x/Woche, tracke Daten, starte nach 3 Monaten mit 100-300€ Test-Ads. Nutze den 30-Tage Action Plan.' },
                 { q: 'Was ist die eine Sache, die ich JETZT machen sollte?', a: 'Wähle deine Top 2 Plattformen aus und poste MORGEN deinen ersten Content. Action über Planung. Start klein, iterate oft.' }
               ].map((item, idx) => (
                 <Card key={idx} sx={{ background: '#1a1a1a', border: '1px solid #333' }}>
