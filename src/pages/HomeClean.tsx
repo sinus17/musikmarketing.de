@@ -148,22 +148,22 @@ const HomeFullGuide = () => {
   return (
     <>
       <Helmet>
-        <title>Musikmarketing Guide 2026 | Meta Ads, TikTok & Spotify Strategien für Artists</title>
+        <title>Musikmarketing für Artists 2026: Komplette Strategie | Meta Ads, TikTok & Spotify</title>
         <meta 
           name="description" 
-          content="Musikmarketing 2026. Meta Ads, TikTok & Spotify Strategien für Artists. Social Media Reichweite aufbauen, Spotify Hörer steigern & mehr Tickets verkaufen." 
+          content="Musikmarketing 2026: Komplette Strategie für Independent Artists. Meta Ads, TikTok Marketing, Spotify Promotion & Fan-CRM. Lerne, wie du mit €500/Monat 10.000+ Hörer erreichst. Inklusive 30-Tage-Plan & bewährten Frameworks. Kostenlos & sofort umsetzbar." 
         />
         <meta name="keywords" content="Musikmarketing 2026, Musikmarketing Deutschland, Meta Ads für Musiker, TikTok Ads Musik, Spotify Marketing, Artist Marketing, Social Media Marketing, Fan-CRM, Musik Promotion" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://musikmarketing.de/" />
-        <meta property="og:title" content="Musikmarketing Guide 2026 | Meta Ads, TikTok & Spotify Strategien" />
-        <meta property="og:description" content="Musikmarketing 2026. Meta Ads, TikTok & Spotify Strategien für Artists. Social Media Reichweite aufbauen, Spotify Hörer steigern & mehr Tickets verkaufen." />
+        <meta property="og:title" content="Musikmarketing für Artists 2026: Komplette Strategie | Meta Ads & TikTok" />
+        <meta property="og:description" content="Musikmarketing 2026: Komplette Strategie für Independent Artists. Meta Ads, TikTok Marketing, Spotify Promotion & Fan-CRM. Lerne, wie du mit €500/Monat 10.000+ Hörer erreichst." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://musikmarketing.de/" />
         <meta property="og:image" content="https://musikmarketing.de/musikmarketing-hero.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Musikmarketing Guide 2026 | Meta Ads, TikTok & Spotify Strategien" />
-        <meta name="twitter:description" content="Musikmarketing 2026. Meta Ads, TikTok & Spotify Strategien für Artists. Social Media Reichweite aufbauen, Spotify Hörer steigern & mehr Tickets verkaufen." />
+        <meta name="twitter:title" content="Musikmarketing für Artists 2026: Komplette Strategie" />
+        <meta name="twitter:description" content="Musikmarketing 2026: Komplette Strategie für Independent Artists. Meta Ads, TikTok Marketing, Spotify Promotion & Fan-CRM. Lerne, wie du mit €500/Monat 10.000+ Hörer erreichst." />
         <meta name="twitter:image" content="https://musikmarketing.de/musikmarketing-hero.jpg" />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -193,9 +193,9 @@ const HomeFullGuide = () => {
               color: '#fff',
             }}
           >
-            Musikmarketing 2026
+            Musikmarketing für Artists: Die komplette Strategie 2026
             <br />
-            Meta Ads, TikTok & Spotify Strategien für Artists
+            Meta Ads, TikTok & Spotify Marketing für Independent Musicians
           </Typography>
           
           <Typography 
@@ -206,7 +206,7 @@ const HomeFullGuide = () => {
               lineHeight: 1.6,
             }}
           >
-            Professionelles Musikmarketing für Independent Artists. Social Media Reichweite aufbauen, Spotify Hörer steigern & mehr Tickets verkaufen.
+            Professionelles Musikmarketing für Independent Artists. Lerne die bewährten Strategien, um deine Musikkarriere aufzubauen: Social Media Reichweite aufbauen, Spotify Hörer steigern & mehr Tickets verkaufen.
           </Typography>
           
           <Typography 
@@ -459,7 +459,7 @@ const HomeFullGuide = () => {
             </Typography>
 
             <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 2 }}>
-              Musikmarketing ist das <strong>System, um deine Musik den richtigen Menschen zu zeigen</strong> und sie in <strong>zahlende Fans zu verwandeln</strong>. Es ist nicht:
+              Musikmarketing für Artists ist das <strong>strategische System, um deine Musik den richtigen Menschen zu zeigen</strong> und sie in <strong>zahlende Fans zu verwandeln</strong>. Professionelles Musikmarketing kombiniert Content-Strategien, Paid Advertising und Community-Building. Es ist nicht:
             </Typography>
 
             <Stack spacing={1} sx={{ pl: 2, mb: 3 }}>
@@ -470,7 +470,7 @@ const HomeFullGuide = () => {
             </Stack>
 
             <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 2 }}>
-              Musikmarketing <strong>ist</strong>:
+              Erfolgreiches Musikmarketing <strong>ist</strong>:
             </Typography>
 
             <Stack spacing={1} sx={{ pl: 2, mb: 3 }}>
@@ -487,7 +487,7 @@ const HomeFullGuide = () => {
             </Typography>
 
             <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 2 }}>
-              99% der Musikmarketing Guides sagen dir WAS du tun sollst. Sie ignorieren aber das Wichtigste: <strong>Wie du misst, ob es funktioniert</strong>.
+              99% der Musikmarketing Guides und Musikmarketing Tipps sagen dir WAS du tun sollst. Sie ignorieren aber das Wichtigste: <strong>Wie du misst, ob dein Musikmarketing funktioniert</strong>.
             </Typography>
 
             <Card sx={{ background: '#1a1a1a', border: '2px solid #555', mb: 3 }}>
@@ -528,7 +528,7 @@ const HomeFullGuide = () => {
             </Card>
 
             <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8 }}>
-              <strong>Die Lösung:</strong> Du brauchst echte Daten. Welche Fans zahlen? Welche gehen konzertieren? Welche kaufen Merch? Mit echten Metriken + strategischem Denken wird dein Musikmarketing 10x effektiver.
+              <strong>Die Lösung:</strong> Du brauchst echte Daten für dein Musikmarketing. Welche Fans zahlen? Welche gehen konzertieren? Welche kaufen Merch? Mit echten Metriken + strategischem Musikmarketing Plan wird deine Strategie 10x effektiver.
             </Typography>
           </Box>
 
@@ -537,11 +537,11 @@ const HomeFullGuide = () => {
           {/* KAPITEL 2 */}
           <Box id="4-schritt-framework" sx={{ mb: 6, scrollMarginTop: '80px' }}>
             <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
-              2. Das 4-Schritt-Framework (Bewährt &amp; Messbar)
+              2. Das 4-Schritt Musikmarketing Framework (Bewährt &amp; Messbar)
             </Typography>
 
             <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 4 }}>
-              Erfolgreiches Musikmarketing folgt einem bewährten System. Die folgenden 4 Schritte funktionieren für jeden Musiker — vom Anfänger bis zum Chart-Künstler:
+              Erfolgreiches Musikmarketing für Independent Artists folgt einem bewährten System. Die folgenden 4 Schritte des Musikmarketing Frameworks funktionieren für jeden Musiker — vom Anfänger bis zum Chart-Künstler:
             </Typography>
 
             {/* Step 1 */}
@@ -610,11 +610,11 @@ const HomeFullGuide = () => {
           {/* KAPITEL 3 */}
           <Box id="platform-deep-dives-2026" sx={{ mb: 6, scrollMarginTop: '80px' }}>
             <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
-              3. Platform Deep-Dives 2026
+              3. Musikmarketing Plattformen: Platform Deep-Dives 2026
             </Typography>
 
             <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 3 }}>
-              Nicht alle Plattformen sind gleich. Hier sind die Top 5 für Musikmarketing 2026:
+              Nicht alle Plattformen sind gleich für dein Musikmarketing. Hier sind die Top 5 Musikmarketing Plattformen für 2026:
             </Typography>
 
             {/* TikTok */}
