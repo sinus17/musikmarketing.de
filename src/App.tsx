@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 // Lazy load main pages for code splitting
 const Home = lazy(() => import('./pages/HomeClean'));
 const MusikmarketingAgentur = lazy(() => import('./pages/MusikmarketingAgentur'));
+const MarketingHandbuch = lazy(() => import('./pages/MarketingHandbuch'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/blog/BlogPost'));
 const Podcast = lazy(() => import('./pages/Podcast'));
@@ -84,6 +85,7 @@ function AppLayout() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/musikmarketing-agentur" element={<MusikmarketingAgentur />} />
+            <Route path="/marketing-handbuch-fuer-artists" element={<MarketingHandbuch />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/podcast" element={<Podcast />} />

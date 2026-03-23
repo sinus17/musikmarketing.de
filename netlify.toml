@@ -9,8 +9,26 @@ publish = "dist"
 VITE_SUPABASE_URL = "https://tiofwmkrbnxgmolifcgw.supabase.co"
 VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpb2Z3bWtyYm54Z21vbGlmY2d3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAyOTI0NDksImV4cCI6MjA3NTg2ODQ0OX0.-IA1Wp3b45n0rDFHJoG1rce8LwT7yXcDgzUnt1gloxo"
 
+# Enable prerendering for better SEO
+[build.processing]
+skip_processing = false
+
+[build.processing.html]
+pretty_urls = true
+
+# Prerender for crawlers
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+
 # Redirect SPA to index.html
 [[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
+
+# Custom headers for better SEO
+[[headers]]
+for = "/*"
+[headers.values]
+X-Robots-Tag = "index, follow"
+X-Content-Type-Options = "nosniff"

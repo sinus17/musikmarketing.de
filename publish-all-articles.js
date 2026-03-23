@@ -51,6 +51,12 @@ async function publishArticles() {
     'artikel-spoke-tiktok-musikmarketing.json',
     'artikel-spoke-tools-musikmarketing.json',
     'artikel-spoke-youtube-shorts.json',
+    'artikel-spotify-verdienst.json',
+    'artikel-musik-bekannt.json',
+    'artikel-musikplattform-vergleich.json',
+    'hypeddit-alternative-article.json',
+    'artikel-musik-influencer-partnerships.json',
+    'artikel-musikmarketing-ultimate-guide.json',
   ];
 
   let published = 0;

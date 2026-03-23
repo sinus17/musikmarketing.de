@@ -376,28 +376,28 @@ const HomeFullGuide = () => {
                 <ListItem>
                   <Typography 
                     component="a" 
-                    href="#4-schritt-framework" 
+                    href="#10k-musikmarketing-plan" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
-                    2. Das 4-Schritt-Framework
+                    2. Der 10.000€ Plan
                   </Typography>
                 </ListItem>
                 <ListItem>
                   <Typography 
                     component="a" 
-                    href="#platform-deep-dives-2026" 
+                    href="#release-strategie-6-wochen" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
-                    3. Platform Deep-Dives 2026
+                    3. Release-Strategie (6-Wochen)
                   </Typography>
                 </ListItem>
                 <ListItem>
                   <Typography 
                     component="a" 
-                    href="#traffic-strategien-organic-vs-paid" 
+                    href="#meta-ads-strategie-detail" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
-                    4. Traffic-Strategien
+                    4. Meta Ads Strategie
                   </Typography>
                 </ListItem>
               </List>
@@ -407,19 +407,28 @@ const HomeFullGuide = () => {
                 <ListItem>
                   <Typography 
                     component="a" 
-                    href="#haeufige-fehler" 
+                    href="#1-prozent-regel" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
-                    5. Häufige Fehler
+                    5. Die 1% Follower-Regel
                   </Typography>
                 </ListItem>
                 <ListItem>
                   <Typography 
                     component="a" 
-                    href="#30-tage-action-plan" 
+                    href="#algorithmus-hacking-spotify" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
-                    6. 30-Tage Action Plan
+                    6. Algorithmus-Hacking
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  <Typography 
+                    component="a" 
+                    href="#musikmarketing-budget" 
+                    sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
+                  >
+                    7. Budget & ROI
                   </Typography>
                 </ListItem>
                 <ListItem>
@@ -428,7 +437,7 @@ const HomeFullGuide = () => {
                     href="#faq" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
-                    7. FAQ
+                    8. FAQ
                   </Typography>
                 </ListItem>
                 <ListItem>
@@ -437,7 +446,7 @@ const HomeFullGuide = () => {
                     href="#naechster-schritt" 
                     sx={{ fontSize: '0.95em', color: '#bbb', textDecoration: 'none', '&:hover': { color: '#fff' }, cursor: 'pointer' }}
                   >
-                    8. Nächste Schritte
+                    9. Nächste Schritte
                   </Typography>
                 </ListItem>
               </List>
@@ -530,6 +539,34 @@ const HomeFullGuide = () => {
             <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8 }}>
               <strong>Die Lösung:</strong> Du brauchst echte Daten für dein Musikmarketing. Welche Fans zahlen? Welche gehen konzertieren? Welche kaufen Merch? Mit echten Metriken + strategischem Musikmarketing Plan wird deine Strategie 10x effektiver.
             </Typography>
+
+            <Divider sx={{ my: 3, borderColor: '#333' }} />
+
+            <Typography component="h3" sx={{ fontSize: '1.3rem', fontWeight: 700, mb: 2, color: '#fff' }}>
+              Die Psychologie: Musik als Produkt behandeln
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #444', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 2 }}>
+                  Viele Artists scheitern, weil sie Marketing als notwendiges Übel betrachten. Doch Marketing ist nichts anderes als das Erzählen einer Geschichte, die Menschen dazu bewegt, zuzuhören.
+                </Typography>
+                
+                <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
+                  Die Parallele zwischen Produktion und Vermarktung
+                </Typography>
+                <Typography sx={{ fontSize: '0.95em', color: '#bbb', lineHeight: 1.7, mb: 2 }}>
+                  Ein Song durchläuft Phasen: Songwriting, Recording, Mixing, Mastering. Marketing sollte exakt denselben Stellenwert einnehmen. Wenn du 40 Stunden in die Produktion investierst, aber nur 2 Stunden in die Vermarktung, ist das Verhältnis gestört.
+                </Typography>
+                
+                <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
+                  Den "Unique Style" in der Nische finden
+                </Typography>
+                <Typography sx={{ fontSize: '0.95em', color: '#bbb', lineHeight: 1.7 }}>
+                  In der Nische liegt die Macht. Wer versucht, "alle" zu erreichen, erreicht niemanden. Das Ziel des Budgets ist es, die Menschen zu finden, deren Identität mit deiner Musik korreliert.
+                </Typography>
+              </CardContent>
+            </Card>
           </Box>
 
           <Divider sx={{ my: 6, borderColor: '#333' }} />
@@ -553,8 +590,11 @@ const HomeFullGuide = () => {
                 <Typography sx={{ fontSize: '1em', color: '#ccc', lineHeight: 1.8, mb: 1 }}>
                   <strong>Das Fundament.</strong> Ohne Content keine Aufmerksamkeit. Mit dem richtigen Content erreichen deine Inhalte die richtigen Menschen — auf TikTok, Instagram, YouTube oder deinem Blog.
                 </Typography>
-                <Typography sx={{ fontSize: '0.95em', color: '#999', lineHeight: 1.6 }}>
+                <Typography sx={{ fontSize: '0.95em', color: '#999', lineHeight: 1.6, mb: 1 }}>
                   Beispiele: TikTok Videos, Instagram Reels, YouTube Tutorials, Blog-Artikel. Der Schlüssel: Content muss Entertainment, Education oder Inspiration sein — nicht nur Musik-Promotion.
+                </Typography>
+                <Typography sx={{ fontSize: '0.9em', fontWeight: 700, color: '#4caf50', mt: 1 }}>
+                  KPIs: Views, Profilbesuche, Scroll-Stopp-Rate
                 </Typography>
               </CardContent>
             </Card>
@@ -568,8 +608,11 @@ const HomeFullGuide = () => {
                 <Typography sx={{ fontSize: '1em', color: '#ccc', lineHeight: 1.8, mb: 1 }}>
                   <strong>Nicht alle Zuschauer sind gleich.</strong> Aus deinen Followers entstehen echte Fans — wenn du die Richtigen identifizierst und ansprichst.
                 </Typography>
-                <Typography sx={{ fontSize: '0.95em', color: '#999', lineHeight: 1.6 }}>
+                <Typography sx={{ fontSize: '0.95em', color: '#999', lineHeight: 1.6, mb: 1 }}>
                   Engagement Funnel: Likes/Views (schwach) → Follows/Subscribers (mittel) → Email-Abos/Discord Members (stark). Mit guten Daten weißt du, wer echtes Interesse hat.
+                </Typography>
+                <Typography sx={{ fontSize: '0.9em', fontWeight: 700, color: '#4caf50', mt: 1 }}>
+                  Werkzeuge: Spotify Canvas, YouTube-Musikvideos, Teaser
                 </Typography>
               </CardContent>
             </Card>
@@ -583,8 +626,11 @@ const HomeFullGuide = () => {
                 <Typography sx={{ fontSize: '1em', color: '#ccc', lineHeight: 1.8, mb: 1 }}>
                   <strong>Deine Superfans sind wertvoll.</strong> Mit direkter Kommunikation baust du eine Community auf, die deine Musik liebt — und dafür bezahlt.
                 </Typography>
-                <Typography sx={{ fontSize: '0.95em', color: '#999', lineHeight: 1.6 }}>
+                <Typography sx={{ fontSize: '0.95em', color: '#999', lineHeight: 1.6, mb: 1 }}>
                   Tools: Email Newsletter, Discord Server, WhatsApp/Telegram für echte Fans. Der Reciprocity Principle: Du gibst zuerst (kostenlos), dann fragen deine Fans nach Merch/Tickets.
+                </Typography>
+                <Typography sx={{ fontSize: '0.9em', fontWeight: 700, color: '#4caf50', mt: 1 }}>
+                  KPIs: E-Mail Open Rate, Discord Engagement, Community Retention
                 </Typography>
               </CardContent>
             </Card>
@@ -598,8 +644,11 @@ const HomeFullGuide = () => {
                 <Typography sx={{ fontSize: '1em', color: '#ccc', lineHeight: 1.8, mb: 1 }}>
                   <strong>Musik ist kostenlos geworden.</strong> Aber Exklusivität ist wertvoll. Merch, Konzerte, Fan-Clubs, Exclusive Releases — damit verdienst du wirklich mit deiner Musik.
                 </Typography>
-                <Typography sx={{ fontSize: '0.95em', color: '#999', lineHeight: 1.6 }}>
+                <Typography sx={{ fontSize: '0.95em', color: '#999', lineHeight: 1.6, mb: 1 }}>
                   Die Kunst: Mit Daten wissen, welche Fan-Gruppe welches Produkt kauft. So maximierst du deinen Umsatz.
+                </Typography>
+                <Typography sx={{ fontSize: '0.9em', fontWeight: 700, color: '#4caf50', mt: 1 }}>
+                  KPIs: Customer Lifetime Value, Conversion Rate, ROI pro Fan
                 </Typography>
               </CardContent>
             </Card>
@@ -791,6 +840,524 @@ const HomeFullGuide = () => {
 
           <Divider sx={{ my: 6, borderColor: '#333' }} />
 
+          {/* NEW SECTION: Der 10.000€ Musikmarketing Plan */}
+          <Box id="10k-musikmarketing-plan" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+            <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
+              Der 10.000€ Musikmarketing Plan (Komplette Jahresstrategie)
+            </Typography>
+
+            <Box sx={{ mb: 4, position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '100%', background: '#000', borderRadius: '8px' }}>
+              <iframe
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+                src="https://www.youtube.com/embed/Qwb08LqxoRI"
+                title="Der 10.000€ Musikmarketing Plan"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </Box>
+
+            <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 3 }}>
+              So würdest du 10.000€ Budget strategisch über 12 Monate verteilen, um maximale Ergebnisse zu erzielen:
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #4caf50', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.2rem', fontWeight: 700, color: '#4caf50', mb: 2 }}>
+                  Budget-Aufteilung für 12 Monate
+                </Typography>
+                <Stack spacing={2}>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
+                      6.500€ für Release-Kampagnen (10 Singles)
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.95em', color: '#bbb', lineHeight: 1.7 }}>
+                      <strong>650€ pro Single:</strong> 20€/Tag für 30 Tage Meta Ads auf Spotify. Damit holst du den Algorithmus optimal ab und generierst 10.000-50.000 Streams pro Release.
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
+                      2.500€ für Follower Growth (365 Tage)
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.95em', color: '#bbb', lineHeight: 1.7 }}>
+                      <strong>~7€/Tag:</strong> Kontinuierliche Instagram Follower-Kampagne. Mit der richtigen Strategie gewinnst du qualifizierte Follower für 20-30 Cent.
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
+                      1.000€ Reserve
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.95em', color: '#bbb', lineHeight: 1.7 }}>
+                      Für besonders gut performende Songs oder unerwartete Chancen (viraler Moment, Playlist-Platzierung).
+                    </Typography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            <Typography component="h3" sx={{ fontSize: '1.3rem', fontWeight: 700, mb: 2, color: '#fff' }}>
+              Der Jahresplan im Detail
+            </Typography>
+
+            <Stack spacing={2}>
+              <Card sx={{ background: '#1a1a1a', border: '1px solid #444' }}>
+                <CardContent>
+                  <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
+                    📅 10 Singles im 6-Wochen-Rhythmus
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb', lineHeight: 1.7 }}>
+                    Alle 6 Wochen ein neuer Release. Konsistenz ist wichtiger als Perfektion. Der Algorithmus belohnt regelmäßige Veröffentlichungen.
+                  </Typography>
+                </CardContent>
+              </Card>
+
+              <Card sx={{ background: '#1a1a1a', border: '1px solid #444' }}>
+                <CardContent>
+                  <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
+                    🎨 2 Merch Drops (nach 1.000 E-Mail Subscribern)
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb', lineHeight: 1.7 }}>
+                    Print-on-Demand Drops mit 4-Tage-Zeitfenster. Null Risiko, nur produzieren was verkauft wird. Erwartung: 50-100 Bestellungen pro Drop.
+                  </Typography>
+                </CardContent>
+              </Card>
+
+              <Card sx={{ background: '#1a1a1a', border: '1px solid #444' }}>
+                <CardContent>
+                  <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
+                    💿 1 Vinyl Release (am Ende des Jahres)
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb', lineHeight: 1.7 }}>
+                    Alle 10 Songs auf Vinyl. Verkaufspreis: 35€. Kombiniere mit Ticket-Bundle für erste Show.
+                  </Typography>
+                </CardContent>
+              </Card>
+
+              <Card sx={{ background: '#1a1a1a', border: '1px solid #444' }}>
+                <CardContent>
+                  <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
+                    🎤 1 Release Show (Vinyl + Ticket Bundle)
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb', lineHeight: 1.7 }}>
+                    Bundle-Angebot: Vinyl (35€) + Ticket (15€) = 40€. 50% kaufen Bundle, 30% nur Vinyl, 20% nur Ticket. Erwartung: 100-200 Tickets.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Stack>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #666', mt: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff', mb: 2 }}>
+                  💡 Erwartete Ergebnisse nach 12 Monaten
+                </Typography>
+                <Stack spacing={0.5} sx={{ pl: 2 }}>
+                  <Typography sx={{ fontSize: '0.95em', color: '#ccc' }}>✓ 100.000-500.000 Spotify Streams (gesamt)</Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#ccc' }}>✓ 5.000-15.000 Instagram Follower</Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#ccc' }}>✓ 1.000-2.000 E-Mail Abonnenten</Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#ccc' }}>✓ 100-200 Merch/Vinyl Verkäufe</Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#ccc' }}>✓ 100-200 verkaufte Show-Tickets</Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#ccc', fontWeight: 700, mt: 1 }}>✓ ROI: Budget refinanziert sich in 12-24 Monaten</Typography>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mt: 3 }}>
+              Mehr Details zum kompletten System findest du in unserem <Link to="/blog/musikmarketing-ultimate-guide" style={{ color: '#4caf50', textDecoration: 'none', fontWeight: 700 }}>Musikmarketing Ultimate Guide</Link>.
+            </Typography>
+          </Box>
+
+          <Divider sx={{ my: 6, borderColor: '#333' }} />
+
+          {/* NEW SECTION: Release Strategie (6-Wochen-System) */}
+          <Box id="release-strategie-6-wochen" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+            <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
+              Die perfekte Release-Strategie: Das 6-Wochen-System
+            </Typography>
+
+            <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 3 }}>
+              <strong>Konsistenz schlägt Perfektion.</strong> Hier ist das bewährte System für kontinuierliche Releases:
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #444', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', mb: 2 }}>
+                  Der 6-Wochen-Zyklus
+                </Typography>
+                <Stack spacing={2}>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Woche 1-2: Produktion & Vorbereitung
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>Nächsten Song produzieren, mixen, mastern</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Woche 3-4: Content Creation
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>20+ Videos für den Release erstellen (Mix aus Cinematic & Native)</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Woche 5: Pre-Release Phase (11 Tage vorher)
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>Montag starten, täglich 1 Video posten (organisch, kein Budget)</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Woche 6: Release Week + Kampagne
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>Freitag: Song live + Meta Ads starten (20€/Tag für 30 Tage)</Typography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            <Typography component="h3" sx={{ fontSize: '1.3rem', fontWeight: 700, mb: 2, color: '#fff' }}>
+              Die 70/30 Content-Regel
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #444', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 2 }}>
+                  <strong>Ich brauche auf beiden Seiten eine hohe Qualität</strong> – sowohl bei der Musik als auch beim Marketing. Hier die optimale Content-Verteilung:
+                </Typography>
+                <Stack spacing={1.5}>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      70% Musik-Content
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>Song-Snippets, Behind-the-Scenes vom Studio, Lyrics, Performance-Clips, Mini-Musikvideos</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      30% Branding-Content
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>Lifestyle, Persönlichkeit, Werte, Off-Topic Content – zeige wer du als Person bist</Typography>
+                  </Box>
+                </Stack>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mt: 2, fontStyle: 'italic' }}>
+                  "Menschen folgen Menschen, nicht nur Musik. Deine Fans wollen dich als Person kennenlernen."
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Typography component="h3" sx={{ fontSize: '1.3rem', fontWeight: 700, mb: 2, color: '#fff' }}>
+              Wichtig: Am Releasetag startet die Kampagne
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #f44336', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7 }}>
+                  <strong>Keine Pre-Save Kampagnen!</strong> Gib kein Geld vor dem Release aus. Die gesamte Pre-Release Phase (11 Tage) läuft organisch. Erst am Freitag, wenn der Song live ist, startest du die Meta Ads Kampagne.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+
+          <Divider sx={{ my: 6, borderColor: '#333' }} />
+
+          {/* NEW SECTION: Meta Ads Strategie */}
+          <Box id="meta-ads-strategie-detail" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+            <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
+              Meta Ads für Musik: Die exakte Strategie (650€ pro Song)
+            </Typography>
+
+            <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 3 }}>
+              Meta Ads (Facebook & Instagram) sind 2026 das mächtigste Tool für Musikpromotion. Hier die bewährte Strategie:
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #4caf50', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.2rem', fontWeight: 700, color: '#4caf50', mb: 2 }}>
+                  Das Genre Stack Setup
+                </Typography>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 2 }}>
+                  Erstelle 3 Ad Sets mit unterschiedlichem Targeting:
+                </Typography>
+                <Stack spacing={1.5}>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Ad Set 1: Genre Stack
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>Genre 1 + Genre 2 + Spotify Interest (z.B. Hip Hop + Rap + Spotify)</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Ad Set 2: Alternative Genre Stack
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>Genre 3 + Genre 4 + Spotify Interest (z.B. R&B + Pop + Spotify)</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Ad Set 3: Broad Targeting
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>Nur Spotify Interest, kein Genre-Targeting</Typography>
+                  </Box>
+                </Stack>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mt: 2 }}>
+                  <strong>Test-Phase:</strong> Alle 3 Ad Sets für 24 Stunden mit je 20€ testen. Dann die schlechter performenden abschalten und nur mit dem Winning Ad Set weiterlaufen (20€/Tag).
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Typography component="h3" sx={{ fontSize: '1.3rem', fontWeight: 700, mb: 2, color: '#fff' }}>
+              Warum Creatives wichtiger sind als Targeting
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #ff9800', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.05rem', fontWeight: 700, color: '#ff9800', mb: 2 }}>
+                  "Tracking und Creative Diversity sind viel wichtiger als Targeting."
+                </Typography>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 2 }}>
+                  Der Creative macht 80% des Erfolgs aus, das Targeting nur 20%. Warum?
+                </Typography>
+                <Stack spacing={1} sx={{ pl: 2 }}>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>✓ Meta's Algorithmus findet automatisch die richtige Audience</Typography>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>✓ Broad Targeting funktioniert oft besser als enges Targeting</Typography>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>✓ Ein guter Creative überzeugt auch außerhalb deiner Zielgruppe</Typography>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>✓ Creative Fatigue ist der Hauptgrund für steigende Kosten</Typography>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            <Typography component="h3" sx={{ fontSize: '1.3rem', fontWeight: 700, mb: 2, color: '#fff' }}>
+              Creative Testing: 10-20 Videos pro Kampagne
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #444', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 2 }}>
+                  Packe 10-20 verschiedene Videos in dein Winning Ad Set:
+                </Typography>
+                <Stack spacing={1} sx={{ pl: 2 }}>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 10 Cinematic Videos (hochwertig, szenisch)</Typography>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• 10 Native Videos (Handy, authentisch)</Typography>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• Verschiedene Hooks und Intros</Typography>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>• Unterschiedliche Vibes und Stimmungen</Typography>
+                </Stack>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mt: 2 }}>
+                  <strong>Frequency Management:</strong> Sobald eine Ad über 1,5 Frequency kommt, steigen deine Kosten. Füge kontinuierlich neue Videos hinzu.
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Typography component="h3" sx={{ fontSize: '1.3rem', fontWeight: 700, mb: 2, color: '#fff' }}>
+              Frequency-Cap: Die Magie des 1.5-Werts
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #f44336', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 2 }}>
+                  <strong>Frequency-Cap ist entscheidend:</strong> Wir wollen nicht, dass eine Person dieselbe Ad 20 Mal sieht. Ein Frequency-Wert von ca. 1.5 sorgt für maximale Reichweite bei minimalem "Ad-Fatigue".
+                </Typography>
+                <Stack spacing={1} sx={{ pl: 2 }}>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>
+                    ✓ Frequency unter 1.5: Optimal, niedrige Kosten
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>
+                    ⚠️ Frequency 1.5-2.5: Akzeptabel, Kosten steigen leicht
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>
+                    ❌ Frequency über 2.5: Ad-Fatigue, Kosten explodieren
+                  </Typography>
+                </Stack>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mt: 2, fontStyle: 'italic' }}>
+                  Lösung: Kontinuierlich neue Creatives hinzufügen, auch wenn sie organisch nicht perfekt performen.
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8 }}>
+              Detaillierte Anleitung findest du hier: <Link to="/blog/die-beste-meta-ads-strategie-fuer-spotify-musik-ads-2026" style={{ color: '#4caf50', textDecoration: 'none', fontWeight: 700 }}>Meta Ads Strategie für Spotify</Link>
+            </Typography>
+          </Box>
+
+          <Divider sx={{ my: 6, borderColor: '#333' }} />
+
+          {/* NEW SECTION: Die 1% Follower Conversion Regel */}
+          <Box id="1-prozent-regel" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+            <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
+              Die 1% Regel: Instagram Follower für 20-30 Cent
+            </Typography>
+
+            <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 3 }}>
+              Parallel zu deinen Release-Kampagnen solltest du kontinuierlich Follower aufbauen. Mit der richtigen Strategie gewinnst du qualifizierte Instagram Follower für 20-30 Cent.
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #4caf50', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.2rem', fontWeight: 700, color: '#4caf50', mb: 2 }}>
+                  Die 1% Conversion Regel
+                </Typography>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 2 }}>
+                  Damit die Follower-Kampagne funktioniert, braucht dein Content eine <strong>1% Conversion Rate von Reach zu Followern</strong>.
+                </Typography>
+                <Stack spacing={1.5}>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Beispiel ✅
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>10.000 Reach → 100 neue Follower = 1% Conversion</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Zu niedrig ❌
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>10.000 Reach → 50 neue Follower = 0,5% Conversion</Typography>
+                  </Box>
+                </Stack>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mt: 2, fontStyle: 'italic' }}>
+                  <strong>Wichtig:</strong> Schau auf Reach (erreichte Konten), nicht auf Views. Views können durch mehrfaches Anschauen höher sein.
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Typography component="h3" sx={{ fontSize: '1.3rem', fontWeight: 700, mb: 2, color: '#fff' }}>
+              Setup für Follower-Kampagne
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #444', mb: 3 }}>
+              <CardContent>
+                <Stack spacing={1.5}>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Budget
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>5-10€ pro Tag (kontinuierlich)</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Objective
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>Engagement oder Reach (nicht Follower!)</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Creative
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>Storytelling Carousel Posts oder virale Reels</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Targeting
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>Hometown, Region oder Land (je nach Größe)</Typography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            <Typography component="h3" sx={{ fontSize: '1.3rem', fontWeight: 700, mb: 2, color: '#fff' }}>
+              Welcher Content funktioniert?
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #444', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 2 }}>
+                  Storytelling Carousel Posts mit:
+                </Typography>
+                <Stack spacing={1} sx={{ pl: 2 }}>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>✓ Persönlicher Journey ("Wie ich von 0 auf 10K Follower kam")</Typography>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>✓ Behind-the-Scenes Stories</Typography>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>✓ Struggles und Erfolge</Typography>
+                  <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>✓ Emotionale Hooks</Typography>
+                </Stack>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mt: 2, fontStyle: 'italic' }}>
+                  <strong>Challenge nicht deine Audience, challenge dich selbst.</strong> Erzähle deine Story, anstatt zu erwarten, dass Leute sich die Zeit nehmen, dich zu verstehen.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+
+          <Divider sx={{ my: 6, borderColor: '#333' }} />
+
+          {/* NEW SECTION: Algorithmus-Hacking */}
+          <Box id="algorithmus-hacking-spotify" sx={{ mb: 6, scrollMarginTop: '80px' }}>
+            <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
+              Algorithmus-Hacking: Spotify "Discover Weekly" triggern
+            </Typography>
+
+            <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 3 }}>
+              Das Ziel der bezahlten Werbung ist es nicht, dauerhaft für Streams zu bezahlen. <strong>Das Ziel ist es, den Algorithmus davon zu überzeugen, dass dein Song gut ist.</strong>
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #4caf50', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.2rem', fontWeight: 700, color: '#4caf50', mb: 2 }}>
+                  Wie der Spotify-Algorithmus funktioniert
+                </Typography>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 2 }}>
+                  Sobald Spotify merkt, dass Menschen den Song zu Ende hören, ihn in Playlists speichern und teilen, beginnt die organische Ausspielung über:
+                </Typography>
+                <Stack spacing={1} sx={{ pl: 2 }}>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>
+                    🎯 <strong>Discover Weekly:</strong> Personalisierte Playlist für Millionen User
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>
+                    🎯 <strong>Release Radar:</strong> Für deine bestehenden Follower
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>
+                    🎯 <strong>Spotify Radio:</strong> "Ähnliche Songs" Feature
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#bbb' }}>
+                    🎯 <strong>Playlist Radar:</strong> Automatische Playlist-Platzierungen
+                  </Typography>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            <Typography component="h3" sx={{ fontSize: '1.3rem', fontWeight: 700, mb: 2, color: '#fff' }}>
+              Den Popularity Score in den ersten 48 Stunden maximieren
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #444', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 2 }}>
+                  Die ersten 48 Stunden nach Release sind entscheidend. Hier wird der "Popularity Score" gesetzt:
+                </Typography>
+                <Stack spacing={1.5}>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Save Rate (wichtigster Faktor)
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>
+                      Wie viele Hörer speichern den Song in ihrer Library oder Playlist? Ziel: &gt;5%
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Completion Rate
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>
+                      Wie viele hören den Song zu Ende? Ziel: &gt;60%
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Skip Rate (negativ)
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>
+                      Wie viele skippen nach 30 Sekunden? Ziel: &lt;30%
+                    </Typography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #666', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff', mb: 2 }}>
+                  💡 Ab diesem Punkt sinken deine Kosten massiv
+                </Typography>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7 }}>
+                  Sobald der Algorithmus übernommen hat, zahlst du nicht mehr für jeden Stream. Die organische Reichweite übernimmt und deine effektiven Kosten pro Stream fallen von 0,10€ auf unter 0,01€.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+
+          <Divider sx={{ my: 6, borderColor: '#333' }} />
+
           {/* NEW SECTION: Musikmarketing vs Musikpromotion */}
           <Box id="musikmarketing-vs-promotion" sx={{ mb: 6, scrollMarginTop: '80px' }}>
             <Typography component="h2" sx={{ fontSize: '2rem', fontWeight: 700, mb: 3, color: '#fff' }}>
@@ -970,6 +1537,136 @@ const HomeFullGuide = () => {
                 </Typography>
                 <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.8 }}>
                   <strong>Die 80/20 Regel:</strong> Investiere 20% deines Budgets in Produktion (Studio, Mixing), 80% in Marketing. Der beste Song bringt nichts, wenn niemand ihn hört. Viele Artists machen es umgekehrt – und scheitern.
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Divider sx={{ my: 3, borderColor: '#333' }} />
+
+            <Typography component="h3" sx={{ fontSize: '1.3rem', fontWeight: 700, mb: 2, color: '#fff' }}>
+              Die Ernte: Monetarisierung und ROI nach 12 Monaten
+            </Typography>
+
+            <Typography sx={{ fontSize: '1.05rem', color: '#ccc', lineHeight: 1.8, mb: 3 }}>
+              Am Ende des Jahres steht die Frage: <strong>Hat es sich gelohnt?</strong> 10.000€ sind ein Investment in den Markenwert. Hier die realistische ROI-Berechnung:
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #4caf50', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.2rem', fontWeight: 700, color: '#4caf50', mb: 2 }}>
+                  Live-Geschäft als Hauptziel
+                </Typography>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 2 }}>
+                  Das klare Ziel: <strong>100 Personen, die bereit sind, für ein Ticket zu bezahlen.</strong>
+                </Typography>
+                <Stack spacing={1.5}>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Ticket-Verkauf (100 Tickets × 15-20€)
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>
+                      Einnahmen: 1.500-2.000€ pro Show
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Merch am Stand (30% Conversion)
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb' }}>
+                      30 Verkäufe × 25€ = 750€ zusätzlich
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                      Gesamt pro Show
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#4caf50', fontWeight: 700 }}>
+                      2.250-2.750€ Umsatz
+                    </Typography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            <Typography component="h3" sx={{ fontSize: '1.3rem', fontWeight: 700, mb: 2, color: '#fff' }}>
+              Merchandising & Vinyl: Customer Lifetime Value erhöhen
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #444', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7, mb: 2 }}>
+                  Durch strategische Angebote lässt sich der "Customer Lifetime Value" eines Fans massiv erhöhen:
+                </Typography>
+                <Stack spacing={2}>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
+                      Limitierte Vinyl (35€)
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb', mb: 1 }}>
+                      Alle 10 Songs des Jahres auf Vinyl. Limitierte Auflage schafft FOMO.
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#999' }}>
+                      Erwartung: 50-100 Verkäufe = 1.750-3.500€
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#fff', mb: 1 }}>
+                      Bundle-Angebote (Vinyl + Ticket = 40€)
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#bbb', mb: 1 }}>
+                      Einzeln: 35€ + 15€ = 50€. Bundle: 40€ = 20% Rabatt, aber höhere Conversion.
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.9em', color: '#999' }}>
+                      Erfahrungswert: 50% kaufen Bundle, 30% nur Vinyl, 20% nur Ticket
+                    </Typography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            <Typography component="h3" sx={{ fontSize: '1.3rem', fontWeight: 700, mb: 2, color: '#fff' }}>
+              ROI-Berechnung nach 12 Monaten
+            </Typography>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #666', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff', mb: 2 }}>
+                  Realistische Einnahmen-Übersicht
+                </Typography>
+                <Stack spacing={1}>
+                  <Typography sx={{ fontSize: '0.95em', color: '#ccc' }}>
+                    💿 Streaming (200.000 Streams × 0,003€): 600€
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#ccc' }}>
+                    👕 Merch Drops (100 Verkäufe × 25€): 2.500€
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#ccc' }}>
+                    💿 Vinyl (75 Verkäufe × 35€): 2.625€
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.95em', color: '#ccc' }}>
+                    🎤 Live-Show (1 Show × 2.500€): 2.500€
+                  </Typography>
+                  <Divider sx={{ my: 1.5, borderColor: '#555' }} />
+                  <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#4caf50' }}>
+                    Gesamt: ~8.225€ Umsatz
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.9em', color: '#999', mt: 1 }}>
+                    Investment: 10.000€ | ROI: -18% im ersten Jahr
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.9em', color: '#4caf50', fontWeight: 700, mt: 1 }}>
+                    ✓ Aber: Du hast jetzt 5.000-15.000 Follower, 1.000-2.000 E-Mail-Abonnenten und eine funktionierende Marketing-Maschine
+                  </Typography>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            <Card sx={{ background: '#1a1a1a', border: '2px solid #4caf50', mb: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: '1.05rem', fontWeight: 700, color: '#4caf50', mb: 2 }}>
+                  💡 Jahr 2: Profitabilität
+                </Typography>
+                <Typography sx={{ fontSize: '0.95em', color: '#ccc', lineHeight: 1.7 }}>
+                  Mit der aufgebauten Fanbase refinanziert sich das Investment in Jahr 2 komplett. Mehr Shows (3-5), höhere Merch-Verkäufe, Streaming-Katalog wächst. <strong>Erwartete Einnahmen Jahr 2: 15.000-25.000€</strong>
                 </Typography>
               </CardContent>
             </Card>

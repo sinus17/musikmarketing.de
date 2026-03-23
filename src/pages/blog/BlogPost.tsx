@@ -133,14 +133,64 @@ export default function BlogPost() {
     return null
   }
 
+  const canonicalUrl = `https://musikmarketing.de/blog/${post.slug}`;
+  const publishedDate = post.published_date || post.created_at;
+  
+  const blogPostSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.excerpt || post.title,
+    "image": post.cover_image || "https://musikmarketing.de/musikmarketing-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": post.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Musikmarketing.de",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://musikmarketing.de/logo.png"
+      }
+    },
+    "datePublished": publishedDate,
+    "dateModified": post.created_at,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    },
+    "keywords": post.tags?.join(', ') || ''
+  };
+
   return (
     <>
       <Helmet>
         <title>{post.title} | Musikmarketing.de</title>
         <meta name="description" content={post.excerpt || post.title} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        
+        <meta property="og:type" content="article" />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt || post.title} />
+        <meta property="og:url" content={canonicalUrl} />
         {post.cover_image && <meta property="og:image" content={post.cover_image} />}
+        <meta property="article:published_time" content={publishedDate} />
+        <meta property="article:modified_time" content={post.created_at} />
+        <meta property="article:author" content={post.author} />
+        {post.tags && post.tags.map((tag) => (
+          <meta key={tag} property="article:tag" content={tag} />
+        ))}
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt || post.title} />
+        {post.cover_image && <meta name="twitter:image" content={post.cover_image} />}
+        
+        <script type="application/ld+json">
+          {JSON.stringify(blogPostSchema)}
+        </script>
       </Helmet>
 
       <Box sx={{ bgcolor: '#000', minHeight: '100vh', py: 8 }}>

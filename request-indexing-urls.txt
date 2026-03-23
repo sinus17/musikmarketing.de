@@ -1,0 +1,16 @@
+# URLs to Request Indexing in Google Search Console
+# Copy each URL and paste into GSC URL Inspection Tool
+# Then click "Request Indexing" for each
+
+https://musikmarketing.de/blog/spotify-verdienst
+https://musikmarketing.de/blog/hypeddit-alternative-song-so
+https://musikmarketing.de/blog/musik-influencer-partnerships
+https://musikmarketing.de/marketing-handbuch-fuer-artists
+https://musikmarketing.de/blog/musikplattform-vergleich
+https://musikmarketing.de/blog/musik-bekannt
+
+# Additional blog posts that may need indexing:
+https://musikmarketing.de/blog/was-ist-musikmarketing
+https://musikmarketing.de/blog/song-veroeffentlichen-kosten
+https://musikmarketing.de/blog/musikmarketing-tipps
+https://musikmarketing.de/blog/song-vermarkten
